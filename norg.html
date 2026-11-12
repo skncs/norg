@@ -1,0 +1,3424 @@
+<!doctype html>
+<!-- Norg · 单文件版 · 双击即可使用，无需联网、无需安装 -->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+<meta name="theme-color" content="#0a0708" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Norg" />
+<title>Norg · 健身与饮食记录</title>
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiTm9yZyDCtyDlgaXouqvkuI7ppa7po5/orrDlvZUiLCJzaG9ydF9uYW1lIjoiTm9yZyIsImRlc2NyaXB0aW9uIjoi6K6w5b2V5q+P5LiA6aSQ44CB5q+P5LiA5qyh6K6t57uD77yM55yL5Yiw6Lqr5L2T55yf5a6e55qE5Y+Y5YyW44CCIiwic3RhcnRfdXJsIjoiLiIsInNjb3BlIjoiLiIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwib3JpZW50YXRpb24iOiJwb3J0cmFpdCIsImJhY2tncm91bmRfY29sb3IiOiIjMDgwNjA3IiwidGhlbWVfY29sb3IiOiIjMDgwNjA3IiwibGFuZyI6InpoLUNOIiwiaWNvbnMiOlt7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0F4T1RJZ01Ua3lJaUIzYVdSMGFEMGlNVGt5SWlCb1pXbG5hSFE5SWpFNU1pSStQR1JsWm5NK1BHeHBibVZoY2tkeVlXUnBaVzUwSUdsa1BTSm5JaUI0TVQwaU1DSWdlVEU5SWpBaUlIZ3lQU0l4SWlCNU1qMGlNU0krUEhOMGIzQWdiMlptYzJWMFBTSXdJaUJ6ZEc5d0xXTnZiRzl5UFNJalptWTFZVFJsSWk4K1BITjBiM0FnYjJabWMyVjBQU0l4SWlCemRHOXdMV052Ykc5eVBTSWpZekV4TWpGbUlpOCtQQzlzYVc1bFlYSkhjbUZrYVdWdWRENDhjbUZrYVdGc1IzSmhaR2xsYm5RZ2FXUTlJbUpuSWlCamVEMGlOVEFsSWlCamVUMGlNVEUxSlNJZ2NqMGlPRFVsSWo0OGMzUnZjQ0J2Wm1aelpYUTlJakFpSUhOMGIzQXRZMjlzYjNJOUlpTXlZVEUwTVRZaUx6NDhjM1J2Y0NCdlptWnpaWFE5SWpFaUlITjBiM0F0WTI5c2IzSTlJaU13T0RBMk1EY2lMejQ4TDNKaFpHbGhiRWR5WVdScFpXNTBQand2WkdWbWN6NDhjbVZqZENCM2FXUjBhRDBpTVRreUlpQm9aV2xuYUhROUlqRTVNaUlnY25nOUlqUXlJaUJtYVd4c1BTSjFjbXdvSTJKbktTSXZQanh3WVhSb0lHUTlJazAxT0NBeE16aFdOVGhzTnpZZ056WldOVGdpSUdacGJHdzlJbTV2Ym1VaUlITjBjbTlyWlQwaWRYSnNLQ05uS1NJZ2MzUnliMnRsTFhkcFpIUm9QU0l5TmlJZ2MzUnliMnRsTFd4cGJtVmpZWEE5SW5KdmRXNWtJaUJ6ZEhKdmEyVXRiR2x1WldwdmFXNDlJbkp2ZFc1a0lpOCtQSEJoZEdnZ1pEMGlUVEV6TkNBeE1USjJNallpSUdacGJHdzlJbTV2Ym1VaUlITjBjbTlyWlQwaWRYSnNLQ05uS1NJZ2MzUnliMnRsTFhkcFpIUm9QU0l5TmlJZ2MzUnliMnRsTFd4cGJtVmpZWEE5SW5KdmRXNWtJaTgrUEM5emRtYysiLCJzaXplcyI6IjE5MngxOTIiLCJ0eXBlIjoiaW1hZ2Uvc3ZnK3htbCIsInB1cnBvc2UiOiJhbnkifSx7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0ExTVRJZ05URXlJaUIzYVdSMGFEMGlOVEV5SWlCb1pXbG5hSFE5SWpVeE1pSStQR1JsWm5NK1BHeHBibVZoY2tkeVlXUnBaVzUwSUdsa1BTSm5JaUI0TVQwaU1DSWdlVEU5SWpBaUlIZ3lQU0l4SWlCNU1qMGlNU0krUEhOMGIzQWdiMlptYzJWMFBTSXdJaUJ6ZEc5d0xXTnZiRzl5UFNJalptWTFZVFJsSWk4K1BITjBiM0FnYjJabWMyVjBQU0l4SWlCemRHOXdMV052Ykc5eVBTSWpZekV4TWpGbUlpOCtQQzlzYVc1bFlYSkhjbUZrYVdWdWRENDhjbUZrYVdGc1IzSmhaR2xsYm5RZ2FXUTlJbUpuSWlCamVEMGlOVEFsSWlCamVUMGlNVEUxSlNJZ2NqMGlPRFVsSWo0OGMzUnZjQ0J2Wm1aelpYUTlJakFpSUhOMGIzQXRZMjlzYjNJOUlpTXlZVEUwTVRZaUx6NDhjM1J2Y0NCdlptWnpaWFE5SWpFaUlITjBiM0F0WTI5c2IzSTlJaU13T0RBMk1EY2lMejQ4TDNKaFpHbGhiRWR5WVdScFpXNTBQand2WkdWbWN6NDhjbVZqZENCM2FXUjBhRDBpTlRFeUlpQm9aV2xuYUhROUlqVXhNaUlnY25nOUlqRXhNaUlnWm1sc2JEMGlkWEpzS0NOaVp5a2lMejQ4Y0dGMGFDQmtQU0pOTVRVMUlETTJPRll4TlRWc01qQXpJREl3TTFZeE5UVWlJR1pwYkd3OUltNXZibVVpSUhOMGNtOXJaVDBpZFhKc0tDTm5LU0lnYzNSeWIydGxMWGRwWkhSb1BTSTJPU0lnYzNSeWIydGxMV3hwYm1WallYQTlJbkp2ZFc1a0lpQnpkSEp2YTJVdGJHbHVaV3B2YVc0OUluSnZkVzVrSWk4K1BIQmhkR2dnWkQwaVRUTTFPQ0F5T1RsMk5qa2lJR1pwYkd3OUltNXZibVVpSUhOMGNtOXJaVDBpZFhKc0tDTm5LU0lnYzNSeWIydGxMWGRwWkhSb1BTSTJPU0lnYzNSeWIydGxMV3hwYm1WallYQTlJbkp2ZFc1a0lpOCtQQzl6ZG1jKyIsInNpemVzIjoiNTEyeDUxMiIsInR5cGUiOiJpbWFnZS9zdmcreG1sIiwicHVycG9zZSI6ImFueSBtYXNrYWJsZSJ9XX0=" />
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmY1YTRlIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYzExMjFmIi8+PC9saW5lYXJHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9ImJnIiBjeD0iNTAlIiBjeT0iMTE1JSIgcj0iODUlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMyYTE0MTYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwODA2MDciLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjQyIiBmaWxsPSJ1cmwoI2JnKSIvPjxwYXRoIGQ9Ik01OCAxMzhWNThsNzYgNzZWNTgiIGZpbGw9Im5vbmUiIHN0cm9rZT0idXJsKCNnKSIgc3Ryb2tlLXdpZHRoPSIyNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTEzNCAxMTJ2MjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0idXJsKCNnKSIgc3Ryb2tlLXdpZHRoPSIyNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+" />
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIiB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmY1YTRlIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYzExMjFmIi8+PC9saW5lYXJHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9ImJnIiBjeD0iNTAlIiBjeT0iMTE1JSIgcj0iODUlIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMyYTE0MTYiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwODA2MDciLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgcng9IjQyIiBmaWxsPSJ1cmwoI2JnKSIvPjxwYXRoIGQ9Ik01OCAxMzhWNThsNzYgNzZWNTgiIGZpbGw9Im5vbmUiIHN0cm9rZT0idXJsKCNnKSIgc3Ryb2tlLXdpZHRoPSIyNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTEzNCAxMTJ2MjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0idXJsKCNnKSIgc3Ryb2tlLXdpZHRoPSIyNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PC9zdmc+" />
+<style>
+/* ============================================================
+   Norg · 设计系统
+   深色 + 猩红主色，卡片圆角 20-24px，光晕质感
+   ============================================================ */
+
+:root{
+  --bg:#080607;
+  --bg-1:#0e0a0c;
+  --card:#141011;
+  --card-2:#1a1416;
+  --card-3:#221a1d;
+  --line:rgba(255,255,255,.07);
+  --line-2:rgba(255,255,255,.12);
+
+  --red:#ff3b30;
+  --red-2:#e01b24;
+  --red-3:#8e0f16;
+  --red-soft:rgba(255,59,48,.14);
+
+  --green:#3ddc84;
+  --purple:#a78bfa;
+  --yellow:#e8ff4f;
+  --cyan:#4fd1e0;
+  --orange:#ff9f43;
+
+  --t1:#ffffff;
+  --t2:rgba(255,255,255,.72);
+  --t3:rgba(255,255,255,.44);
+  --t4:rgba(255,255,255,.26);
+
+  --r-s:12px;
+  --r-m:18px;
+  --r-l:24px;
+  --r-xl:30px;
+
+  --safe-b:env(safe-area-inset-bottom,0px);
+  --safe-t:env(safe-area-inset-top,0px);
+
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro SC", "PingFang SC",
+          "Helvetica Neue", "Microsoft YaHei", system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{margin:0;padding:0;height:100%;}
+body{
+  font-family:var(--font);
+  background:var(--bg);
+  color:var(--t1);
+  -webkit-font-smoothing:antialiased;
+  overscroll-behavior-y:none;
+  font-variant-numeric:tabular-nums;
+  overflow-x:hidden;
+}
+/* hidden 必须压过组件自身的 display */
+[hidden]{display:none !important;}
+
+/* 内联图标统一尺寸，防止无宽高的 svg 撑满容器 */
+.mini .h svg{width:14px;height:14px;flex:0 0 auto;color:var(--t4);}
+.row > svg{width:16px;height:16px;flex:0 0 auto;color:var(--t4);}
+.kv svg{width:16px;height:16px;color:var(--t4);}
+.tag svg{width:13px;height:13px;}
+.icon-btn svg{width:17px;height:17px;}
+button{font-family:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;}
+input,select,textarea{font-family:inherit;color:inherit;}
+::-webkit-scrollbar{width:0;height:0;}
+
+/* ---------- 外壳 ---------- */
+#app{
+  max-width:520px;margin:0 auto;min-height:100%;
+  display:flex;flex-direction:column;
+  background:
+    radial-gradient(120% 60% at 50% -10%, rgba(224,27,36,.22), transparent 62%),
+    var(--bg);
+  position:relative;
+}
+
+/* ---------- 顶栏 ---------- */
+.topbar{
+  position:sticky;top:0;z-index:40;
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:calc(var(--safe-t) + 14px) 18px 12px;
+  backdrop-filter:blur(18px) saturate(150%);
+  -webkit-backdrop-filter:blur(18px) saturate(150%);
+  background:linear-gradient(180deg, rgba(8,6,7,.92), rgba(8,6,7,.62));
+}
+.brand{display:flex;align-items:center;gap:9px;flex:0 0 auto;}
+.brand-mark{width:26px;height:26px;filter:drop-shadow(0 0 10px rgba(255,59,48,.55));}
+.brand-name{font-size:22px;font-weight:800;letter-spacing:-.5px;}
+.top-actions{display:flex;align-items:center;gap:8px;}
+.pill{
+  display:inline-flex;align-items:center;gap:5px;
+  height:29px;padding:0 13px;border-radius:999px;
+  font-size:12.5px;font-weight:700;letter-spacing:.2px;
+  background:rgba(255,255,255,.09);
+  border:1px solid var(--line-2);
+}
+.pill-pro{
+  background:linear-gradient(135deg,#fff,#e6e6e6);
+  color:#111;border-color:transparent;
+  box-shadow:0 2px 10px rgba(255,255,255,.18);
+}
+.pill-streak{color:var(--t2);}
+.pill-streak svg{color:var(--red);}
+
+/* ---------- 视图 ---------- */
+.view{
+  flex:1;
+  padding:4px 14px calc(104px + var(--safe-b));
+  animation:viewIn .28s cubic-bezier(.2,.8,.25,1);
+}
+@keyframes viewIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- 底部导航 ---------- */
+.tabbar{
+  position:fixed;left:50%;transform:translateX(-50%);
+  bottom:calc(var(--safe-b) + 10px);
+  width:min(492px, calc(100% - 28px));
+  display:grid;grid-template-columns:repeat(4,1fr);
+  padding:8px 6px;
+  border-radius:22px;
+  background:rgba(22,16,18,.82);
+  border:1px solid var(--line-2);
+  backdrop-filter:blur(24px) saturate(160%);
+  -webkit-backdrop-filter:blur(24px) saturate(160%);
+  box-shadow:0 12px 40px rgba(0,0,0,.6);
+  z-index:50;
+}
+.tab{
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  padding:7px 0 5px;border-radius:16px;
+  color:var(--t4);transition:color .18s, background .18s;
+}
+.tab svg{width:22px;height:22px;}
+.tab span{font-size:10px;font-weight:600;letter-spacing:.2px;}
+.tab.is-active{
+  color:var(--red);
+  background:radial-gradient(60% 100% at 50% 120%, rgba(255,59,48,.22), transparent 70%);
+}
+
+/* ---------- 通用卡片 ---------- */
+.card{
+  background:linear-gradient(168deg, var(--card-2), var(--card));
+  border:1px solid var(--line);
+  border-radius:var(--r-l);
+  padding:16px;
+  position:relative;
+  overflow:hidden;
+}
+.card.glow::after{
+  content:"";position:absolute;inset:auto -30% -60% -30%;height:70%;
+  background:radial-gradient(50% 100% at 50% 100%, rgba(255,59,48,.30), transparent 70%);
+  pointer-events:none;
+}
+.sec-title{
+  display:flex;align-items:center;gap:8px;
+  margin:22px 4px 12px;font-size:17px;font-weight:800;letter-spacing:-.2px;
+}
+.sec-title .dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 9px var(--red);}
+.sec-title .more{margin-left:auto;font-size:13px;font-weight:600;color:var(--t3);}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:11px;}
+.grid2 > *{min-width:0;overflow:hidden;}
+.muted{color:var(--t3);}
+.small{font-size:12px;}
+.tiny{font-size:11px;}
+.center{text-align:center;}
+
+/* ---------- 今日：模式切换 ---------- */
+.mode-seg{
+  display:inline-flex;gap:4px;padding:4px;border-radius:999px;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);
+  flex:0 0 auto;
+}
+.mode-seg button{
+  padding:6px 15px;border-radius:999px;font-size:12.5px;font-weight:700;color:var(--t3);
+  transition:.2s;white-space:nowrap;
+}
+.mode-seg button.on{
+  background:linear-gradient(135deg,#ff5a4e,#d3141d);
+  color:#fff;box-shadow:0 4px 16px rgba(224,27,36,.45);
+}
+
+/* ---------- 今日：主数据卡 ---------- */
+.hero{
+  margin-top:14px;
+  border-radius:var(--r-xl);
+  padding:18px 18px 20px;
+  background:
+    radial-gradient(120% 90% at 50% 108%, rgba(255,59,48,.34), transparent 62%),
+    linear-gradient(170deg, #241a1c, #120d0e 70%);
+  border:1px solid rgba(255,90,78,.22);
+  box-shadow:0 18px 48px -18px rgba(224,27,36,.55), inset 0 1px 0 rgba(255,255,255,.06);
+  position:relative;overflow:hidden;
+}
+.hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;}
+.hero-kcal{display:flex;align-items:baseline;gap:7px;}
+.hero-kcal b{font-size:46px;line-height:1;font-weight:800;letter-spacing:-2.2px;}
+.hero-kcal i{font-style:normal;font-size:14px;font-weight:700;color:var(--t2);}
+.hero-sub{margin-top:7px;font-size:12.5px;color:var(--t3);font-weight:600;}
+.hero-btns{display:flex;gap:8px;}
+.round-btn{
+  width:38px;height:38px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(255,255,255,.08);
+  border:1px solid var(--line-2);
+  color:var(--t2);transition:.16s;
+}
+.round-btn:active{transform:scale(.93);background:rgba(255,255,255,.16);}
+.round-btn svg{width:18px;height:18px;}
+
+.bar-wrap{display:flex;align-items:center;gap:12px;margin-top:16px;}
+.bar{
+  flex:1;height:30px;border-radius:999px;
+  background:rgba(255,255,255,.08);
+  overflow:hidden;position:relative;
+  border:1px solid rgba(255,255,255,.06);
+}
+.bar-fill{
+  height:100%;border-radius:999px;
+  background:repeating-linear-gradient(115deg,#ff6a5e 0 9px,#f5352b 9px 18px);
+  box-shadow:0 0 22px rgba(255,59,48,.6);
+  transition:width .55s cubic-bezier(.2,.8,.25,1);
+}
+.bar-pct{font-size:17px;font-weight:800;min-width:46px;text-align:right;}
+
+.macros{display:grid;grid-template-columns:repeat(3,1fr);margin-top:18px;gap:6px;}
+.macro{text-align:left;}
+.macro .k{font-size:11.5px;color:var(--t3);font-weight:600;}
+.macro .v{font-size:19px;font-weight:800;margin-top:3px;letter-spacing:-.4px;}
+.macro .v span{font-size:11.5px;font-weight:600;color:var(--t3);margin-left:2px;}
+.goal-arc{
+  margin-top:14px;padding-top:12px;
+  border-top:1px solid rgba(255,255,255,.07);
+  text-align:center;font-size:12.5px;color:var(--t3);font-weight:600;
+}
+.goal-arc b{color:var(--t1);font-weight:800;font-size:14px;}
+
+/* ---------- 快捷入口横排 ---------- */
+.quick-row{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:2px;margin-top:16px;
+}
+.quick{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  padding:10px 2px;border-radius:16px;color:var(--t3);
+  font-size:10.5px;font-weight:600;transition:.16s;
+  min-width:0;overflow:hidden;
+}
+.quick span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.quick:active{background:rgba(255,255,255,.05);}
+.quick svg{width:26px;height:26px;color:rgba(255,255,255,.5);}
+.quick.on svg{color:var(--red);filter:drop-shadow(0 0 8px rgba(255,59,48,.6));}
+.quick.on{color:var(--t1);}
+
+/* ---------- 数据小卡 ---------- */
+.mini{
+  background:linear-gradient(168deg,var(--card-2),var(--card));
+  border:1px solid var(--line);border-radius:var(--r-m);
+  padding:13px 14px;position:relative;overflow:hidden;
+}
+.mini .h{display:flex;align-items:center;justify-content:space-between;font-size:12.5px;color:var(--t2);font-weight:600;gap:6px;}
+.mini .big{font-size:26px;font-weight:800;letter-spacing:-1px;margin-top:6px;line-height:1;white-space:nowrap;overflow:hidden;}
+.mini .big span{font-size:12px;font-weight:600;color:var(--t3);margin-left:3px;letter-spacing:0;}
+.mini .foot{font-size:10.5px;color:var(--t4);margin-top:7px;}
+
+/* ---------- 环形（宏量） ---------- */
+.ring-cell{display:flex;align-items:center;gap:10px;min-width:0;}
+.ring-cell > svg{flex:0 0 auto;}
+.legend{display:flex;flex-direction:column;gap:5px;font-size:10.5px;color:var(--t2);font-weight:600;min-width:0;}
+.legend span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.legend i{display:inline-block;width:3px;height:11px;border-radius:2px;margin-right:5px;vertical-align:-1px;}
+
+/* ---------- 列表 ---------- */
+.list{display:flex;flex-direction:column;gap:8px;}
+.row{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 14px;border-radius:var(--r-m);
+  background:linear-gradient(168deg,var(--card-2),var(--card));
+  border:1px solid var(--line);
+}
+.row:active{background:var(--card-3);}
+.row .ico{
+  width:38px;height:38px;border-radius:12px;flex:0 0 auto;
+  display:grid;place-items:center;font-size:19px;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);
+}
+.row .mid{flex:1;min-width:0;}
+.row .t{font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.row .s{font-size:11.5px;color:var(--t3);margin-top:3px;font-weight:600;}
+.row .r{text-align:right;flex:0 0 auto;}
+.row .r .n{font-size:15px;font-weight:800;}
+.row .r .u{font-size:10.5px;color:var(--t4);font-weight:600;}
+
+/* ---------- 输入 ---------- */
+.field{margin-bottom:12px;}
+.field label{display:block;font-size:12px;color:var(--t3);font-weight:700;margin-bottom:6px;}
+.input,.select{
+  width:100%;height:46px;padding:0 14px;border-radius:14px;
+  background:rgba(255,255,255,.06);border:1px solid var(--line-2);
+  font-size:15px;font-weight:600;outline:none;transition:.16s;
+}
+.input:focus,.select:focus{border-color:rgba(255,59,48,.6);background:rgba(255,59,48,.08);}
+.input::placeholder{color:var(--t4);}
+.row-in{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+
+.btn{
+  width:100%;height:50px;border-radius:16px;font-size:15.5px;font-weight:800;
+  background:linear-gradient(135deg,#ff5a4e,#cf1520);
+  color:#fff;box-shadow:0 10px 26px -8px rgba(224,27,36,.8);
+  transition:.16s;
+}
+.btn:active{transform:scale(.98);}
+.btn.ghost{background:rgba(255,255,255,.07);color:var(--t1);box-shadow:none;border:1px solid var(--line-2);}
+.btn.sm{height:40px;font-size:13.5px;border-radius:13px;}
+
+/* ---------- 弹层 ---------- */
+.sheet-mask{
+  position:fixed;inset:0;background:rgba(0,0,0,.62);
+  backdrop-filter:blur(4px);z-index:90;
+  animation:fade .2s;
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.sheet{
+  position:fixed;left:50%;transform:translateX(-50%);
+  bottom:0;width:min(520px,100%);
+  max-height:88vh;display:flex;flex-direction:column;
+  background:linear-gradient(180deg,#191315,#0d090a);
+  border-radius:26px 26px 0 0;
+  border-top:1px solid var(--line-2);
+  z-index:100;
+  padding-bottom:var(--safe-b);
+  animation:up .3s cubic-bezier(.2,.9,.25,1);
+  box-shadow:0 -18px 60px rgba(0,0,0,.7);
+}
+@keyframes up{from{transform:translate(-50%,100%)}to{transform:translate(-50%,0)}}
+.sheet-grip{width:38px;height:4px;border-radius:2px;background:rgba(255,255,255,.18);margin:9px auto 0;}
+.sheet-head{display:flex;align-items:center;padding:12px 18px 8px;}
+.sheet-head h3{margin:0;font-size:17px;font-weight:800;flex:1;}
+.icon-btn{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);color:var(--t2);}
+.sheet-body{padding:4px 18px 22px;overflow-y:auto;}
+
+/* ---------- toast ---------- */
+.toast{
+  position:fixed;left:50%;bottom:calc(var(--safe-b) + 92px);
+  transform:translateX(-50%);
+  padding:11px 20px;border-radius:14px;
+  background:rgba(255,255,255,.96);color:#111;
+  font-size:13.5px;font-weight:700;z-index:200;
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+  animation:up2 .26s;
+}
+@keyframes up2{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}
+
+/* ---------- 动作卡 / 肌群 ---------- */
+.ex-hero{
+  border-radius:var(--r-l);overflow:hidden;position:relative;
+  background:linear-gradient(160deg,#f2f2f0,#d8d8d4);
+  aspect-ratio:1.28/1;display:grid;place-items:center;
+}
+.ex-hero svg{width:88%;height:88%;}
+.tag{
+  display:inline-block;padding:5px 11px;border-radius:999px;
+  font-size:11.5px;font-weight:700;
+  background:rgba(255,255,255,.08);border:1px solid var(--line-2);color:var(--t2);
+}
+.tag.red{background:var(--red-soft);border-color:rgba(255,59,48,.35);color:#ff8b82;}
+
+/* ---------- 训练记录条目 ---------- */
+.set-line{
+  display:grid;grid-template-columns:26px 1fr 1fr 1fr 30px;
+  gap:6px;align-items:center;
+  font-size:13px;font-weight:600;
+  padding:9px 4px;border-bottom:1px solid rgba(255,255,255,.05);
+}
+.set-line .idx{color:var(--t4);font-weight:800;font-size:12px;}
+.set-line .v{font-weight:800;}
+.set-line .u{font-size:10.5px;color:var(--t4);font-weight:600;}
+.set-line .del{color:var(--t4);text-align:right;}
+
+/* ---------- 空状态 ---------- */
+.empty{
+  text-align:center;padding:34px 20px;color:var(--t4);
+  font-size:13px;font-weight:600;
+}
+.empty svg{width:44px;height:44px;opacity:.4;margin-bottom:10px;}
+
+/* ---------- 进度条（目标） ---------- */
+.prog{height:7px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden;}
+.prog i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#ff6a5e,#e01b24);transition:width .5s;}
+
+/* ---------- 分段 tab（动作详情） ---------- */
+.seg{
+  display:flex;gap:16px;overflow-x:auto;padding:2px 2px 0;
+  border-bottom:1px solid var(--line);
+}
+.seg button{
+  padding:10px 0 11px;font-size:13.5px;font-weight:700;color:var(--t3);
+  border-bottom:2px solid transparent;white-space:nowrap;transition:.18s;
+}
+.seg button.on{color:var(--t1);border-bottom-color:var(--red);}
+
+/* ---------- 头像 / 设置 ---------- */
+.avatar{
+  width:60px;height:60px;border-radius:50%;
+  background:linear-gradient(135deg,#ff5a4e,#8e0f16);
+  display:grid;place-items:center;font-size:24px;font-weight:800;
+  box-shadow:0 8px 24px -6px rgba(224,27,36,.8);
+}
+.kv{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.05);
+  font-size:14px;font-weight:600;
+}
+.kv:last-child{border-bottom:0;}
+.kv .k{color:var(--t2);}
+.kv .v{color:var(--t1);font-weight:800;}
+
+/* ---------- 数字滚动 ---------- */
+.num{font-variant-numeric:tabular-nums;}
+
+/* ---------- 水波纹按钮 ---------- */
+.fab{
+  position:fixed;right:calc(50% - 246px);
+  bottom:calc(var(--safe-b) + 92px);
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,#ff5a4e,#cf1520);
+  display:grid;place-items:center;z-index:60;
+  box-shadow:0 12px 30px -6px rgba(224,27,36,.9);
+  transition:.16s;
+}
+.fab:active{transform:scale(.92);}
+.fab svg{width:24px;height:24px;}
+@media(max-width:540px){.fab{right:20px;}}
+
+/* ---------- 图表容器 ---------- */
+.chart{width:100%;display:block;overflow:visible;}
+.chart text{font-family:var(--font);}
+
+/* ---------- 训练热力 ---------- */
+.muscle-wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+
+</style>
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ========== 顶栏 ========== -->
+  <header class="topbar" id="topbar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <linearGradient id="bm" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ff5a4e"/><stop offset="1" stop-color="#c1121f"/>
+          </linearGradient>
+        </defs>
+        <path d="M6 26V6l14 14V6" fill="none" stroke="url(#bm)" stroke-width="5.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M24 20v6" fill="none" stroke="url(#bm)" stroke-width="5.5" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">Norg</span>
+    </div>
+    <div class="top-actions">
+      <button class="pill pill-pro" id="btnPro">PRO</button>
+      <button class="pill pill-streak" id="btnStreak">
+        <svg viewBox="0 0 24 24" width="14" height="14"><path d="M12 2c1 4-2 5-2 8a2 2 0 004 0c0-1 0-2 .5-2.5C16 9 18 12 18 15a6 6 0 11-12 0c0-4 3-7 6-13z" fill="currentColor"/></svg>
+        <span id="streakNum">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== 主视图 ========== -->
+  <main id="view" class="view"></main>
+
+  <!-- ========== 底部导航 ========== -->
+  <nav class="tabbar" id="tabbar">
+    <button class="tab is-active" data-tab="today">
+      <svg viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 011 1v13a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1zm0 5h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="8" cy="14.5" r="1.6" fill="currentColor"/></svg>
+      <span>今日</span>
+    </button>
+    <button class="tab" data-tab="diet">
+      <svg viewBox="0 0 24 24"><path d="M6 3v7a3 3 0 006 0V3M9 3v18M17 3c-1.5 2-2 4-2 6 0 2 1 3 2 3v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>饮食</span>
+    </button>
+    <button class="tab" data-tab="train">
+      <svg viewBox="0 0 24 24"><path d="M3 9v6M21 9v6M6.5 6.5v11M17.5 6.5v11M6.5 12h11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>训练</span>
+    </button>
+    <button class="tab" data-tab="body">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 21c0-4 3-6.5 7-6.5s7 2.5 7 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>数据</span>
+    </button>
+  </nav>
+
+</div>
+
+<!-- ========== 底部弹层 ========== -->
+<div class="sheet-mask" id="sheetMask" hidden></div>
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-grip"></div>
+  <div class="sheet-head">
+    <h3 id="sheetTitle">标题</h3>
+    <button class="icon-btn" id="sheetClose" aria-label="关闭">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="sheet-body" id="sheetBody"></div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script>
+/* ===== data.js ===== */
+/* ============================================================
+   Norg · 内置数据库
+   食物库（每 100g）：kcal / 蛋白 / 碳水 / 脂肪
+   动作库：肌群 / 器械 / 步骤 / 提示
+   ============================================================ */
+(function (global) {
+  'use strict';
+
+  /* ---------------- 食物库 ---------------- */
+  /* [名称, 别名, kcal, P, C, F, 单位(份量g), 分类] */
+  const FOOD_RAW = [
+    // 主食 / 碳水
+    ['米饭', '白米饭 大米饭', 116, 2.6, 25.9, 0.3, 200, '主食'],
+    ['糙米饭', '糙米', 112, 2.6, 23.5, 0.9, 200, '主食'],
+    ['馒头', '', 223, 7.0, 47.0, 1.1, 100, '主食'],
+    ['全麦面包', '面包 吐司', 246, 9.0, 46.0, 3.3, 35, '主食'],
+    ['白吐司', '面包', 282, 8.5, 51.0, 4.5, 30, '主食'],
+    ['燕麦片', '燕麦 麦片', 377, 13.0, 66.0, 7.0, 40, '主食'],
+    ['意大利面', '意面 通心粉 熟', 158, 5.8, 31.0, 0.9, 200, '主食'],
+    ['荞麦面', '冷面', 130, 5.0, 26.0, 0.6, 200, '主食'],
+    ['红薯', '地瓜 番薯', 86, 1.6, 20.1, 0.1, 150, '主食'],
+    ['紫薯', '', 82, 1.6, 18.6, 0.2, 150, '主食'],
+    ['土豆', '马铃薯 洋芋', 77, 2.0, 17.0, 0.1, 150, '主食'],
+    ['玉米', '甜玉米', 86, 3.3, 19.0, 1.4, 150, '主食'],
+    ['小米粥', '粥', 46, 1.4, 9.7, 0.2, 300, '主食'],
+    ['藜麦', '熟', 120, 4.4, 21.3, 1.9, 150, '主食'],
+    ['年糕', '', 154, 3.3, 34.0, 0.2, 100, '主食'],
+
+    // 蛋白质
+    ['鸡胸肉', '鸡胸 鸡脯', 133, 24.6, 0, 5.0, 150, '蛋白'],
+    ['鸡腿肉', '去皮鸡腿', 181, 24.0, 0, 9.0, 150, '蛋白'],
+    ['鸡翅', '', 202, 17.4, 4.6, 12.8, 100, '蛋白'],
+    ['牛里脊', '牛肉 牛柳', 125, 21.5, 0.6, 4.2, 150, '蛋白'],
+    ['牛腱子', '牛腱', 143, 22.0, 0, 6.0, 150, '蛋白'],
+    ['肥牛卷', '肥牛', 250, 15.0, 0.5, 21.0, 100, '蛋白'],
+    ['猪里脊', '里脊肉 猪肉', 155, 20.2, 0.7, 7.9, 150, '蛋白'],
+    ['猪五花', '五花肉', 518, 9.5, 0, 53.0, 80, '蛋白'],
+    ['鸡蛋', '全蛋 水煮蛋', 144, 13.3, 2.8, 8.8, 50, '蛋白'],
+    ['蛋白', '蛋清', 60, 11.6, 3.1, 0.1, 33, '蛋白'],
+    ['三文鱼', '鲑鱼', 208, 20.4, 0, 13.4, 120, '蛋白'],
+    ['鳕鱼', '', 88, 20.4, 0, 0.5, 120, '蛋白'],
+    ['龙利鱼', '巴沙鱼', 90, 17.5, 0, 2.0, 150, '蛋白'],
+    ['虾', '基围虾 白虾', 101, 18.2, 3.9, 1.4, 100, '蛋白'],
+    ['金枪鱼罐头', '水浸金枪鱼', 108, 24.0, 0, 1.0, 100, '蛋白'],
+    ['牛肉丸', '', 218, 15.0, 8.0, 14.0, 80, '蛋白'],
+    ['火腿肠', '', 212, 12.0, 8.0, 15.0, 50, '蛋白'],
+    ['乳清蛋白粉', '蛋白粉 乳清', 380, 78.0, 6.0, 5.0, 30, '蛋白'],
+    ['豆腐', '北豆腐 老豆腐', 98, 8.1, 4.2, 3.7, 150, '蛋白'],
+    ['内酯豆腐', '嫩豆腐', 50, 5.0, 3.3, 1.9, 150, '蛋白'],
+    ['豆干', '香干', 140, 16.2, 3.8, 6.5, 100, '蛋白'],
+    ['毛豆', '毛豆仁', 131, 13.1, 10.5, 5.0, 100, '蛋白'],
+    ['鹰嘴豆', '熟', 164, 8.9, 27.4, 2.6, 100, '蛋白'],
+    ['无糖希腊酸奶', '希腊酸奶', 59, 10.0, 3.6, 0.4, 150, '乳制品'],
+    ['牛奶', '全脂奶', 65, 3.3, 4.9, 3.6, 250, '乳制品'],
+    ['脱脂牛奶', '低脂奶', 34, 3.4, 4.9, 0.2, 250, '乳制品'],
+    ['奶酪', '芝士', 328, 25.0, 3.5, 24.0, 20, '乳制品'],
+
+    // 蔬果
+    ['西兰花', '绿花菜', 34, 2.8, 6.6, 0.4, 150, '蔬菜'],
+    ['菠菜', '', 23, 2.9, 3.6, 0.4, 150, '蔬菜'],
+    ['生菜', '', 15, 1.4, 2.9, 0.2, 100, '蔬菜'],
+    ['黄瓜', '青瓜', 16, 0.7, 3.6, 0.1, 150, '蔬菜'],
+    ['番茄', '西红柿', 18, 0.9, 3.9, 0.2, 150, '蔬菜'],
+    ['胡萝卜', '', 41, 0.9, 9.6, 0.2, 100, '蔬菜'],
+    ['白菜', '大白菜', 17, 1.5, 3.2, 0.2, 200, '蔬菜'],
+    ['香菇', '', 26, 2.2, 5.2, 0.3, 100, '蔬菜'],
+    ['洋葱', '', 40, 1.1, 9.3, 0.1, 100, '蔬菜'],
+    ['青椒', '彩椒', 26, 1.0, 5.4, 0.2, 100, '蔬菜'],
+    ['茄子', '', 25, 1.0, 5.9, 0.2, 150, '蔬菜'],
+    ['海带', '海带丝', 13, 1.2, 2.1, 0.1, 100, '蔬菜'],
+    ['苹果', '', 52, 0.3, 13.8, 0.2, 200, '水果'],
+    ['香蕉', '', 89, 1.1, 22.8, 0.3, 120, '水果'],
+    ['橙子', '', 47, 0.9, 11.8, 0.1, 200, '水果'],
+    ['蓝莓', '', 57, 0.7, 14.5, 0.3, 100, '水果'],
+    ['草莓', '', 32, 0.7, 7.7, 0.3, 150, '水果'],
+    ['牛油果', '鳄梨', 160, 2.0, 8.5, 14.7, 100, '水果'],
+    ['西瓜', '', 30, 0.6, 7.6, 0.2, 300, '水果'],
+    ['葡萄', '', 69, 0.7, 18.1, 0.2, 150, '水果'],
+
+    // 油脂 / 坚果
+    ['橄榄油', '', 884, 0, 0, 100, 10, '油脂'],
+    ['花生油', '食用油', 884, 0, 0, 100, 10, '油脂'],
+    ['黄油', '', 717, 0.9, 0.1, 81.0, 10, '油脂'],
+    ['花生酱', '', 588, 25.0, 20.0, 50.0, 15, '油脂'],
+    ['杏仁', '巴旦木', 578, 21.0, 22.0, 50.0, 20, '油脂'],
+    ['核桃', '', 654, 15.0, 14.0, 65.0, 20, '油脂'],
+    ['腰果', '', 553, 18.0, 30.0, 44.0, 20, '油脂'],
+    ['芝麻', '', 573, 17.0, 23.0, 50.0, 10, '油脂'],
+
+    // 常见成品 / 外食
+    ['白粥配咸菜', '', 55, 1.5, 11.0, 0.3, 350, '外食'],
+    ['兰州拉面', '', 130, 5.5, 22.0, 2.5, 550, '外食'],
+    ['黄焖鸡米饭', '', 165, 7.5, 18.0, 7.0, 600, '外食'],
+    ['麻辣烫', '清汤', 95, 6.0, 8.0, 4.5, 500, '外食'],
+    ['沙县拌面', '', 190, 5.0, 26.0, 7.5, 250, '外食'],
+    ['牛肉汉堡', '汉堡', 254, 13.0, 24.0, 12.0, 220, '外食'],
+    ['炸鸡', '炸鸡腿', 279, 18.0, 11.0, 18.5, 150, '外食'],
+    ['薯条', '', 312, 3.4, 41.0, 15.0, 120, '外食'],
+    ['可乐', '碳酸饮料', 43, 0, 10.6, 0, 330, '饮品'],
+    ['无糖可乐', '零度可乐', 0, 0, 0, 0, 330, '饮品'],
+    ['美式咖啡', '黑咖啡', 2, 0.1, 0, 0, 350, '饮品'],
+    ['拿铁', '拿铁咖啡', 55, 2.8, 5.0, 2.6, 350, '饮品'],
+    ['奶茶', '珍珠奶茶', 78, 1.0, 14.0, 2.0, 500, '饮品'],
+    ['啤酒', '', 43, 0.3, 3.6, 0, 500, '饮品'],
+    ['橙汁', '', 45, 0.7, 10.4, 0.2, 300, '饮品'],
+  ];
+
+  const FOODS = FOOD_RAW.map((f, i) => ({
+    id: 'f' + i,
+    name: f[0],
+    alias: f[1],
+    kcal: f[2],
+    p: f[3],
+    c: f[4],
+    f: f[5],
+    serving: f[6],
+    cat: f[7],
+  }));
+
+  /* ---------------- 动作库 ---------------- */
+  /* 肌群键：chest back shoulders biceps triceps quads hams glutes calves abs forearms traps */
+  const MUSCLES = {
+    chest:     { name: '胸部',   color: '#ff3b30' },
+    back:      { name: '背部',   color: '#4fd1e0' },
+    shoulders: { name: '肩部',   color: '#ff9f43' },
+    biceps:    { name: '肱二头', color: '#a78bfa' },
+    triceps:   { name: '肱三头', color: '#f472b6' },
+    quads:     { name: '股四头', color: '#3ddc84' },
+    hams:      { name: '腘绳肌', color: '#e8ff4f' },
+    glutes:    { name: '臀部',   color: '#fb7185' },
+    calves:    { name: '小腿',   color: '#38bdf8' },
+    abs:       { name: '腹部',   color: '#facc15' },
+    forearms:  { name: '前臂',   color: '#94a3b8' },
+    traps:     { name: '斜方肌', color: '#c084fc' },
+  };
+
+  const EX_RAW = [
+    // 胸
+    ['杠铃平板卧推', 'chest', '杠铃', ['chest','triceps','shoulders'], '经典水平推胸动作，用于提升胸肌、肱三头肌与三角肌前束力量，是每一个推日训练的核心基础。',
+      ['仰卧于平板凳，双脚踩实地面，肩胛骨后缩下沉贴紧凳面。','双手略宽于肩握杠，手腕保持中立不后折。','吸气下放至杠铃轻触胸线偏下位置，肘部约 45° 夹角。','呼气发力推起，全程保持肩胛稳定、臀部不离凳。'],
+      ['下放不要弹胸，控制 2 秒离心。','大重量务必有保护或使用安全架。']],
+    ['哑铃平板卧推', 'chest', '哑铃', ['chest','triceps','shoulders'], '哑铃提供更大活动范围，能更好地刺激胸肌外侧与稳定肌群。',
+      ['双手持哑铃躺于平板凳，掌心朝前。','下放至胸侧，感受胸肌拉伸。','推起时哑铃轨迹向内收拢但不碰撞。'],
+      ['单侧不稳定，重量略低于杠铃。']],
+    ['上斜杠铃卧推', 'chest', '杠铃', ['chest','shoulders','triceps'], '重点刺激胸大肌上束，改善上胸厚度。',
+      ['凳面角度 30-45°，角度过高会转为肩推。','杠铃下放至锁骨下方位置。'],
+      ['角度越高三角肌前束参与越多。']],
+    ['上斜哑铃卧推', 'chest', '哑铃', ['chest','shoulders','triceps'], '上胸训练的主力动作，哑铃轨迹更自由，能修正左右不平衡。',
+      ['凳面调至 30°，双脚踩实地面。','哑铃举于锁骨上方，掌心朝前。','下放至胸侧有拉伸感，推起时向内收拢。'],
+      ['不要让哑铃在顶端碰撞，保持张力。','肩部有旧伤时角度再降一些。']],
+    ['双杠臂屈伸', 'chest', '自重', ['chest','triceps','shoulders'], '自重复合动作，身体前倾侧重胸下束，直立侧重肱三头。',
+      ['双手撑杠，身体前倾约 30°。','下放至肩略低于肘，再撑起。'],
+      ['肩部不适者减小幅度。']],
+    ['绳索夹胸', 'chest', '绳索', ['chest'], '孤立胸肌，全程保持张力，适合作为收尾泵感动作。',
+      ['站于龙门架中间，一脚在前保持稳定。','手臂微屈画弧向内合拢，顶峰挤压 1 秒。'],
+      ['不要用手臂发力，想象用胸把手臂"抱"过来。']],
+    ['俯卧撑', 'chest', '自重', ['chest','triceps','shoulders','abs'], '最基础的自重复合推类动作，随时随地可做。',
+      ['双手略宽于肩，身体成一条直线。','下放至胸口接近地面，肘部约 45°。'],
+      ['核心收紧，避免塌腰。']],
+    ['上斜哑铃飞鸟', 'chest', '哑铃', ['chest'], '拉长胸肌纤维，强化上胸的宽度与分离度。',
+      ['凳面 30°，哑铃位于胸部正上方。','手肘微屈固定角度，下放至胸部有明显拉伸。'],
+      ['重量宜轻，避免肩关节压力过大。']],
+
+    // 背
+    ['引体向上', 'back', '自重', ['back','biceps','forearms'], '垂直拉之王，宽握侧重背阔肌外侧，窄握侧重厚度。',
+      ['正握略宽于肩，肩胛先下沉再发力。','拉至下巴过杠，控制下放至手臂近伸直。'],
+      ['想象用肘部向下"插"而不是用手拉。']],
+    ['高位下拉', 'back', '器械', ['back','biceps'], '引体的可调重量替代，适合建立背阔肌发力感。',
+      ['坐稳，大腿卡住挡板。','握把拉至锁骨位置，肩胛充分下沉。'],
+      ['避免身体大幅后仰借力。']],
+    ['杠铃划船', 'back', '杠铃', ['back','biceps','traps'], '水平拉核心动作，显著提升背部厚度。',
+      ['俯身约 45°，背部保持中立不圆背。','杠铃拉向下腹，肘部贴近身体。'],
+      ['全程核心收紧，避免腰部代偿。']],
+    ['单臂哑铃划船', 'back', '哑铃', ['back','biceps'], '单侧训练，改善左右不平衡并增加活动范围。',
+      ['一手一膝撑凳，背部与地面平行。','哑铃沿身体侧面拉至腰际。'],
+      ['不要旋转躯干借力。']],
+    ['坐姿绳索划船', 'back', '绳索', ['back','biceps','traps'], '稳定轨迹的水平拉，适合中背部厚度。',
+      ['坐直，膝盖微屈不锁死。','把手拉向腹部，肩胛后缩。'],
+      ['回放时让肩胛前伸，充分拉伸。']],
+    ['直臂下压', 'back', '绳索', ['back','triceps'], '孤立背阔肌，无肱二头参与，适合找背部发力感。',
+      ['站直，手臂近乎伸直。','以肩为轴把横杆压向大腿。'],
+      ['手肘角度全程固定。']],
+    ['硬拉', 'back', '杠铃', ['back','hams','glutes','traps','forearms'], '全身性力量动作，后链训练的核心。',
+      ['杠铃贴近小腿，肩在杠铃正上方。','背部中立，用腿和髋把杠铃"推"离地面。','站直时髋膝同时锁定，不要过度后仰。'],
+      ['腰背酸痛立即停止，动作质量优先于重量。']],
+    ['面拉', 'back', '绳索', ['back','shoulders','traps'], '强化后束与肩袖，改善圆肩体态。',
+      ['绳索调至面部高度。','拉向面部，双手外旋如"拉弓"。'],
+      ['重量宜轻，注重肩胛后缩。']],
+
+    // 肩
+    ['杠铃站姿推举', 'shoulders', '杠铃', ['shoulders','triceps','traps'], '垂直推的核心动作，全面提升肩部力量。',
+      ['杠铃置于锁骨前，握距略宽于肩。','推起至头顶上方，头部略后避让。','下放至锁骨位置。'],
+      ['核心与臀部收紧，避免腰部过度后弯。']],
+    ['哑铃坐姿推举', 'shoulders', '哑铃', ['shoulders','triceps'], '活动范围更大，可修正左右力量差异。',
+      ['坐姿背靠凳，哑铃举至耳侧。','推起至手臂近伸直，不完全锁死。'],
+      ['下放至肘略低于肩即可。']],
+    ['哑铃侧平举', 'shoulders', '哑铃', ['shoulders'], '孤立三角肌中束，决定肩部宽度的关键动作。',
+      ['身体略前倾，手臂微屈。','抬至与肩同高，小指略高。'],
+      ['重量宁轻勿重，避免斜方肌代偿。']],
+    ['哑铃前平举', 'shoulders', '哑铃', ['shoulders'], '针对三角肌前束的孤立动作。',
+      ['双手持铃置于大腿前。','抬至肩高，控制下放。'],
+      ['避免身体前后晃动。']],
+    ['俯身飞鸟', 'shoulders', '哑铃', ['shoulders','back'], '三角肌后束训练，改善圆肩、平衡推拉。',
+      ['俯身背部平直，手臂微屈。','向两侧展开至与肩同高。'],
+      ['想象用肩胛骨"夹"而不是用手抬。']],
+    ['绳索侧平举', 'shoulders', '绳索', ['shoulders'], '全程恒定张力，中束刺激优于哑铃。',
+      ['绳索从身体侧后方穿过。','沿身体侧方抬至肩高。'],
+      ['保持躯干稳定不侧倾。']],
+
+    // 手臂
+    ['杠铃弯举', 'biceps', '杠铃', ['biceps','forearms'], '肱二头肌基础增肌动作。',
+      ['站直，握距与肩同宽。','弯举至前臂接近垂直，控制下放。'],
+      ['手肘固定在体侧，不要前后摆动。']],
+    ['哑铃交替弯举', 'biceps', '哑铃', ['biceps','forearms'], '加入旋后动作，更全面地刺激肱二头肌。',
+      ['起始掌心朝内。','弯举过程中前臂外旋至掌心朝上。'],
+      ['顶峰收缩 1 秒。']],
+    ['锤式弯举', 'biceps', '哑铃', ['biceps','forearms'], '侧重肱肌与肱桡肌，增加手臂围度。',
+      ['掌心相对握铃。','弯举至肩前，肘部固定。'],
+      ['可双手同时或交替。']],
+    ['牧师凳弯举', 'biceps', '器械', ['biceps'], '固定上臂，完全隔离肱二头肌。',
+      ['上臂贴紧斜板。','下放至接近伸直但不锁死。'],
+      ['离心阶段控制 3 秒。']],
+    ['绳索下压', 'triceps', '绳索', ['triceps'], '肱三头肌外侧头的经典孤立动作。',
+      ['站直，手肘贴紧体侧。','下压至手臂完全伸直，顶峰挤压。'],
+      ['只动前臂，上臂不动。']],
+    ['仰卧臂屈伸', 'triceps', '杠铃', ['triceps'], '针对肱三头肌长头，增加手臂后侧厚度。',
+      ['仰卧，杠铃举于胸部上方。','屈肘下放至额头上方，再伸直。'],
+      ['手肘保持朝上不外张。']],
+    ['窄距卧推', 'triceps', '杠铃', ['triceps','chest','shoulders'], '复合推类，可上较大重量练三头。',
+      ['握距与肩同宽或略窄。','下放至胸部，肘部贴近身体。'],
+      ['手腕不要过度后折。']],
+    ['腕弯举', 'forearms', '哑铃', ['forearms'], '强化前臂屈肌，提升握力与围度。',
+      ['前臂支撑于大腿或凳面。','只用手腕完成屈伸。'],
+      ['小重量高次数效果更好。']],
+
+    // 腿
+    ['杠铃深蹲', 'quads', '杠铃', ['quads','glutes','hams','abs'], '下肢训练之王，同时调动全身稳定肌群。',
+      ['杠铃置于斜方肌上部，双脚与肩同宽略外八。','屈髋屈膝下蹲至大腿平行或更低。','脚跟发力站起，膝盖与脚尖同向。'],
+      ['全程核心收紧，背部中立。','膝盖内扣是常见错误，注意主动外展。']],
+    ['前蹲', 'quads', '杠铃', ['quads','abs','glutes'], '杠铃置于肩前，更侧重股四头肌与核心。',
+      ['杠铃架于三角肌前束，肘部高抬。','躯干保持更直立地下蹲。'],
+      ['手腕柔韧不足可用交叉握法。']],
+    ['腿举', 'quads', '器械', ['quads','glutes','hams'], '大重量安全练腿，可精确控制角度。',
+      ['双脚与肩同宽踩踏板。','下放至膝关节约 90°，不要过深抬臀。'],
+      ['膝盖不要锁死，保持微屈。']],
+    ['保加利亚分腿蹲', 'quads', '哑铃', ['quads','glutes','hams'], '单腿训练，兼顾力量与平衡，臀腿刺激极强。',
+      ['后脚搭于凳上，前脚向前一步。','下蹲至前腿大腿平行地面。'],
+      ['重心放在前腿，后腿只做支撑。']],
+    ['腿屈伸', 'quads', '器械', ['quads'], '完全孤立股四头肌，适合预热或收尾。',
+      ['坐姿，脚踝勾住滚垫。','伸膝至接近伸直，顶峰收缩。'],
+      ['避免用惯性甩起。']],
+    ['罗马尼亚硬拉', 'hams', '杠铃', ['hams','glutes','back'], '髋主导动作，重点拉伸并强化腘绳肌。',
+      ['微屈膝，髋部向后推。','杠铃贴腿下放至腘绳肌有明显拉伸。','臀部发力站直。'],
+      ['背部全程中立，不要弯腰。']],
+    ['腿弯举', 'hams', '器械', ['hams'], '孤立腘绳肌，平衡股四头力量。',
+      ['俯卧或坐姿，脚踝勾住滚垫。','屈膝拉至最大幅度。'],
+      ['离心阶段控制 3 秒。']],
+    ['臀推', 'glutes', '杠铃', ['glutes','hams'], '臀部激活度最高的动作之一。',
+      ['上背靠凳，杠铃置于髋部。','臀部发力顶起至躯干与大腿成直线。'],
+      ['顶峰挤压臀部 1 秒，避免腰部过伸。']],
+    ['髋外展', 'glutes', '器械', ['glutes'], '针对臀中肌，改善臀型与髋稳定。',
+      ['坐姿，双腿抵住挡板。','向外打开至最大幅度。'],
+      ['身体前倾可增加臀中肌参与。']],
+    ['站姿提踵', 'calves', '器械', ['calves'], '小腿三头肌训练，需大次数与全幅度。',
+      ['前脚掌踩踏板，脚跟悬空。','下放至小腿充分拉伸，再顶至最高。'],
+      ['顶峰停顿 1 秒，避免弹震。']],
+    ['坐姿提踵', 'calves', '器械', ['calves'], '侧重比目鱼肌。',
+      ['坐姿，膝盖压住挡板。','全幅度完成提踵。'],
+      ['比目鱼肌以慢肌纤维为主，宜高次数。']],
+
+    // 核心
+    ['卷腹', 'abs', '自重', ['abs'], '腹直肌基础训练，比仰卧起坐对腰椎更友好。',
+      ['仰卧屈膝，下背贴地。','用腹部把肩胛卷离地面。'],
+      ['不要用手拉头，下巴与胸保持一拳距离。']],
+    ['悬垂举腿', 'abs', '自重', ['abs','forearms'], '高难度核心动作，兼顾握力。',
+      ['悬垂于单杠，肩胛稳定。','用腹部把腿抬至水平或更高。'],
+      ['避免身体前后摆动借力。']],
+    ['平板支撑', 'abs', '自重', ['abs','shoulders','glutes'], '等长收缩训练整体核心稳定。',
+      ['肘部在肩正下方，身体成直线。','臀部收紧，不要塌腰或抬臀。'],
+      ['以质量计时，宁可 40 秒标准不塌腰。']],
+    ['俄罗斯转体', 'abs', '自重', ['abs'], '训练腹斜肌与旋转控制。',
+      ['坐姿身体后倾约 45°，双脚可离地。','双手左右转体触地。'],
+      ['转动来自躯干而非手臂。']],
+    ['绳索卷腹', 'abs', '绳索', ['abs'], '可负重的腹直肌训练，适合渐进超负荷。',
+      ['跪姿，绳索置于头部两侧。','用腹部把上身卷向大腿。'],
+      ['髋角固定，只做脊柱屈曲。']],
+    ['死虫', 'abs', '自重', ['abs'], '核心稳定与协调训练，腰椎友好。',
+      ['仰卧，双手双脚抬起。','对侧手脚缓慢伸展，腰部贴地。'],
+      ['动作越慢越有效。']],
+
+    // 有氧 / 其他
+    ['跑步机慢跑', 'quads', '有氧', ['quads','calves','hams'], '最常见的有氧方式，注意配速与心率区间。',
+      ['热身 5 分钟快走。','保持能说话但不能唱歌的强度。'],
+      ['跑步机坡度 1% 更接近户外。']],
+    ['动感单车', 'quads', '有氧', ['quads','glutes','calves'], '低冲击有氧，适合大体重或膝不适人群。',
+      ['调整座高至踩到底膝盖微屈。','保持踏频 80-100 rpm。'],
+      ['阻力循序渐进。']],
+    ['跳绳', 'calves', '有氧', ['calves','quads','abs'], '高效燃脂，同时训练协调与小臂。',
+      ['手腕发力摇绳，落地前脚掌。','保持小幅弹跳。'],
+      ['分组进行，30 秒一组起步。']],
+  ];
+
+  const EXERCISES = EX_RAW.map((e, i) => ({
+    id: 'e' + i,
+    name: e[0],
+    primary: e[1],
+    equip: e[2],
+    muscles: e[3],
+    desc: e[4],
+    steps: e[5],
+    tips: e[6] || [],
+  }));
+
+  /* ---------------- 主题 ---------------- */
+  const THEMES = [
+    { id:'crimson', name:'猩红', accent:'#ff3b30', accent2:'#e01b24', glow:'rgba(255,59,48,.34)', bg:'#080607' },
+    { id:'ice',     name:'寒冰', accent:'#4fd1e0', accent2:'#1e8ea8', glow:'rgba(79,209,224,.28)', bg:'#060809' },
+    { id:'toxic',   name:'荧光', accent:'#c6ff3d', accent2:'#7ab800', glow:'rgba(198,255,61,.24)', bg:'#080a06' },
+    { id:'violet',  name:'紫电', accent:'#a78bfa', accent2:'#6d3ff5', glow:'rgba(167,139,250,.28)', bg:'#07060a' },
+    { id:'ember',   name:'余烬', accent:'#ff9f43', accent2:'#d2691e', glow:'rgba(255,159,67,.26)', bg:'#0a0806' },
+    { id:'mono',    name:'钛白', accent:'#e8e8e8', accent2:'#9a9a9a', glow:'rgba(232,232,232,.18)', bg:'#070707' },
+  ];
+
+  /* ---------------- 成就 ---------------- */
+  const ACHIEVEMENTS = [
+    { id:'first_meal',  name:'第一口',   desc:'记录第一餐',          icon:'🍚' },
+    { id:'week_streak', name:'七日不断', desc:'连续记录 7 天',        icon:'🔥' },
+    { id:'month_streak',name:'铁人',     desc:'连续记录 30 天',       icon:'🏆' },
+    { id:'first_workout',name:'开练',    desc:'完成第一次训练',       icon:'💪' },
+    { id:'ten_workouts',name:'十连击',   desc:'累计完成 10 次训练',   icon:'⚡' },
+    { id:'pr_hunter',   name:'纪录猎人', desc:'打破 5 次个人纪录',    icon:'🎯' },
+    { id:'protein_king',name:'蛋白之王', desc:'单日蛋白达标',         icon:'🥩' },
+    { id:'deficit_week',name:'缺口大师', desc:'连续 7 天保持热量缺口',icon:'📉' },
+    { id:'volume_20k',  name:'两万公斤', desc:'单次训练容量破 20000kg',icon:'🏋️' },
+    { id:'early_bird',  name:'晨练党',   desc:'早上 8 点前完成训练',  icon:'🌅' },
+  ];
+
+  global.NORG_DATA = { FOODS, EXERCISES, MUSCLES, THEMES, ACHIEVEMENTS };
+})(window);
+
+
+/* ===== store.js ===== */
+/* ============================================================
+   Norg · 状态与计算引擎
+   localStorage 持久化 + TDEE / 宏量 / e1RM / 统计聚合
+   ============================================================ */
+(function (global) {
+  'use strict';
+
+  const KEY = 'norg.v1';
+
+  /* ---------- 工具 ---------- */
+  const pad = n => String(n).padStart(2, '0');
+  const todayKey = (d = new Date()) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  const dayOffset = (k, n) => {
+    const d = new Date(k + 'T00:00:00');
+    d.setDate(d.getDate() + n);
+    return todayKey(d);
+  };
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const round = (v, n = 0) => { const p = Math.pow(10, n); return Math.round(v * p) / p; };
+  const uid = () => Math.random().toString(36).slice(2, 9);
+
+  /* ---------- 默认档案 ---------- */
+  function defaultState() {
+    return {
+      v: 1,
+      profile: {
+        name: '训练者',
+        sex: 'male',
+        age: 25,
+        height: 175,
+        weight: 70,
+        targetWeight: 65,
+        activity: 1.375,      // 活动系数
+        goalRate: -0.5,       // kg / 周
+        goalType: 'cut',      // cut / maintain / bulk
+        proteinPerKg: 2.0,
+        fatPct: 0.25,
+        theme: 'crimson',
+        unit: 'kg',
+      },
+      days: {},        // { '2026-11-12': { meals:[], workouts:[], weight:null, water:0, sleep:null, steps:0 } }
+      prs: {},         // { exerciseId: { weight, reps, e1rm, date } }
+      streak: 0,
+      lastLog: null,
+      achievements: [],
+      customFoods: [],
+    };
+  }
+
+  /* ---------- 读写 ---------- */
+  let S = null;
+
+  function load() {
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (!raw) { S = defaultState(); seed(); return S; }
+      S = JSON.parse(raw);
+      // 迁移/补全
+      const d = defaultState();
+      S.profile = Object.assign({}, d.profile, S.profile || {});
+      S.days = S.days || {};
+      S.prs = S.prs || {};
+      S.achievements = S.achievements || [];
+      S.customFoods = S.customFoods || [];
+      return S;
+    } catch (e) {
+      S = defaultState(); seed(); return S;
+    }
+  }
+
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {}
+  }
+
+  /* ---------- 首次体验：注入 30 天演示数据 ---------- */
+  function seed() {
+    const t = todayKey();
+    const foods = global.NORG_DATA.FOODS;
+    const find = n => foods.find(f => f.name === n);
+
+    /* 1) 30 天体重曲线：从 87.6 缓慢降到 85.0，带自然波动 */
+    const w0 = 87.6, w1 = 85.0;
+    for (let i = 29; i >= 0; i--) {
+      const k = dayOffset(t, -i);
+      if (!S.days[k]) S.days[k] = { meals: [], workouts: [], weight: null, water: 0, sleep: null, steps: 0 };
+      const prog = (29 - i) / 29;
+      const base = w0 + (w1 - w0) * prog;
+      // 每 7 天一个平台期，加 ±0.25 抖动
+      const wobble = Math.sin((29 - i) / 7 * Math.PI * 2) * 0.22 + Math.sin((29 - i) * 1.7) * 0.1;
+      S.days[k].weight = round(base + wobble, 1);
+      S.days[k].sleep = round(6.2 + Math.abs(Math.sin(i * 0.9)) * 1.8, 1);
+      S.days[k].steps = 5500 + Math.round(Math.abs(Math.sin(i * 1.3)) * 5000);
+      S.days[k].water = 1500 + Math.round(Math.abs(Math.cos(i * 0.8)) * 1200);
+    }
+    // 今天体重固定为 85.0
+    S.days[t].weight = 85.0;
+
+    /* 2) 最近 7 天的饮食记录 */
+    const plan = [
+      { off: -6, meals: [['燕麦片', 60], ['牛奶', 250], ['鸡蛋', 100], ['鸡胸肉', 180], ['米饭', 250], ['西兰花', 200], ['三文鱼', 130]] },
+      { off: -5, meals: [['全麦面包', 70], ['鸡蛋', 100], ['鸡胸肉', 200], ['糙米饭', 250], ['菠菜', 150], ['牛肉丸', 100]] },
+      { off: -4, meals: [['燕麦片', 60], ['乳清蛋白粉', 30], ['米饭', 200], ['牛里脊', 180], ['黄瓜', 150], ['苹果', 200]] },
+      { off: -3, meals: [['馒头', 100], ['鸡蛋', 100], ['鸡腿肉', 200], ['红薯', 200], ['生菜', 100], ['无糖希腊酸奶', 150]] },
+      { off: -2, meals: [['燕麦片', 50], ['牛奶', 250], ['猪里脊', 180], ['意大利面', 250], ['番茄', 150], ['香蕉', 120]] },
+      { off: -1, meals: [['全麦面包', 60], ['鸡蛋', 100], ['鸡胸肉', 200], ['糙米饭', 220], ['西兰花', 180], ['蓝莓', 100]] },
+      { off: 0,  meals: [['燕麦片', 50], ['牛奶', 250], ['鸡蛋', 50], ['鸡胸肉', 200], ['米饭', 250], ['西兰花', 200]] },
+    ];
+
+    plan.forEach(p => {
+      const k = dayOffset(t, p.off);
+      const meals = [];
+      const slots = ['早餐', '早餐', '午餐', '午餐', '晚餐', '加餐', '加餐'];
+      p.meals.forEach((m, i) => {
+        const f = find(m[0]);
+        if (!f) return;
+        const grams = m[1];
+        meals.push({
+          id: uid(),
+          foodId: f.id,
+          name: f.name,
+          grams,
+          kcal: round(f.kcal * grams / 100),
+          p: round(f.p * grams / 100, 1),
+          c: round(f.c * grams / 100, 1),
+          f: round(f.f * grams / 100, 1),
+          slot: slots[i] || '加餐',
+          ts: Date.now() - (6 - p.off) * 864e5,
+        });
+      });
+      S.days[k].meals = meals;
+    });
+
+    /* 3) 训练记录：最近 3 次 */
+    [[-6, 'push'], [-3, 'pull'], [-1, 'legs']].forEach(([off, kind]) => {
+      const k = dayOffset(t, off);
+      S.days[k].workouts = [makeWorkout(kind)];
+    });
+    // 今天也给一次训练，让今日训练页有内容
+    S.days[t].workouts = [makeWorkout('push')];
+
+    /* 4) 个人纪录（按动作名定位，避免 ID 漂移） */
+    const EXS = global.NORG_DATA.EXERCISES;
+    const byName = n => EXS.find(e => e.name === n);
+    const prSet = (name, weight, reps, off) => {
+      const ex = byName(name);
+      if (!ex) return;
+      S.prs[ex.id] = { weight, reps, e1rm: e1rm(weight, reps), date: dayOffset(t, off) };
+    };
+    prSet('杠铃平板卧推', 80, 5, -1);
+    prSet('杠铃深蹲', 110, 6, -1);
+    prSet('硬拉', 130, 5, -6);
+    prSet('高位下拉', 65, 8, -3);
+    prSet('腿举', 150, 8, -6);
+
+    S.streak = 12;
+    S.lastLog = t;
+    save();
+  }
+
+  function makeWorkout(kind) {
+    const EX = global.NORG_DATA.EXERCISES;
+    const pick = names => names.map(n => EX.find(e => e.name === n)).filter(Boolean);
+    const sets = (ex, base, n) => {
+      if (!ex) return null;
+      const arr = [];
+      for (let i = 0; i < n; i++) {
+        arr.push({ id: uid(), weight: round(base * (1 + i * 0.025), 1), reps: [10, 9, 8, 7][i] || 8, done: true });
+      }
+      return { exId: ex.id, name: ex.name, sets: arr };
+    };
+    let list = [];
+    if (kind === 'push') {
+      list = [
+        sets(EX.find(e => e.name === '杠铃平板卧推'), 70, 4),
+        sets(EX.find(e => e.name === '上斜哑铃卧推'), 24, 3),
+        sets(EX.find(e => e.name === '哑铃侧平举'), 10, 3),
+        sets(EX.find(e => e.name === '绳索下压'), 25, 3),
+      ];
+    } else if (kind === 'pull') {
+      list = [
+        sets(EX.find(e => e.name === '高位下拉'), 60, 4),
+        sets(EX.find(e => e.name === '杠铃划船'), 65, 4),
+        sets(EX.find(e => e.name === '面拉'), 20, 3),
+        sets(EX.find(e => e.name === '哑铃交替弯举'), 14, 3),
+      ];
+    } else {
+      list = [
+        sets(EX.find(e => e.name === '杠铃深蹲'), 90, 4),
+        sets(EX.find(e => e.name === '罗马尼亚硬拉'), 70, 3),
+        sets(EX.find(e => e.name === '腿举'), 140, 3),
+        sets(EX.find(e => e.name === '站姿提踵'), 50, 4),
+      ];
+    }
+    return {
+      id: uid(),
+      name: kind === 'push' ? '推日 · 胸肩三头' : kind === 'pull' ? '拉日 · 背二头' : '腿日 · 下肢',
+      ts: Date.now(),
+      dur: 55 + Math.round(Math.random() * 25),
+      exercises: list.filter(Boolean),
+    };
+  }
+
+  /* ---------- 日数据 ---------- */
+  function day(k) {
+    k = k || todayKey();
+    if (!S.days[k]) S.days[k] = { meals: [], workouts: [], weight: null, water: 0, sleep: null, steps: 0 };
+    const d = S.days[k];
+    d.meals = d.meals || [];
+    d.workouts = d.workouts || [];
+    if (d.water == null) d.water = 0;
+    if (d.steps == null) d.steps = 0;
+    return d;
+  }
+
+  /* ---------- 目标计算 ---------- */
+  function calcTargets() {
+    const p = S.profile;
+    // Mifflin-St Jeor
+    const bmr = p.sex === 'male'
+      ? 10 * p.weight + 6.25 * p.height - 5 * p.age + 5
+      : 10 * p.weight + 6.25 * p.height - 5 * p.age - 161;
+    const tdee = bmr * p.activity;
+    // 1kg 脂肪 ≈ 7700 kcal
+    const dailyDelta = (p.goalRate * 7700) / 7;
+    let kcal = tdee + dailyDelta;
+    kcal = clamp(kcal, bmr * 1.05, tdee * 1.6);
+    kcal = Math.round(kcal / 10) * 10;
+
+    const protein = Math.round(p.weight * p.proteinPerKg);
+    const fat = Math.round((kcal * p.fatPct) / 9);
+    const carb = Math.max(0, Math.round((kcal - protein * 4 - fat * 9) / 4));
+
+    return {
+      bmr: Math.round(bmr),
+      tdee: Math.round(tdee),
+      kcal,
+      protein, fat, carb,
+      delta: Math.round(dailyDelta),
+    };
+  }
+
+  /* ---------- 日汇总 ---------- */
+  function dayTotals(k) {
+    const d = day(k);
+    const t = { kcal: 0, p: 0, c: 0, f: 0 };
+    d.meals.forEach(m => { t.kcal += m.kcal; t.p += m.p; t.c += m.c; t.f += m.f; });
+    t.kcal = Math.round(t.kcal);
+    t.p = round(t.p, 1); t.c = round(t.c, 1); t.f = round(t.f, 1);
+    return t;
+  }
+
+  function workoutVolume(w) {
+    if (!w || !w.exercises) return 0;
+    let v = 0;
+    w.exercises.forEach(ex => {
+      (ex.sets || []).forEach(s => { if (s.done) v += (s.weight || 0) * (s.reps || 0); });
+    });
+    return Math.round(v);
+  }
+
+  function workoutSets(w) {
+    if (!w || !w.exercises) return 0;
+    let n = 0;
+    w.exercises.forEach(ex => { n += (ex.sets || []).filter(s => s.done).length; });
+    return n;
+  }
+
+  function dayVolume(k) {
+    return day(k).workouts.reduce((a, w) => a + workoutVolume(w), 0);
+  }
+
+  /* ---------- e1RM (Epley) ---------- */
+  function e1rm(weight, reps) {
+    if (!weight || !reps) return 0;
+    if (reps === 1) return weight;
+    return round(weight * (1 + reps / 30), 1);
+  }
+
+  /* ---------- 记录一餐 ---------- */
+  function addMeal(k, food, grams, slot) {
+    const d = day(k);
+    const g = Number(grams) || food.serving;
+    const item = {
+      id: uid(),
+      foodId: food.id,
+      name: food.name,
+      grams: g,
+      kcal: round(food.kcal * g / 100),
+      p: round(food.p * g / 100, 1),
+      c: round(food.c * g / 100, 1),
+      f: round(food.f * g / 100, 1),
+      slot: slot || slotOfNow(),
+      ts: Date.now(),
+    };
+    d.meals.push(item);
+    bumpStreak(k);
+    save();
+    return item;
+  }
+
+  function removeMeal(k, id) {
+    const d = day(k);
+    d.meals = d.meals.filter(m => m.id !== id);
+    save();
+  }
+
+  function slotOfNow() {
+    const h = new Date().getHours();
+    if (h < 10) return '早餐';
+    if (h < 15) return '午餐';
+    if (h < 20) return '晚餐';
+    return '加餐';
+  }
+
+  /* ---------- 记录体重 ---------- */
+  function setWeight(k, kg) {
+    const d = day(k);
+    d.weight = Number(kg);
+    S.profile.weight = Number(kg);
+    save();
+  }
+
+  /* ---------- 连续打卡 ---------- */
+  function bumpStreak(k) {
+    if (S.lastLog === k) return;
+    if (S.lastLog === dayOffset(k, -1)) S.streak += 1;
+    else S.streak = 1;
+    S.lastLog = k;
+  }
+
+  /* ---------- 体重趋势 ---------- */
+  function weightSeries(n = 30) {
+    const t = todayKey();
+    const out = [];
+    for (let i = n - 1; i >= 0; i--) {
+      const k = dayOffset(t, -i);
+      const d = S.days[k];
+      out.push({ k, w: d && d.weight != null ? d.weight : null });
+    }
+    return out;
+  }
+
+  function weightAvg(n = 7) {
+    const s = weightSeries(n).filter(x => x.w != null);
+    if (!s.length) return null;
+    return round(s.reduce((a, x) => a + x.w, 0) / s.length, 1);
+  }
+
+  /* ---------- 热量缺口 ---------- */
+  function calorieBalance(k) {
+    const t = calcTargets();
+    const tot = dayTotals(k);
+    const vol = dayVolume(k);
+    // 训练消耗估算：容量 × 0.0006 ≈ 每 1000kg 容量 6kcal（保守）
+    const exerciseBurn = Math.round(vol * 0.0006);
+    const intake = tot.kcal;
+    const deficit = t.tdee + exerciseBurn - intake;
+    return { intake, burn: t.tdee + exerciseBurn, exerciseBurn, deficit };
+  }
+
+  /* ---------- 统计聚合 ---------- */
+  function weekSeries(n = 7, field) {
+    const t = todayKey();
+    const out = [];
+    for (let i = n - 1; i >= 0; i--) {
+      const k = dayOffset(t, -i);
+      out.push({ k, v: field === 'kcal' ? dayTotals(k).kcal : dayVolume(k) });
+    }
+    return out;
+  }
+
+  function totalWorkouts() {
+    return Object.values(S.days).reduce((a, d) => a + (d.workouts || []).length, 0);
+  }
+
+  function muscleVolume(daysBack = 7) {
+    const t = todayKey();
+    const acc = {};
+    const EX = global.NORG_DATA.EXERCISES;
+    for (let i = 0; i < daysBack; i++) {
+      const k = dayOffset(t, -i);
+      const d = S.days[k];
+      if (!d) continue;
+      (d.workouts || []).forEach(w => {
+        (w.exercises || []).forEach(ex => {
+          const meta = EX.find(e => e.id === ex.exId);
+          if (!meta) return;
+          const vol = (ex.sets || []).filter(s => s.done).reduce((a, s) => a + s.weight * s.reps, 0);
+          meta.muscles.forEach(m => { acc[m] = (acc[m] || 0) + vol; });
+        });
+      });
+    }
+    return acc;
+  }
+
+  /* ---------- 主题 ---------- */
+  function applyTheme(id) {
+    const th = global.NORG_DATA.THEMES.find(t => t.id === id) || global.NORG_DATA.THEMES[0];
+    const r = document.documentElement.style;
+    r.setProperty('--red', th.accent);
+    r.setProperty('--red-2', th.accent2);
+    r.setProperty('--red-soft', hexA(th.accent, .14));
+    r.setProperty('--bg', th.bg);
+    document.querySelector('meta[name=theme-color]').setAttribute('content', th.bg);
+    S.profile.theme = th.id;
+    save();
+  }
+
+  function hexA(hex, a) {
+    const n = parseInt(hex.slice(1), 16);
+    return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`;
+  }
+
+  /* ---------- 成就 ---------- */
+  function checkAchievements() {
+    const got = new Set(S.achievements);
+    const add = id => { if (!got.has(id)) { S.achievements.push(id); return true; } return false; };
+    let n = 0;
+    if (Object.values(S.days).some(d => (d.meals || []).length)) n += add('first_meal') ? 1 : 0;
+    if (S.streak >= 7) n += add('week_streak') ? 1 : 0;
+    if (S.streak >= 30) n += add('month_streak') ? 1 : 0;
+    if (totalWorkouts() >= 1) n += add('first_workout') ? 1 : 0;
+    if (totalWorkouts() >= 10) n += add('ten_workouts') ? 1 : 0;
+    if (Object.keys(S.prs).length >= 5) n += add('pr_hunter') ? 1 : 0;
+    if (n) save();
+    return n;
+  }
+
+  /* ---------- 导出 / 导入 ---------- */
+  function exportJSON() { return JSON.stringify(S, null, 2); }
+
+  function importJSON(txt) {
+    const obj = JSON.parse(txt);
+    if (!obj || typeof obj !== 'object' || !obj.profile) throw new Error('格式不正确');
+    S = obj;
+    save();
+  }
+
+  function reset() {
+    localStorage.removeItem(KEY);
+    S = defaultState();
+    save();
+  }
+
+  global.NorgStore = {
+    load, save, get state() { return S; },
+    day, dayTotals, calcTargets, addMeal, removeMeal, setWeight,
+    weightSeries, weightAvg, calorieBalance, weekSeries,
+    workoutVolume, workoutSets, dayVolume, totalWorkouts, muscleVolume,
+    e1rm, applyTheme, checkAchievements, exportJSON, importJSON, reset,
+    bumpStreak, slotOfNow,
+    todayKey, dayOffset, round, clamp, uid, seed,
+  };
+})(window);
+
+
+/* ===== charts.js ===== */
+/* ============================================================
+   Norg · SVG 图表引擎（零依赖）
+   环形 / 弧线仪表 / 折线 / 柱状 / 人体肌群热力图
+   ============================================================ */
+(function (global) {
+  'use strict';
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const R = global.NorgStore.round;
+
+  /* ---------- 多段环形（宏量） ---------- */
+  function ring(opts) {
+    const { size = 108, stroke = 11, gap = 7, segments = [], center = '', sub = '' } = opts;
+    const cx = size / 2, cy = size / 2;
+    const r = (size - stroke) / 2 - 2;
+    const C = 2 * Math.PI * r;
+    const total = segments.reduce((a, s) => a + s.value, 0) || 1;
+    let acc = 0;
+
+    let paths = '';
+    segments.forEach(s => {
+      const frac = s.value / total;
+      const len = Math.max(0, frac * C - gap);
+      const dash = `${len} ${C - len}`;
+      const rot = -90 + (acc / total) * 360;
+      paths += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none"
+        stroke="${s.color}" stroke-width="${stroke}" stroke-linecap="round"
+        stroke-dasharray="${dash}" transform="rotate(${rot} ${cx} ${cy})"
+        style="filter:drop-shadow(0 0 5px ${s.color}66)"/>`;
+      acc += s.value;
+    });
+
+    return `<svg class="chart" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}">
+      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="${stroke}"/>
+      ${paths}
+      <text x="${cx}" y="${cy - 2}" text-anchor="middle" fill="#fff"
+        font-size="${size * .19}" font-weight="800" letter-spacing="-1">${center}</text>
+      <text x="${cx}" y="${cy + size * .13}" text-anchor="middle" fill="rgba(255,255,255,.4)"
+        font-size="${size * .085}" font-weight="600">${sub}</text>
+    </svg>`;
+  }
+
+  /* ---------- 单值进度环 ---------- */
+  function progressRing(opts) {
+    const { size = 120, stroke = 12, pct = 0, color = '#ff3b30', label = '', sub = '', track = 'rgba(255,255,255,.10)' } = opts;
+    const cx = size / 2, cy = size / 2;
+    const r = (size - stroke) / 2 - 1;
+    const C = 2 * Math.PI * r;
+    const v = Math.max(0, Math.min(1, pct));
+    const dash = v * C;
+    return `<svg class="chart" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}">
+      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${track}" stroke-width="${stroke}"/>
+      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${color}" stroke-width="${stroke}"
+        stroke-linecap="round" stroke-dasharray="${dash.toFixed(1)} ${(C - dash).toFixed(1)}"
+        transform="rotate(-90 ${cx} ${cy})"
+        style="filter:drop-shadow(0 0 7px ${color}77)"/>
+      <text x="${cx}" y="${cy + 2}" text-anchor="middle" fill="#fff"
+        font-size="${size * .23}" font-weight="800" letter-spacing="-1">${label}</text>
+      <text x="${cx}" y="${cy + size * .17}" text-anchor="middle" fill="rgba(255,255,255,.38)"
+        font-size="${size * .092}" font-weight="600">${sub}</text>
+    </svg>`;
+  }
+
+  /* ---------- 半圆仪表（热量缺口） ---------- */
+  function gauge(opts) {
+    const { w = 200, h = 118, value = 0, min = -2000, max = 2000, label = '', sub = '', color = '#ff3b30' } = opts;
+    const cx = w / 2, cy = h - 12;
+    const r = Math.min(w / 2 - 12, h - 26);
+    const start = Math.PI, end = 2 * Math.PI;
+    const arc = (a1, a2, rr) => {
+      const x1 = cx + rr * Math.cos(a1), y1 = cy + rr * Math.sin(a1);
+      const x2 = cx + rr * Math.cos(a2), y2 = cy + rr * Math.sin(a2);
+      const large = Math.abs(a2 - a1) > Math.PI ? 1 : 0;
+      return `M${x1} ${y1} A${rr} ${rr} 0 ${large} 1 ${x2} ${y2}`;
+    };
+    const frac = (value - min) / (max - min);
+    const ang = start + Math.PI * Math.max(0, Math.min(1, frac));
+
+    // 刻度
+    let ticks = '';
+    for (let i = 0; i <= 8; i++) {
+      const a = start + (Math.PI * i) / 8;
+      const x1 = cx + (r - 9) * Math.cos(a), y1 = cy + (r - 9) * Math.sin(a);
+      const x2 = cx + (r - 2) * Math.cos(a), y2 = cy + (r - 2) * Math.sin(a);
+      ticks += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="rgba(255,255,255,.2)" stroke-width="1.6" stroke-linecap="round"/>`;
+    }
+
+    return `<svg class="chart" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">
+      <path d="${arc(start, end, r)}" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="11" stroke-linecap="round"/>
+      <path d="${arc(start, ang, r)}" fill="none" stroke="${color}" stroke-width="11" stroke-linecap="round"
+        style="filter:drop-shadow(0 0 9px ${color}aa)"/>
+      ${ticks}
+      <circle cx="${cx + r * Math.cos(ang)}" cy="${cy + r * Math.sin(ang)}" r="5.5" fill="#fff"/>
+      <text x="${cx}" y="${cy - 26}" text-anchor="middle" fill="#fff" font-size="26" font-weight="800" letter-spacing="-1">${label}</text>
+      <text x="${cx}" y="${cy - 8}" text-anchor="middle" fill="rgba(255,255,255,.4)" font-size="10.5" font-weight="700">${sub}</text>
+    </svg>`;
+  }
+
+  /* ---------- 折线（体重趋势） ---------- */
+  function line(opts) {
+    const { w = 300, h = 74, points = [], color = '#ff3b30', fill = true, dots = true, minPad = 0.8 } = opts;
+    const vals = points.map(p => p.w).filter(v => v != null);
+    if (!vals.length) {
+      return `<svg class="chart" viewBox="0 0 ${w} ${h}" width="100%" height="${h}">
+        <line x1="0" y1="${h - 6}" x2="${w}" y2="${h - 6}" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+      </svg>`;
+    }
+    const mn = Math.min(...vals) - minPad, mx = Math.max(...vals) + minPad;
+    const span = mx - mn || 1;
+    const pad = 5;
+    const X = i => pad + (i / Math.max(1, points.length - 1)) * (w - pad * 2);
+    const Y = v => h - pad - ((v - mn) / span) * (h - pad * 2);
+
+    let d = '', area = '', started = false, firstX = 0, lastX = 0;
+    points.forEach((p, i) => {
+      if (p.w == null) return;
+      const x = X(i), y = Y(p.w);
+      if (!started) { d += `M${x} ${y}`; firstX = x; started = true; }
+      else d += ` L${x} ${y}`;
+      lastX = x;
+    });
+    area = `${d} L${lastX} ${h} L${firstX} ${h} Z`;
+
+    let ds = '';
+    if (dots) {
+      points.forEach((p, i) => {
+        if (p.w == null) return;
+        ds += `<circle cx="${X(i)}" cy="${Y(p.w)}" r="2.4" fill="${color}"/>`;
+      });
+      // 最后一个点高亮
+      for (let i = points.length - 1; i >= 0; i--) {
+        if (points[i].w != null) {
+          ds += `<circle cx="${X(i)}" cy="${Y(points[i].w)}" r="4" fill="#fff" stroke="${color}" stroke-width="2.4"/>`;
+          break;
+        }
+      }
+    }
+
+    const gid = 'lg' + Math.random().toString(36).slice(2, 6);
+    return `<svg class="chart" viewBox="0 0 ${w} ${h}" width="100%" height="${h}" preserveAspectRatio="none">
+      <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="${color}" stop-opacity=".28"/>
+        <stop offset="1" stop-color="${color}" stop-opacity="0"/>
+      </linearGradient></defs>
+      ${fill ? `<path d="${area}" fill="url(#${gid})"/>` : ''}
+      <path d="${d}" fill="none" stroke="${color}" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+      ${ds}
+    </svg>`;
+  }
+
+  /* ---------- 柱状（周热量） ---------- */
+  function bars(opts) {
+    const { w = 300, h = 90, data = [], color = '#ff3b30', goal = null, labels = [] } = opts;
+    const mx = Math.max(goal || 0, ...data, 1);
+    const n = data.length || 1;
+    const gap = 7;
+    const bw = (w - gap * (n - 1)) / n;
+    let out = '';
+    data.forEach((v, i) => {
+      const bh = Math.max(2, (v / mx) * (h - 20));
+      const x = i * (bw + gap);
+      const y = h - 16 - bh;
+      const over = goal && v > goal * 1.06;
+      out += `<rect x="${x}" y="${y}" width="${bw}" height="${bh}" rx="${Math.min(5, bw / 2)}"
+        fill="${over ? 'rgba(255,255,255,.28)' : color}" opacity="${v ? .92 : .16}"/>`;
+      if (labels[i]) {
+        out += `<text x="${x + bw / 2}" y="${h - 3}" text-anchor="middle" fill="rgba(255,255,255,.34)"
+          font-size="9" font-weight="700">${labels[i]}</text>`;
+      }
+    });
+    let goalLine = '';
+    if (goal) {
+      const gy = h - 16 - (goal / mx) * (h - 20);
+      goalLine = `<line x1="0" y1="${gy}" x2="${w}" y2="${gy}" stroke="rgba(255,255,255,.3)"
+        stroke-width="1" stroke-dasharray="4 4"/>`;
+    }
+    return `<svg class="chart" viewBox="0 0 ${w} ${h}" width="100%" height="${h}">${goalLine}${out}</svg>`;
+  }
+
+  /* ---------- 人体肌群热力图（正面 + 背面） ---------- */
+  function bodyMap(opts) {
+    const { data = {}, w = 128, h = 200, mode = 'front' } = opts;
+    const maxV = Math.max(1, ...Object.values(data));
+    const c = m => {
+      const v = data[m] || 0;
+      if (!v) return 'rgba(255,255,255,.10)';
+      const a = 0.28 + 0.72 * (v / maxV);
+      return `rgba(255,59,48,${a.toFixed(2)})`;
+    };
+    const stroke = 'rgba(255,255,255,.16)';
+
+    if (mode === 'front') {
+      return `<svg class="chart" viewBox="0 0 128 200" width="${w}" height="${h}">
+        <g stroke="${stroke}" stroke-width="1" stroke-linejoin="round">
+          <!-- 头 -->
+          <circle cx="64" cy="18" r="11" fill="rgba(255,255,255,.08)"/>
+          <!-- 颈/斜方 -->
+          <path d="M54 30 L74 30 L78 40 L50 40 Z" fill="${c('traps')}"/>
+          <!-- 肩 -->
+          <ellipse cx="36" cy="52" rx="12" ry="9" fill="${c('shoulders')}"/>
+          <ellipse cx="92" cy="52" rx="12" ry="9" fill="${c('shoulders')}"/>
+          <!-- 胸 -->
+          <path d="M46 42 Q64 40 82 42 L86 62 Q64 72 42 62 Z" fill="${c('chest')}"/>
+          <!-- 腹 -->
+          <rect x="52" y="64" width="24" height="34" rx="6" fill="${c('abs')}"/>
+          <!-- 二头 -->
+          <ellipse cx="30" cy="76" rx="8" ry="14" fill="${c('biceps')}"/>
+          <ellipse cx="98" cy="76" rx="8" ry="14" fill="${c('biceps')}"/>
+          <!-- 前臂 -->
+          <ellipse cx="25" cy="106" rx="6.5" ry="15" fill="${c('forearms')}"/>
+          <ellipse cx="103" cy="106" rx="6.5" ry="15" fill="${c('forearms')}"/>
+          <!-- 股四头 -->
+          <path d="M48 102 L62 102 L60 152 L48 152 Z" fill="${c('quads')}"/>
+          <path d="M66 102 L80 102 L80 152 L68 152 Z" fill="${c('quads')}"/>
+          <!-- 小腿 -->
+          <path d="M49 158 L60 158 L58 192 L50 192 Z" fill="${c('calves')}"/>
+          <path d="M68 158 L79 158 L78 192 L70 192 Z" fill="${c('calves')}"/>
+        </g>
+      </svg>`;
+    }
+
+    return `<svg class="chart" viewBox="0 0 128 200" width="${w}" height="${h}">
+      <g stroke="${stroke}" stroke-width="1" stroke-linejoin="round">
+        <circle cx="64" cy="18" r="11" fill="rgba(255,255,255,.08)"/>
+        <path d="M54 30 L74 30 L78 42 L50 42 Z" fill="${c('traps')}"/>
+        <ellipse cx="36" cy="52" rx="12" ry="9" fill="${c('shoulders')}"/>
+        <ellipse cx="92" cy="52" rx="12" ry="9" fill="${c('shoulders')}"/>
+        <!-- 背阔 -->
+        <path d="M44 44 Q64 42 84 44 L82 78 Q64 86 46 78 Z" fill="${c('back')}"/>
+        <!-- 竖脊 -->
+        <rect x="58" y="80" width="12" height="20" rx="4" fill="${c('back')}" opacity=".7"/>
+        <!-- 三头 -->
+        <ellipse cx="30" cy="78" rx="8" ry="15" fill="${c('triceps')}"/>
+        <ellipse cx="98" cy="78" rx="8" ry="15" fill="${c('triceps')}"/>
+        <ellipse cx="25" cy="108" rx="6.5" ry="15" fill="${c('forearms')}"/>
+        <ellipse cx="103" cy="108" rx="6.5" ry="15" fill="${c('forearms')}"/>
+        <!-- 臀 -->
+        <path d="M48 100 Q64 96 80 100 L80 124 Q64 132 48 124 Z" fill="${c('glutes')}"/>
+        <!-- 腘绳 -->
+        <path d="M49 128 L62 128 L61 160 L50 160 Z" fill="${c('hams')}"/>
+        <path d="M66 128 L79 128 L78 160 L67 160 Z" fill="${c('hams')}"/>
+        <path d="M50 164 L60 164 L58 192 L51 192 Z" fill="${c('calves')}"/>
+        <path d="M68 164 L78 164 L77 192 L70 192 Z" fill="${c('calves')}"/>
+      </g>
+    </svg>`;
+  }
+
+  /* ---------- 动作示范插画（灰模风格，按器械类型） ---------- */
+  function exerciseArt(ex, w = 260, h = 200) {
+    const g = 'url(#exGrad)';
+    const body = '#b9b9b5', hi = '#ff3b30';
+    const grad = `<defs>
+      <linearGradient id="exGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#cfcfca"/><stop offset="1" stop-color="#a8a8a3"/>
+      </linearGradient>
+      <radialGradient id="exGlow"><stop offset="0" stop-color="${hi}" stop-opacity=".55"/><stop offset="1" stop-color="${hi}" stop-opacity="0"/></radialGradient>
+    </defs>`;
+
+    const isPush = /卧推|飞鸟|臂屈伸|俯卧撑|夹胸/.test(ex.name);
+    const isPull = /引体|下拉|划船|下压|面拉/.test(ex.name);
+    const isSquat = /深蹲|腿举|分腿蹲|腿屈伸|提踵|臀推|硬拉|腿弯举|外展/.test(ex.name);
+    const isArm = /弯举|下压|腕/.test(ex.name);
+    const isCore = /卷腹|举腿|平板|转体|死虫/.test(ex.name);
+    const isCardio = ex.equip === '有氧';
+
+    let scene = '';
+    if (isPush) {
+      scene = `
+        <!-- 卧推凳 -->
+        <rect x="46" y="118" width="150" height="13" rx="6" fill="${body}"/>
+        <rect x="60" y="131" width="10" height="42" rx="4" fill="${body}" opacity=".8"/>
+        <rect x="170" y="131" width="10" height="42" rx="4" fill="${body}" opacity=".8"/>
+        <!-- 躯干 -->
+        <path d="M78 118 Q104 108 132 118 L132 104 Q104 96 78 104 Z" fill="${g}"/>
+        <!-- 头 -->
+        <circle cx="146" cy="110" r="12" fill="${body}"/>
+        <!-- 手臂上举 -->
+        <path d="M92 106 L86 74" stroke="${body}" stroke-width="11" stroke-linecap="round"/>
+        <path d="M112 104 L118 74" stroke="${body}" stroke-width="11" stroke-linecap="round"/>
+        <!-- 杠铃 -->
+        <rect x="58" y="66" width="110" height="7" rx="3.5" fill="#8f8f8b"/>
+        <circle cx="62" cy="69" r="12" fill="#7d7d79"/>
+        <circle cx="164" cy="69" r="12" fill="#7d7d79"/>
+        <!-- 胸肌高亮 -->
+        <ellipse cx="104" cy="112" rx="26" ry="13" fill="url(#exGlow)"/>
+        <ellipse cx="104" cy="112" rx="17" ry="8" fill="${hi}" opacity=".55"/>`;
+    } else if (isPull) {
+      scene = `
+        <rect x="40" y="34" width="176" height="8" rx="4" fill="#8f8f8b"/>
+        <path d="M96 42 L96 58" stroke="${body}" stroke-width="10" stroke-linecap="round"/>
+        <path d="M160 42 L160 58" stroke="${body}" stroke-width="10" stroke-linecap="round"/>
+        <circle cx="128" cy="52" r="12" fill="${body}"/>
+        <path d="M128 64 L128 122" stroke="${g}" stroke-width="20" stroke-linecap="round"/>
+        <path d="M128 82 L104 100" stroke="${body}" stroke-width="10" stroke-linecap="round"/>
+        <path d="M128 82 L152 100" stroke="${body}" stroke-width="10" stroke-linecap="round"/>
+        <ellipse cx="128" cy="96" rx="26" ry="22" fill="url(#exGlow)"/>`;
+    } else if (isSquat) {
+      scene = `
+        <rect x="40" y="40" width="96" height="7" rx="3.5" fill="#8f8f8b"/>
+        <circle cx="44" cy="43" r="11" fill="#7d7d79"/>
+        <circle cx="132" cy="43" r="11" fill="#7d7d79"/>
+        <circle cx="88" cy="62" r="12" fill="${body}"/>
+        <path d="M88 74 L88 128" stroke="${g}" stroke-width="22" stroke-linecap="round"/>
+        <path d="M88 88 L68 74" stroke="${body}" stroke-width="10" stroke-linecap="round"/>
+        <path d="M88 88 L108 74" stroke="${body}" stroke-width="10" stroke-linecap="round"/>
+        <path d="M88 128 L68 156 L70 186" stroke="${body}" stroke-width="14" stroke-linecap="round" fill="none"/>
+        <path d="M88 128 L108 156 L106 186" stroke="${body}" stroke-width="14" stroke-linecap="round" fill="none"/>
+        <ellipse cx="88" cy="132" rx="24" ry="26" fill="url(#exGlow)"/>`;
+    } else if (isArm) {
+      scene = `
+        <circle cx="88" cy="44" r="12" fill="${body}"/>
+        <path d="M88 56 L88 132" stroke="${g}" stroke-width="22" stroke-linecap="round"/>
+        <path d="M88 74 L112 96 L108 74" stroke="${body}" stroke-width="11" stroke-linecap="round" fill="none"/>
+        <path d="M88 74 L64 96 L68 74" stroke="${body}" stroke-width="11" stroke-linecap="round" fill="none"/>
+        <circle cx="112" cy="96" r="8" fill="#8f8f8b"/>
+        <circle cx="64" cy="96" r="8" fill="#8f8f8b"/>
+        <ellipse cx="88" cy="86" rx="22" ry="20" fill="url(#exGlow)"/>`;
+    } else if (isCore) {
+      scene = `
+        <rect x="34" y="140" width="176" height="10" rx="5" fill="${body}" opacity=".55"/>
+        <path d="M60 138 Q100 118 148 132" stroke="${g}" stroke-width="20" stroke-linecap="round" fill="none"/>
+        <circle cx="56" cy="130" r="11" fill="${body}"/>
+        <path d="M148 132 L176 122" stroke="${body}" stroke-width="11" stroke-linecap="round"/>
+        <ellipse cx="104" cy="130" rx="30" ry="15" fill="url(#exGlow)"/>`;
+    } else if (isCardio) {
+      scene = `
+        <circle cx="96" cy="52" r="12" fill="${body}"/>
+        <path d="M96 64 L96 118" stroke="${g}" stroke-width="20" stroke-linecap="round"/>
+        <path d="M96 78 L72 96" stroke="${body}" stroke-width="10" stroke-linecap="round"/>
+        <path d="M96 78 L122 62" stroke="${body}" stroke-width="10" stroke-linecap="round"/>
+        <path d="M96 118 L78 148 L84 178" stroke="${body}" stroke-width="13" stroke-linecap="round" fill="none"/>
+        <path d="M96 118 L116 148 L112 178" stroke="${body}" stroke-width="13" stroke-linecap="round" fill="none"/>
+        <ellipse cx="96" cy="120" rx="26" ry="24" fill="url(#exGlow)"/>`;
+    } else {
+      scene = `
+        <circle cx="96" cy="50" r="12" fill="${body}"/>
+        <path d="M96 62 L96 126" stroke="${g}" stroke-width="22" stroke-linecap="round"/>
+        <path d="M96 78 L70 100" stroke="${body}" stroke-width="11" stroke-linecap="round"/>
+        <path d="M96 78 L122 100" stroke="${body}" stroke-width="11" stroke-linecap="round"/>
+        <path d="M96 126 L80 170" stroke="${body}" stroke-width="14" stroke-linecap="round"/>
+        <path d="M96 126 L112 170" stroke="${body}" stroke-width="14" stroke-linecap="round"/>
+        <ellipse cx="96" cy="96" rx="26" ry="26" fill="url(#exGlow)"/>`;
+    }
+
+    return `<svg class="chart" viewBox="0 0 260 200" width="100%" height="100%">
+      ${grad}
+      <rect width="260" height="200" fill="none"/>
+      ${scene}
+    </svg>`;
+  }
+
+  global.NorgChart = { ring, progressRing, gauge, line, bars, bodyMap, exerciseArt };
+})(window);
+
+
+/* ===== ui.js ===== */
+/* ============================================================
+   Norg · UI 基础组件（弹层 / toast / 通用片段）
+   ============================================================ */
+(function (global) {
+  'use strict';
+
+  const $ = s => document.querySelector(s);
+  const $$ = s => Array.from(document.querySelectorAll(s));
+  const esc = s => String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
+  /* ---------- toast ---------- */
+  let toastTimer = null;
+  function toast(msg) {
+    const el = $('#toast');
+    el.textContent = msg;
+    el.hidden = false;
+    el.style.animation = 'none';
+    void el.offsetWidth;
+    el.style.animation = '';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { el.hidden = true; }, 1700);
+  }
+
+  /* ---------- sheet ---------- */
+  let onClose = null;
+  function openSheet(title, html, opts) {
+    $('#sheetTitle').textContent = title;
+    // 用克隆节点替换，确保旧的事件监听被彻底丢弃
+    const old = $('#sheetBody');
+    const fresh = old.cloneNode(false);
+    fresh.innerHTML = html;
+    old.parentNode.replaceChild(fresh, old);
+
+    $('#sheetMask').hidden = false;
+    $('#sheet').hidden = false;
+    document.body.style.overflow = 'hidden';
+    onClose = (opts && opts.onClose) || null;
+    if (opts && opts.after) setTimeout(opts.after, 20);
+  }
+  function closeSheet() {
+    $('#sheetMask').hidden = true;
+    $('#sheet').hidden = true;
+    document.body.style.overflow = '';
+    if (onClose) { const f = onClose; onClose = null; f(); }
+  }
+
+  /* ---------- 图标 ---------- */
+  const ICON = {
+    plus: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>`,
+    edit: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4l10-10-4-4L4 16v4z"/><path d="M14 6l4 4"/></svg>`,
+    bowl: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 11h18a9 9 0 01-9 9 9 9 0 01-9-9z"/><path d="M8 7c0-2 1-3 2-3M13 7c0-2 1-3 2-3"/></svg>`,
+    search: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>`,
+    back: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>`,
+    trash: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/></svg>`,
+    arrow: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>`,
+    check: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>`,
+    clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>`,
+    fire: `<svg viewBox="0 0 24 24"><path d="M12 2c1 4-2 5-2 8a2 2 0 004 0c0-1 0-2 .5-2.5C16 9 18 12 18 15a6 6 0 11-12 0c0-4 3-7 6-13z" fill="currentColor"/></svg>`,
+    trophy: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 01-8 0V4z"/><path d="M8 5H5v2a3 3 0 003 3M16 5h3v2a3 3 0 01-3 3"/><path d="M10 13v3h4v-3M9 20h6"/></svg>`,
+    medal: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="15" r="5.5"/><path d="M9 3l1.5 5M15 3l-1.5 5"/></svg>`,
+    plan: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>`,
+    rank: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v6a5 5 0 01-10 0V4z"/><path d="M12 15v4M9 21h6"/></svg>`,
+    store: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9l2-5h12l2 5M4 9h16v10H4z"/><path d="M9 19v-5h6v5"/></svg>`,
+    water: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3s6 6.5 6 10.5a6 6 0 01-12 0C6 9.5 12 3 12 3z"/></svg>`,
+    moon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20 14a8 8 0 11-9-11 7 7 0 009 11z"/></svg>`,
+    scale: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="4"/><path d="M8 10a4 4 0 008 0"/><path d="M12 10l2-2"/></svg>`,
+    dumbbell: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M3 9v6M21 9v6M6.5 6.5v11M17.5 6.5v11M6.5 12h11"/></svg>`,
+  };
+
+  /* ---------- 分段控件 ---------- */
+  function seg(items, active, dataAttr) {
+    return `<div class="seg">${items.map(it =>
+      `<button class="${it.v === active ? 'on' : ''}" ${dataAttr}="${it.v}">${esc(it.t)}</button>`
+    ).join('')}</div>`;
+  }
+
+  global.NorgUI = { $, $$, esc, toast, openSheet, closeSheet, ICON, seg };
+})(window);
+
+
+/* ===== views.js ===== */
+/* ============================================================
+   Norg · 视图层
+   今日 / 饮食 / 训练 / 数据 / 设置
+   ============================================================ */
+(function (global) {
+  'use strict';
+
+  const S = global.NorgStore;
+  const C = global.NorgChart;
+  const U = global.NorgUI;
+  const D = global.NORG_DATA;
+  const esc = U.esc, ICON = U.ICON;
+
+  let mode = 'diet';        // 今日页模式：diet / train
+  let viewDate = null;      // 浏览的日期（null = 今天）
+  let curTab = 'today';
+
+  const V = {};
+
+  /* ==========================================================
+     今日
+     ========================================================== */
+  V.today = function () {
+    const k = viewDate || S.todayKey();
+    const t = S.calcTargets();
+    const tot = S.dayTotals(k);
+    const p = S.state.profile;
+    const d = S.day(k);
+
+    const pct = Math.min(1, tot.kcal / t.kcal);
+    const left = t.kcal - tot.kcal;
+
+    const pctP = Math.min(1, tot.p / t.protein);
+    const pctC = Math.min(1, tot.c / t.carb);
+    const pctF = Math.min(1, tot.f / t.fat);
+
+    // 训练模式数据
+    const vol = S.dayVolume(k);
+    const wsets = d.workouts.reduce((a, w) => a + S.workoutSets(w), 0);
+    const musc = S.muscleVolume(7);
+
+    // 体重
+    const ws = S.weightSeries(14);
+    const curW = d.weight != null ? d.weight : p.weight;
+    const prevW = (() => {
+      for (let i = 1; i <= 14; i++) {
+        const dd = S.state.days[S.dayOffset(k, -i)];
+        if (dd && dd.weight != null) return dd.weight;
+      }
+      return null;
+    })();
+    const wDelta = prevW != null ? S.round(curW - prevW, 1) : null;
+    const avg7 = S.weightAvg(7);
+
+    // 缺口
+    const bal = S.calorieBalance(k);
+
+    // PR
+    const prKeys = Object.keys(S.state.prs);
+    const bestPr = prKeys.map(id => {
+      const ex = D.EXERCISES.find(e => e.id === id);
+      return ex ? { ex, pr: S.state.prs[id] } : null;
+    }).filter(Boolean).sort((a, b) => b.pr.e1rm - a.pr.e1rm)[0];
+
+    const isToday = k === S.todayKey();
+    const dateLabel = isToday ? '今日' : `${k.slice(5).replace('-', '/')}`;
+
+    return `
+    <div style="display:flex;align-items:center;gap:8px;margin:6px 4px 0;">
+      <button class="round-btn" data-act="prevday" style="width:34px;height:34px;flex:0 0 auto">${ICON.back}</button>
+      <div style="font-size:24px;font-weight:800;letter-spacing:-.8px;flex:0 0 auto;">${dateLabel}</div>
+      ${!isToday ? `<button class="round-btn" style="width:30px;height:30px" data-act="nextday">${ICON.arrow}</button>` : ''}
+      <div style="margin-left:auto;flex:0 0 auto">
+        <div class="mode-seg">
+          <button class="${mode === 'diet' ? 'on' : ''}" data-mode="diet">饮食</button>
+          <button class="${mode === 'train' ? 'on' : ''}" data-mode="train">训练</button>
+        </div>
+      </div>
+    </div>
+
+    ${mode === 'diet' ? dietHero(t, tot, pct, left, pctP, pctC, pctF, k) : trainHero(vol, wsets, d)}
+
+    <div class="quick-row">
+      ${quick('学院', ICON.medal, false, 'college')}
+      ${quick('成就', ICON.trophy, false, 'achv')}
+      ${quick('官方计划', ICON.plan, true, 'plan')}
+      ${quick('段位', ICON.rank, false, 'rank')}
+      ${quick('主题市场', ICON.store, false, 'themes')}
+    </div>
+
+    <div class="sec-title"><span class="dot"></span>身体数据<span class="more" data-act="editweight">编辑</span></div>
+
+    <div class="grid2">
+      <div class="mini" data-act="editweight" style="cursor:pointer">
+        <div class="h"><span>${isToday ? '今日体重' : '当日体重'}</span>
+          <span style="color:var(--red);font-size:15px;line-height:1">+</span></div>
+        <div class="big">${curW.toFixed(1)}<span>kg</span></div>
+        <div class="foot">
+          ${wDelta != null ? `<span style="color:${wDelta <= 0 ? 'var(--green)' : 'var(--orange)'};font-weight:800">${wDelta <= 0 ? '↓' : '↑'}${Math.abs(wDelta).toFixed(1)}</span> 较上次` : '暂无对比'}
+        </div>
+        <div style="margin-top:8px">${C.line({ w: 150, h: 40, points: ws, dots: false, minPad: .5 })}</div>
+        <div class="foot" style="display:flex;justify-content:space-between">
+          <span>7 天前</span><span>7 日均 ${avg7 != null ? avg7 : '--'}</span>
+        </div>
+      </div>
+
+      <div class="mini" style="min-width:0">
+        <div class="ring-cell">
+          ${C.ring({
+            size: 84, stroke: 9, gap: 6,
+            segments: [
+              { value: tot.c || .001, color: 'var(--green)' },
+              { value: tot.p || .001, color: 'var(--purple)' },
+              { value: tot.f || .001, color: 'var(--yellow)' },
+            ],
+            center: String(tot.kcal), sub: 'kcal',
+          })}
+          <div class="legend">
+            <span><i style="background:var(--green)"></i>${Math.round(tot.c)}g 碳水</span>
+            <span><i style="background:var(--purple)"></i>${Math.round(tot.p)}g 蛋白</span>
+            <span><i style="background:var(--yellow)"></i>${Math.round(tot.f)}g 脂肪</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mini">
+        <div class="h"><span>热量缺口</span></div>
+        <div style="display:grid;place-items:center;margin-top:2px">
+          ${C.gauge({
+            w: 168, h: 100, value: bal.deficit, min: -1200, max: 1600,
+            label: String(Math.round(bal.deficit)), sub: 'kcal 缺口',
+            color: bal.deficit > 0 ? 'var(--red)' : 'var(--orange)',
+          })}
+        </div>
+        <div class="foot center">缺口区 · 摄入 ${bal.intake} / 消耗 ${bal.burn}</div>
+      </div>
+
+      <div class="mini" data-act="pr" style="cursor:pointer">
+        <div class="h"><span>个人纪录</span>${ICON.arrow}</div>
+        ${bestPr ? `
+          <div style="margin-top:6px;display:flex;align-items:center;gap:9px">
+            <div style="width:44px;height:52px;flex:0 0 auto">${C.bodyMap({ data: { [bestPr.ex.primary]: 1 }, w: 44, h: 52, mode: 'front' })}</div>
+            <div>
+              <div style="font-size:12.5px;font-weight:700;color:var(--t2)">${esc(bestPr.ex.name)}</div>
+              <div style="font-size:24px;font-weight:800;letter-spacing:-1px;line-height:1.15">${bestPr.pr.e1rm}<span style="font-size:11px;color:var(--t3);font-weight:600"> kg</span></div>
+              <div class="tiny muted">估算 1RM</div>
+            </div>
+          </div>` : `<div class="empty" style="padding:20px 0">还没有纪录</div>`}
+      </div>
+
+      <div class="mini">
+        <div class="h"><span>训练分布</span>${ICON.arrow}</div>
+        <div class="muscle-wrap" style="margin-top:6px">
+          <div>${C.bodyMap({ data: musc, w: 72, h: 112, mode: 'front' })}</div>
+          <div>${C.bodyMap({ data: musc, w: 72, h: 112, mode: 'back' })}</div>
+        </div>
+        <div class="foot">近 7 天训练量分布</div>
+      </div>
+
+      <div class="mini">
+        <div class="h"><span>睡眠</span>${ICON.arrow}</div>
+        <div class="big">${d.sleep != null ? d.sleep.toFixed(1) : '--'}<span>小时</span></div>
+        <div class="foot">昨夜 · 目标 7.5h</div>
+        <div style="margin-top:10px">${C.bars({ w: 150, h: 34, data: weekSleep(), color: 'var(--purple)' })}</div>
+      </div>
+
+      <div class="mini">
+        <div class="h"><span>训练容量</span>${ICON.arrow}</div>
+        <div class="big">${vol.toLocaleString()}<span>kg</span></div>
+        <div class="foot">${d.workouts.length} 次训练 · ${wsets} 组</div>
+      </div>
+
+      <div class="mini">
+        <div class="h"><span>活动消耗</span>${ICON.arrow}</div>
+        <div class="big">${bal.exerciseBurn}<span>大卡</span></div>
+        <div class="foot">来自训练容量估算</div>
+      </div>
+    </div>
+
+    <div class="sec-title"><span class="dot"></span>本周摄入<span class="more" data-act="goDiet">查看全部</span></div>
+    <div class="card">
+      ${C.bars({
+        w: 300, h: 104,
+        data: weekKcal(),
+        goal: t.kcal,
+        labels: weekLabels(),
+        color: 'var(--red)',
+      })}
+      <div class="tiny muted center" style="margin-top:6px">虚线为目标 ${t.kcal} kcal</div>
+    </div>
+
+    <div style="height:8px"></div>
+    `;
+  };
+
+  function quick(label, icon, on, act) {
+    return `<button class="quick ${on ? 'on' : ''}" data-act="${act}">${icon}<span>${label}</span></button>`;
+  }
+
+  function dietHero(t, tot, pct, left, pctP, pctC, pctF, k) {
+    const d = S.day(k);
+    const slots = ['早餐', '午餐', '晚餐', '加餐'];
+    const cnt = d.meals.length;
+    return `
+    <div class="hero">
+      <div class="hero-top">
+        <div>
+          <div class="hero-kcal"><b class="num">${tot.kcal.toLocaleString()}</b><i>kcal</i></div>
+          <div class="hero-sub">已记录 ${cnt} 餐${left > 0 ? ` · 还可摄入 ${left} kcal` : ` · 已超出 ${Math.abs(left)} kcal`}</div>
+        </div>
+        <div class="hero-btns">
+          <button class="round-btn" data-act="addMeal" title="记录饮食">${ICON.bowl}</button>
+          <button class="round-btn" data-act="editweight" title="记录体重">${ICON.edit}</button>
+        </div>
+      </div>
+
+      <div class="bar-wrap">
+        <div class="bar"><div class="bar-fill" style="width:${Math.max(2, pct * 100)}%"></div></div>
+        <div class="bar-pct">${Math.round(pct * 100)}%</div>
+      </div>
+
+      <div class="macros">
+        <div class="macro"><div class="k">蛋白质</div><div class="v">${Math.round(tot.p)}<span>g</span></div>
+          <div class="prog" style="margin-top:6px"><i style="width:${pctP * 100}%;background:linear-gradient(90deg,#c4b5fd,#7c3aed)"></i></div></div>
+        <div class="macro"><div class="k">碳水</div><div class="v">${Math.round(tot.c)}<span>g</span></div>
+          <div class="prog" style="margin-top:6px"><i style="width:${pctC * 100}%;background:linear-gradient(90deg,#6ee7a0,#16a34a)"></i></div></div>
+        <div class="macro"><div class="k">脂肪</div><div class="v">${Math.round(tot.f)}<span>g</span></div>
+          <div class="prog" style="margin-top:6px"><i style="width:${pctF * 100}%;background:linear-gradient(90deg,#f7ff8a,#a3b800)"></i></div></div>
+      </div>
+
+      <div class="goal-arc">目标 <b>${t.kcal.toLocaleString()}</b> kcal · TDEE ${t.tdee} · BMR ${t.bmr}</div>
+    </div>
+
+    ${d.meals.length ? `
+      <div class="sec-title"><span class="dot"></span>今日记录<span class="more" data-act="addMeal">+ 添加</span></div>
+      <div class="list">
+        ${slots.map(sl => {
+          const items = d.meals.filter(m => m.slot === sl);
+          if (!items.length) return '';
+          const sum = items.reduce((a, m) => a + m.kcal, 0);
+          return `<div class="card" style="padding:12px 14px">
+            <div style="display:flex;align-items:center;margin-bottom:8px">
+              <span style="font-size:13px;font-weight:800">${sl}</span>
+              <span class="tiny muted" style="margin-left:auto">${sum} kcal</span>
+            </div>
+            ${items.map(m => `
+              <div class="row" style="background:transparent;border:0;padding:8px 0" data-meal="${m.id}">
+                <div class="mid"><div class="t" style="font-size:13.5px">${esc(m.name)}</div>
+                  <div class="s">${m.grams}g · 蛋白 ${m.p}g · 碳水 ${m.c}g · 脂肪 ${m.f}g</div></div>
+                <div class="r"><div class="n">${m.kcal}</div><div class="u">kcal</div></div>
+                <button class="icon-btn" style="width:26px;height:26px;background:transparent;color:var(--t4)" data-del="${m.id}">${ICON.trash}</button>
+              </div>`).join('')}
+          </div>`;
+        }).join('')}
+      </div>` : `
+      <div class="card" style="margin-top:14px">
+        <div class="empty">
+          ${ICON.bowl}
+          <div>今天还没有记录饮食</div>
+          <button class="btn sm" style="margin-top:14px;max-width:180px" data-act="addMeal">记录第一餐</button>
+        </div>
+      </div>`}
+    `;
+  }
+
+  function trainHero(vol, sets, d) {
+    const t = S.calcTargets();
+    const cnt = d.workouts.length;
+    return `
+    <div class="hero">
+      <div class="hero-top">
+        <div>
+          <div class="hero-kcal"><b class="num">${vol.toLocaleString()}</b><i>kg 容量</i></div>
+          <div class="hero-sub">${cnt} 次训练 · ${sets} 组有效组</div>
+        </div>
+        <div class="hero-btns">
+          <button class="round-btn" data-act="addWorkout" title="开始训练">${ICON.dumbbell}</button>
+        </div>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar"><div class="bar-fill" style="width:${Math.min(100, vol / 250)}%"></div></div>
+        <div class="bar-pct">${cnt}</div>
+      </div>
+      <div class="goal-arc">建议每周 3-5 练 · 目标 ${t.kcal} kcal 摄入</div>
+    </div>
+
+    ${d.workouts.length ? `
+      <div class="sec-title"><span class="dot"></span>今日训练<span class="more" data-act="addWorkout">+ 新增</span></div>
+      ${d.workouts.map(w => `
+        <div class="card" style="margin-bottom:11px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1">
+              <div style="font-size:15px;font-weight:800">${esc(w.name)}</div>
+              <div class="tiny muted" style="margin-top:4px">${w.dur} 分钟 · ${S.workoutVolume(w).toLocaleString()} kg · ${S.workoutSets(w)} 组</div>
+            </div>
+            <button class="icon-btn" data-workout="${w.id}">${ICON.arrow}</button>
+          </div>
+          <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px">
+            ${w.exercises.map(ex => `<span class="tag">${esc(ex.name)} ${ex.sets.length}×</span>`).join('')}
+          </div>
+        </div>`).join('')}` : `
+      <div class="card" style="margin-top:14px">
+        <div class="empty">${ICON.dumbbell}
+          <div>今天还没有训练记录</div>
+          <button class="btn sm" style="margin-top:14px;max-width:180px" data-act="addWorkout">开始训练</button>
+        </div>
+      </div>`}
+    `;
+  }
+
+  function weekKcal() {
+    const out = [];
+    for (let i = 6; i >= 0; i--) out.push(S.dayTotals(S.dayOffset(S.todayKey(), -i)).kcal);
+    return out;
+  }
+  function weekLabels() {
+    const out = [];
+    const names = ['日', '一', '二', '三', '四', '五', '六'];
+    for (let i = 6; i >= 0; i--) {
+      const k = S.dayOffset(S.todayKey(), -i);
+      out.push(names[new Date(k + 'T00:00:00').getDay()]);
+    }
+    return out;
+  }
+  function weekSleep() {
+    const out = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = S.state.days[S.dayOffset(S.todayKey(), -i)];
+      out.push(d && d.sleep ? d.sleep : 0);
+    }
+    return out;
+  }
+
+  /* ==========================================================
+     饮食
+     ========================================================== */
+  V.diet = function () {
+    const k = S.todayKey();
+    const t = S.calcTargets();
+    const tot = S.dayTotals(k);
+    const d = S.day(k);
+    const slots = ['早餐', '午餐', '晚餐', '加餐'];
+
+    return `
+    <div class="sec-title" style="margin-top:8px"><span class="dot"></span>营养摄入</div>
+    <div class="card glow">
+      <div style="display:flex;align-items:center;gap:16px">
+        ${C.ring({
+          size: 112, stroke: 11, gap: 6,
+          segments: [
+            { value: Math.max(.001, t.carb - tot.c), color: 'rgba(61,220,132,.22)' },
+            { value: Math.max(.001, tot.c), color: 'var(--green)' },
+            { value: Math.max(.001, tot.p), color: 'var(--purple)' },
+            { value: Math.max(.001, tot.f), color: 'var(--yellow)' },
+          ],
+          center: String(tot.kcal), sub: '已摄入',
+        })}
+        <div style="flex:1">
+          <div style="font-size:13px;color:var(--t3);font-weight:700">今日剩余</div>
+          <div style="font-size:32px;font-weight:800;letter-spacing:-1.4px;line-height:1.15">${Math.max(0, t.kcal - tot.kcal)}<span style="font-size:13px;color:var(--t3);font-weight:600"> kcal</span></div>
+          <div class="tiny muted" style="margin-top:6px">目标 ${t.kcal} · 已摄入 ${tot.kcal}</div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;display:flex;flex-direction:column;gap:12px">
+        ${macroBar('蛋白质', tot.p, t.protein, 'var(--purple)', '#7c3aed')}
+        ${macroBar('碳水', tot.c, t.carb, 'var(--green)', '#16a34a')}
+        ${macroBar('脂肪', tot.f, t.fat, 'var(--yellow)', '#a3b800')}
+      </div>
+    </div>
+
+    <div class="sec-title"><span class="dot"></span>今日饮食<span class="more" data-act="addMeal">+ 添加</span></div>
+
+    ${slots.map(sl => {
+      const items = d.meals.filter(m => m.slot === sl);
+      const sum = items.reduce((a, m) => a + m.kcal, 0);
+      return `<div class="card" style="margin-bottom:11px;padding:14px">
+        <div style="display:flex;align-items:center;margin-bottom:${items.length ? 8 : 0}px">
+          <div style="font-size:14px;font-weight:800">${sl}</div>
+          <div class="tiny muted" style="margin-left:8px">${items.length ? sum + ' kcal' : '未记录'}</div>
+          <button class="icon-btn" style="margin-left:auto;width:28px;height:28px" data-addslot="${sl}">${ICON.plus}</button>
+        </div>
+        ${items.map(m => `
+          <div class="row" style="background:transparent;border:0;padding:8px 0">
+            <div class="mid"><div class="t" style="font-size:13.5px">${esc(m.name)}</div>
+              <div class="s">${m.grams}g · P${m.p} C${m.c} F${m.f}</div></div>
+            <div class="r"><div class="n">${m.kcal}</div><div class="u">kcal</div></div>
+            <button class="icon-btn" style="width:26px;height:26px;background:transparent;color:var(--t4)" data-del="${m.id}">${ICON.trash}</button>
+          </div>`).join('')}
+      </div>`;
+    }).join('')}
+
+    <div class="sec-title"><span class="dot"></span>快捷添加</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      ${['鸡胸肉', '鸡蛋', '米饭', '牛奶', '燕麦片', '西兰花', '香蕉', '乳清蛋白粉'].map(n => {
+        const f = D.FOODS.find(x => x.name === n);
+        return f ? `<button class="tag" data-quick="${f.id}" style="padding:9px 14px;font-size:12.5px">${n} · ${f.serving}g</button>` : '';
+      }).join('')}
+    </div>
+
+    <div style="height:8px"></div>`;
+  };
+
+  function macroBar(name, cur, goal, c1, c2) {
+    const pct = Math.min(1, cur / (goal || 1));
+    return `<div>
+      <div style="display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin-bottom:5px">
+        <span style="color:var(--t2)">${name}</span>
+        <span><b style="font-size:13px">${Math.round(cur)}</b><span class="muted" style="font-weight:600"> / ${goal}g</span></span>
+      </div>
+      <div class="prog"><i style="width:${pct * 100}%;background:linear-gradient(90deg,${c1},${c2})"></i></div>
+    </div>`;
+  }
+
+  /* ==========================================================
+     训练
+     ========================================================== */
+  V.train = function () {
+    const k = S.todayKey();
+    const d = S.day(k);
+    const musc = S.muscleVolume(7);
+    const totalVol = Object.values(S.state.days).reduce((a, dd) =>
+      a + (dd.workouts || []).reduce((b, w) => b + S.workoutVolume(w), 0), 0);
+
+    const prs = Object.keys(S.state.prs).map(id => {
+      const ex = D.EXERCISES.find(e => e.id === id);
+      return ex ? { ex, pr: S.state.prs[id] } : null;
+    }).filter(Boolean).sort((a, b) => b.pr.e1rm - a.pr.e1rm);
+
+    return `
+    <div class="sec-title" style="margin-top:8px"><span class="dot"></span>训练概览</div>
+    <div class="card glow">
+      <div style="display:flex;gap:14px;align-items:center">
+        <div style="flex:1">
+          <div class="tiny muted" style="font-weight:700">累计容量</div>
+          <div style="font-size:30px;font-weight:800;letter-spacing:-1.4px;line-height:1.2">${totalVol.toLocaleString()}<span style="font-size:12px;color:var(--t3)"> kg</span></div>
+          <div class="tiny muted" style="margin-top:5px">共 ${S.totalWorkouts()} 次训练</div>
+        </div>
+        <div style="text-align:center">
+          ${C.progressRing({ size: 78, stroke: 8, pct: Math.min(1, S.totalWorkouts() / 30), label: String(S.totalWorkouts()), sub: '次' })}
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-title"><span class="dot"></span>肌群分布<span class="more">近 7 天</span></div>
+    <div class="card">
+      <div class="muscle-wrap">
+        <div style="text-align:center">${C.bodyMap({ data: musc, w: 118, h: 184, mode: 'front' })}
+          <div class="tiny muted" style="margin-top:4px">正面</div></div>
+        <div style="text-align:center">${C.bodyMap({ data: musc, w: 118, h: 184, mode: 'back' })}
+          <div class="tiny muted" style="margin-top:4px">背面</div></div>
+      </div>
+      <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:7px 14px">
+        ${Object.entries(D.MUSCLES).filter(([mk]) => musc[mk]).sort((a, b) => musc[b[0]] - musc[a[0]]).slice(0, 8).map(([mk, m]) => `
+          <div style="display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700">
+            <i style="width:7px;height:7px;border-radius:50%;background:${m.color};flex:0 0 auto"></i>
+            <span style="color:var(--t2)">${m.name}</span>
+            <span style="margin-left:auto;color:var(--t3);font-weight:600">${Math.round(musc[mk] / 100) / 10}t</span>
+          </div>`).join('')}
+      </div>
+    </div>
+
+    <div class="sec-title"><span class="dot"></span>今日训练<span class="more" data-act="addWorkout">+ 新增</span></div>
+    ${d.workouts.length ? d.workouts.map(w => `
+      <div class="card" style="margin-bottom:11px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="flex:1">
+            <div style="font-size:15px;font-weight:800">${esc(w.name)}</div>
+            <div class="tiny muted" style="margin-top:4px">${w.dur} 分钟 · ${S.workoutVolume(w).toLocaleString()} kg · ${S.workoutSets(w)} 组</div>
+          </div>
+          <button class="icon-btn" data-workout="${w.id}">${ICON.arrow}</button>
+        </div>
+        <div style="margin-top:10px;display:flex;flex-direction:column;gap:4px">
+          ${w.exercises.map(ex => `
+            <div style="display:flex;font-size:12.5px;font-weight:600;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04)">
+              <span style="color:var(--t2)">${esc(ex.name)}</span>
+              <span style="margin-left:auto;color:var(--t3)">${ex.sets.length} 组 · ${Math.max(...ex.sets.map(s => s.weight))}kg</span>
+            </div>`).join('')}
+        </div>
+      </div>`).join('') : `<div class="card"><div class="empty">${ICON.dumbbell}<div>今天还没练</div>
+        <button class="btn sm" style="margin-top:14px;max-width:180px" data-act="addWorkout">开始训练</button></div></div>`}
+
+    <div class="sec-title"><span class="dot"></span>动作库<span class="more" data-act="allEx">全部 ${D.EXERCISES.length} 个</span></div>
+    <div class="list">
+      ${D.EXERCISES.slice(0, 8).map(ex => `
+        <div class="row" data-ex="${ex.id}">
+          <div class="ico" style="background:${D.MUSCLES[ex.primary].color}22;border-color:${D.MUSCLES[ex.primary].color}44">
+            <span style="width:9px;height:9px;border-radius:50%;background:${D.MUSCLES[ex.primary].color}"></span>
+          </div>
+          <div class="mid">
+            <div class="t">${esc(ex.name)}</div>
+            <div class="s">${D.MUSCLES[ex.primary].name} · ${ex.equip}</div>
+          </div>
+          ${ICON.arrow}
+        </div>`).join('')}
+    </div>
+
+    <div class="sec-title"><span class="dot"></span>个人纪录</div>
+    <div class="list">
+      ${prs.length ? prs.map(({ ex, pr }) => `
+        <div class="row" data-ex="${ex.id}">
+          <div class="mid">
+            <div class="t">${esc(ex.name)}</div>
+            <div class="s">${pr.weight}kg × ${pr.reps} · ${pr.date}</div>
+          </div>
+          <div class="r"><div class="n">${pr.e1rm}</div><div class="u">估算1RM</div></div>
+        </div>`).join('') : `<div class="card"><div class="empty">还没有个人纪录</div></div>`}
+    </div>
+
+    <div style="height:8px"></div>`;
+  };
+
+  /* ==========================================================
+     数据
+     ========================================================== */
+  V.body = function () {
+    const p = S.state.profile;
+    const t = S.calcTargets();
+    const ws = S.weightSeries(30);
+    const filled = ws.filter(x => x.w != null);
+    const first = filled.length ? filled[0].w : p.weight;
+    const last = filled.length ? filled[filled.length - 1].w : p.weight;
+    const change = S.round(last - first, 1);
+    const toGo = S.round(last - p.targetWeight, 1);
+    const pctGoal = Math.abs(first - p.targetWeight) > 0
+      ? Math.min(1, Math.abs(first - last) / Math.abs(first - p.targetWeight)) : 0;
+
+    const avgKcal = (() => {
+      let s = 0, n = 0;
+      for (let i = 0; i < 7; i++) { const v = S.dayTotals(S.dayOffset(S.todayKey(), -i)).kcal; if (v) { s += v; n++; } }
+      return n ? Math.round(s / n) : 0;
+    })();
+
+    return `
+    <div style="display:flex;align-items:center;gap:13px;margin:10px 4px 0">
+      <div class="avatar">${esc((p.name || 'N')[0])}</div>
+      <div style="flex:1">
+        <div style="font-size:19px;font-weight:800">${esc(p.name)}</div>
+        <div class="tiny muted" style="margin-top:3px">${p.sex === 'male' ? '男' : '女'} · ${p.age}岁 · ${p.height}cm · ${last}kg</div>
+      </div>
+      <button class="round-btn" data-act="settings">${ICON.edit}</button>
+    </div>
+
+    <div class="sec-title"><span class="dot"></span>体重趋势<span class="more">近 30 天</span></div>
+    <div class="card">
+      <div style="display:flex;align-items:flex-end;gap:12px;margin-bottom:10px">
+        <div>
+          <div style="font-size:34px;font-weight:800;letter-spacing:-1.6px;line-height:1">${last.toFixed(1)}<span style="font-size:13px;color:var(--t3)"> kg</span></div>
+          <div class="tiny" style="margin-top:5px;font-weight:700;color:${change <= 0 ? 'var(--green)' : 'var(--orange)'}">
+            ${change <= 0 ? '↓' : '↑'} ${Math.abs(change)} kg / 30天
+          </div>
+        </div>
+        <div style="margin-left:auto;text-align:right">
+          <div class="tiny muted" style="font-weight:700">目标</div>
+          <div style="font-size:16px;font-weight:800">${p.targetWeight} kg</div>
+          <div class="tiny muted" style="margin-top:3px">还差 ${Math.abs(toGo)} kg</div>
+        </div>
+      </div>
+      ${C.line({ w: 300, h: 96, points: ws, minPad: .6 })}
+      <div class="prog" style="margin-top:12px"><i style="width:${pctGoal * 100}%"></i></div>
+      <div class="tiny muted center" style="margin-top:7px">目标进度 ${Math.round(pctGoal * 100)}%</div>
+    </div>
+
+    <div class="grid2" style="margin-top:11px">
+      <div class="mini"><div class="h"><span>基础代谢</span></div>
+        <div class="big">${t.bmr}<span>kcal</span></div><div class="foot">Mifflin-St Jeor</div></div>
+      <div class="mini"><div class="h"><span>每日消耗</span></div>
+        <div class="big">${t.tdee}<span>kcal</span></div><div class="foot">活动系数 ${p.activity}</div></div>
+      <div class="mini"><div class="h"><span>日均摄入</span></div>
+        <div class="big">${avgKcal}<span>kcal</span></div><div class="foot">近 7 天平均</div></div>
+      <div class="mini"><div class="h"><span>目标速率</span></div>
+        <div class="big">${p.goalRate > 0 ? '+' : ''}${p.goalRate}<span>kg/周</span></div><div class="foot">日缺口 ${Math.abs(t.delta)} kcal</div></div>
+    </div>
+
+    <div class="sec-title"><span class="dot"></span>周摄入<span class="more">近 7 天</span></div>
+    <div class="card">
+      ${C.bars({ w: 300, h: 110, data: weekKcal(), goal: t.kcal, labels: weekLabels() })}
+    </div>
+
+    <div class="sec-title"><span class="dot"></span>成就<span class="more">${S.state.achievements.length}/${D.ACHIEVEMENTS.length}</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:9px">
+      ${D.ACHIEVEMENTS.map(a => {
+        const got = S.state.achievements.includes(a.id);
+        return `<div style="text-align:center;padding:12px 4px;border-radius:16px;
+          background:${got ? 'rgba(255,59,48,.12)' : 'rgba(255,255,255,.04)'};
+          border:1px solid ${got ? 'rgba(255,59,48,.3)' : 'rgba(255,255,255,.06)'};
+          opacity:${got ? 1 : .42}">
+          <div style="font-size:21px;line-height:1">${a.icon}</div>
+          <div style="font-size:9.5px;font-weight:700;margin-top:5px;color:var(--t2)">${a.name}</div>
+        </div>`;
+      }).join('')}
+    </div>
+
+    <div class="sec-title"><span class="dot"></span>更多</div>
+    <div class="card" style="padding:4px 16px">
+      <div class="kv" data-act="settings"><span class="k">个人设置与目标</span><span class="v">${ICON.arrow}</span></div>
+      <div class="kv" data-act="export"><span class="k">导出数据</span><span class="v">${ICON.arrow}</span></div>
+      <div class="kv" data-act="import"><span class="k">导入数据</span><span class="v">${ICON.arrow}</span></div>
+      <div class="kv" data-act="reset"><span class="k" style="color:var(--red)">清空全部数据</span><span class="v">${ICON.arrow}</span></div>
+    </div>
+
+    <div style="height:8px"></div>`;
+  };
+
+  global.NorgViews = {
+    get tab() { return curTab; },
+    set tab(v) { curTab = v; },
+    get mode() { return mode; },
+    set mode(v) { mode = v; },
+    get viewDate() { return viewDate; },
+    set viewDate(v) { viewDate = v; },
+    V, weekKcal, weekLabels, macroBar,
+  };
+})(window);
+
+
+/* ===== app.js ===== */
+/* ============================================================
+   Norg · 应用控制器
+   路由 / 事件委托 / 各类弹层流程
+   ============================================================ */
+(function (global) {
+  'use strict';
+
+  const S = global.NorgStore;
+  const C = global.NorgChart;
+  const U = global.NorgUI;
+  const D = global.NORG_DATA;
+  const VW = global.NorgViews;
+  const V = VW.V;
+  const esc = U.esc, ICON = U.ICON;
+  const $ = U.$, $$ = U.$$;
+
+  /* ==========================================================
+     渲染
+     ========================================================== */
+  function render() {
+    const tab = VW.tab;
+    const el = $('#view');
+    el.innerHTML = V[tab] ? V[tab]() : '';
+    el.scrollTop = 0;
+    window.scrollTo(0, 0);
+    $$('.tab').forEach(b => b.classList.toggle('is-active', b.dataset.tab === tab));
+    $('#streakNum').textContent = S.state.streak || 0;
+    // FAB
+    const old = $('#fab');
+    if (old) old.remove();
+    if (tab === 'diet' || tab === 'train') {
+      const f = document.createElement('button');
+      f.id = 'fab';
+      f.className = 'fab';
+      f.innerHTML = ICON.plus;
+      f.onclick = () => tab === 'diet' ? openAddMeal() : openAddWorkout();
+      document.body.appendChild(f);
+    }
+  }
+
+  /* ==========================================================
+     事件委托
+     ========================================================== */
+  function bindGlobal() {
+    $('#tabbar').addEventListener('click', e => {
+      const b = e.target.closest('.tab');
+      if (!b) return;
+      VW.tab = b.dataset.tab;
+      render();
+    });
+
+    $('#view').addEventListener('click', e => {
+      const t = e.target;
+
+      // 删除一餐
+      const del = t.closest('[data-del]');
+      if (del) {
+        e.stopPropagation();
+        const k = VW.viewDate || S.todayKey();
+        S.removeMeal(k, del.dataset.del);
+        U.toast('已删除');
+        render();
+        return;
+      }
+
+      // 打开某个动作
+      const ex = t.closest('[data-ex]');
+      if (ex) { openExercise(ex.dataset.ex); return; }
+
+      // 打开某次训练
+      const wk = t.closest('[data-workout]');
+      if (wk) { openWorkoutDetail(wk.dataset.workout); return; }
+
+      // 指定餐次添加
+      const as = t.closest('[data-addslot]');
+      if (as) { openAddMeal(as.dataset.addslot); return; }
+
+      // 快捷添加
+      const qk = t.closest('[data-quick]');
+      if (qk) {
+        const f = D.FOODS.find(x => x.id === qk.dataset.quick);
+        if (f) { S.addMeal(S.todayKey(), f, f.serving); U.toast(`已添加 ${f.name} ${f.serving}g`); render(); }
+        return;
+      }
+
+      // 模式切换
+      const md = t.closest('[data-mode]');
+      if (md) { VW.mode = md.dataset.mode; render(); return; }
+
+      // 通用动作
+      const act = t.closest('[data-act]');
+      if (!act) return;
+      const a = act.dataset.act;
+      switch (a) {
+        case 'addMeal': openAddMeal(); break;
+        case 'addWorkout': openAddWorkout(); break;
+        case 'editweight': openWeight(); break;
+        case 'prevday': VW.viewDate = S.dayOffset(VW.viewDate || S.todayKey(), -1); render(); break;
+        case 'nextday': {
+          const n = S.dayOffset(VW.viewDate || S.todayKey(), 1);
+          VW.viewDate = n > S.todayKey() ? S.todayKey() : n;
+          render();
+          break;
+        }
+        case 'goDiet': VW.tab = 'diet'; render(); break;
+        case 'settings': openSettings(); break;
+        case 'themes': openThemes(); break;
+        case 'achv': openAchievements(); break;
+        case 'pr': openPRs(); break;
+        case 'college': U.toast('Norg 学院 · 内容持续更新中'); break;
+        case 'plan': openPlan(); break;
+        case 'rank': openRank(); break;
+        case 'allEx': openAllExercises(); break;
+        case 'export': doExport(); break;
+        case 'import': doImport(); break;
+        case 'reset': doReset(); break;
+      }
+    });
+
+    $('#btnPro').onclick = () => U.toast('PRO 已解锁（演示版全部功能免费）');
+    $('#btnStreak').onclick = () => U.toast(`已连续记录 ${S.state.streak} 天`);
+    $('#sheetClose').onclick = U.closeSheet;
+    $('#sheetMask').onclick = U.closeSheet;
+  }
+
+  /* ==========================================================
+     记录饮食
+     ========================================================== */
+  let mealPick = { slot: null, food: null, grams: 100, cat: '全部', q: '' };
+
+  function openAddMeal(slot) {
+    mealPick = { slot: slot || null, food: null, grams: 100, cat: '全部', q: '' };
+    U.openSheet('记录饮食', mealSheetHTML(), { after: bindMealSheet });
+  }
+
+  function mealSheetHTML() {
+    const cats = ['全部', '主食', '蛋白', '乳制品', '蔬菜', '水果', '油脂', '外食', '饮品'];
+    const q = mealPick.q.trim();
+    let list = D.FOODS;
+    if (mealPick.cat !== '全部') list = list.filter(f => f.cat === mealPick.cat);
+    if (q) list = list.filter(f => (f.name + ' ' + f.alias).toLowerCase().includes(q.toLowerCase()));
+    list = list.slice(0, 60);
+
+    return `
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <div style="flex:1;position:relative">
+          <span style="position:absolute;left:13px;top:14px;width:18px;height:18px;color:var(--t4)">${ICON.search}</span>
+          <input class="input" id="fq" placeholder="搜索食物，如 鸡胸肉" value="${esc(mealPick.q)}" style="padding-left:38px" />
+        </div>
+      </div>
+      <div style="display:flex;gap:7px;overflow-x:auto;padding-bottom:10px;margin-bottom:6px">
+        ${cats.map(c => `<button class="tag ${mealPick.cat === c ? 'red' : ''}" data-cat="${c}" style="white-space:nowrap">${c}</button>`).join('')}
+      </div>
+      <div id="flist" style="max-height:44vh;overflow-y:auto;margin:0 -4px">
+        ${list.map(f => `
+          <div class="row" data-food="${f.id}" style="margin:0 4px 7px">
+            <div class="mid">
+              <div class="t">${esc(f.name)}</div>
+              <div class="s">每100g · P${f.p} C${f.c} F${f.f}</div>
+            </div>
+            <div class="r"><div class="n">${f.kcal}</div><div class="u">kcal</div></div>
+          </div>`).join('') || `<div class="empty">没有找到相关食物</div>`}
+      </div>`;
+  }
+
+  function bindMealSheet() {
+    const q = $('#fq');
+    if (q) {
+      q.addEventListener('input', () => {
+        mealPick.q = q.value;
+        $('#flist').innerHTML = renderFoodList();
+      });
+      q.addEventListener('focus', () => setTimeout(() => q.setSelectionRange(q.value.length, q.value.length), 10));
+    }
+    $('#sheetBody').addEventListener('click', e => {
+      const cat = e.target.closest('[data-cat]');
+      if (cat) {
+        mealPick.cat = cat.dataset.cat;
+        U.openSheet('记录饮食', mealSheetHTML(), { after: bindMealSheet });
+        return;
+      }
+      const fi = e.target.closest('[data-food]');
+      if (fi) {
+        mealPick.food = D.FOODS.find(f => f.id === fi.dataset.food);
+        mealPick.grams = mealPick.food.serving;
+        openGramsSheet();
+      }
+    });
+  }
+
+  function renderFoodList() {
+    let list = D.FOODS;
+    if (mealPick.cat !== '全部') list = list.filter(f => f.cat === mealPick.cat);
+    if (mealPick.q.trim()) {
+      const q = mealPick.q.trim().toLowerCase();
+      list = list.filter(f => (f.name + ' ' + f.alias).toLowerCase().includes(q));
+    }
+    list = list.slice(0, 60);
+    return list.map(f => `
+      <div class="row" data-food="${f.id}" style="margin:0 4px 7px">
+        <div class="mid"><div class="t">${esc(f.name)}</div>
+          <div class="s">每100g · P${f.p} C${f.c} F${f.f}</div></div>
+        <div class="r"><div class="n">${f.kcal}</div><div class="u">kcal</div></div>
+      </div>`).join('') || `<div class="empty">没有找到相关食物</div>`;
+  }
+
+  function openGramsSheet() {
+    const f = mealPick.food;
+    const slots = ['早餐', '午餐', '晚餐', '加餐'];
+    if (!mealPick.slot) mealPick.slot = S.slotOfNow ? S.slotOfNow() : '午餐';
+
+    const html = `
+      <div style="display:flex;align-items:center;gap:13px;margin-bottom:16px">
+        <div class="ico" style="width:50px;height:50px;border-radius:16px;display:grid;place-items:center;font-size:23px;background:rgba(255,59,48,.14);border:1px solid rgba(255,59,48,.28)">🍽️</div>
+        <div>
+          <div style="font-size:17px;font-weight:800">${esc(f.name)}</div>
+          <div class="tiny muted" style="margin-top:3px">每 100g：${f.kcal} kcal · P${f.p} C${f.c} F${f.f}</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>份量（克）</label>
+        <input class="input" id="gIn" type="number" inputmode="decimal" value="${mealPick.grams}" />
+      </div>
+      <div style="display:flex;gap:7px;margin-bottom:14px;flex-wrap:wrap">
+        ${[50, 100, 150, 200, 250, 300].map(g => `<button class="tag" data-g="${g}">${g}g</button>`).join('')}
+        <button class="tag red" data-g="${f.serving}">1份 ${f.serving}g</button>
+      </div>
+
+      <div class="field">
+        <label>餐次</label>
+        <div style="display:flex;gap:7px;flex-wrap:wrap">
+          ${slots.map(s => `<button class="tag ${mealPick.slot === s ? 'red' : ''}" data-slot="${s}">${s}</button>`).join('')}
+        </div>
+      </div>
+
+      <div class="card" style="margin:16px 0" id="preview">
+        ${previewHTML(f, mealPick.grams)}
+      </div>
+
+      <button class="btn" id="doAdd">加入记录</button>
+    `;
+    U.openSheet('添加食物', html, {
+      after: () => {
+        const gIn = $('#gIn');
+        const upd = () => {
+          mealPick.grams = Number(gIn.value) || 0;
+          $('#preview').innerHTML = previewHTML(f, mealPick.grams);
+        };
+        gIn.addEventListener('input', upd);
+        $('#sheetBody').addEventListener('click', e => {
+          const g = e.target.closest('[data-g]');
+          if (g) { gIn.value = g.dataset.g; upd(); return; }
+          const s = e.target.closest('[data-slot]');
+          if (s) {
+            mealPick.slot = s.dataset.slot;
+            $$('[data-slot]').forEach(b => b.classList.toggle('red', b.dataset.slot === mealPick.slot));
+            return;
+          }
+          if (e.target.closest('#doAdd')) {
+            if (!mealPick.grams) { U.toast('请输入份量'); return; }
+            S.addMeal(S.todayKey(), f, mealPick.grams, mealPick.slot);
+            U.closeSheet();
+            U.toast(`已记录 ${f.name} ${mealPick.grams}g`);
+            render();
+          }
+        });
+      },
+    });
+  }
+
+  function previewHTML(f, g) {
+    const k = Math.round(f.kcal * g / 100);
+    const p = Math.round(f.p * g / 100 * 10) / 10;
+    const c = Math.round(f.c * g / 100 * 10) / 10;
+    const fa = Math.round(f.f * g / 100 * 10) / 10;
+    return `<div style="display:flex;align-items:center">
+      <div>
+        <div class="tiny muted" style="font-weight:700">本次摄入</div>
+        <div style="font-size:28px;font-weight:800;letter-spacing:-1.2px;line-height:1.2">${k}<span style="font-size:12px;color:var(--t3)"> kcal</span></div>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:14px;text-align:right">
+        <div><div class="tiny muted">蛋白</div><div style="font-size:15px;font-weight:800;color:var(--purple)">${p}g</div></div>
+        <div><div class="tiny muted">碳水</div><div style="font-size:15px;font-weight:800;color:var(--green)">${c}g</div></div>
+        <div><div class="tiny muted">脂肪</div><div style="font-size:15px;font-weight:800;color:var(--yellow)">${fa}g</div></div>
+      </div>
+    </div>`;
+  }
+
+  /* ==========================================================
+     记录体重
+     ========================================================== */
+  function openWeight() {
+    const k = VW.viewDate || S.todayKey();
+    const d = S.day(k);
+    const cur = d.weight != null ? d.weight : S.state.profile.weight;
+    const html = `
+      <div class="field">
+        <label>体重（kg）</label>
+        <input class="input" id="wIn" type="number" inputmode="decimal" step="0.1" value="${cur}" style="font-size:26px;height:60px;font-weight:800;text-align:center" />
+      </div>
+      <div style="display:flex;gap:7px;margin-bottom:16px;justify-content:center">
+        ${[-0.5, -0.1, +0.1, +0.5].map(x => `<button class="tag" data-adj="${x}">${x > 0 ? '+' : ''}${x}</button>`).join('')}
+      </div>
+      <div class="card" style="margin-bottom:16px">
+        ${C.line({ w: 280, h: 80, points: S.weightSeries(14) })}
+        <div class="tiny muted center" style="margin-top:6px">近 14 天趋势</div>
+      </div>
+      <button class="btn" id="doW">保存体重</button>
+    `;
+    U.openSheet('记录体重', html, {
+      after: () => {
+        const inp = $('#wIn');
+        $('#sheetBody').addEventListener('click', e => {
+          const adj = e.target.closest('[data-adj]');
+          if (adj) { inp.value = (Number(inp.value) + Number(adj.dataset.adj)).toFixed(1); return; }
+          if (e.target.closest('#doW')) {
+            const v = Number(inp.value);
+            if (!v || v < 20 || v > 300) { U.toast('请输入合理体重'); return; }
+            S.setWeight(k, v);
+            U.closeSheet();
+            U.toast('体重已记录');
+            render();
+          }
+        });
+      },
+    });
+  }
+
+  /* ==========================================================
+     动作详情
+     ========================================================== */
+  function openExercise(id) {
+    const ex = D.EXERCISES.find(e => e.id === id);
+    if (!ex) return;
+    let tab = 'about';
+    const pr = S.state.prs[id];
+
+    const build = () => {
+      const m = D.MUSCLES[ex.primary];
+      let body = '';
+      if (tab === 'about') {
+        body = `
+          <div class="ex-hero" style="margin-bottom:14px">${C.exerciseArt(ex)}</div>
+          <div class="tiny muted" style="margin-bottom:12px">官方动作示范</div>
+          <div style="font-size:13.5px;line-height:1.75;color:var(--t2)">${esc(ex.desc)}</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
+            <div class="card" style="padding:12px">
+              <div class="tiny muted" style="font-weight:700">主要肌群</div>
+              <div style="font-size:15px;font-weight:800;margin-top:4px">${m.name}</div>
+            </div>
+            <div class="card" style="padding:12px">
+              <div class="tiny muted" style="font-weight:700">器械</div>
+              <div style="font-size:15px;font-weight:800;margin-top:4px">${esc(ex.equip)}</div>
+            </div>
+          </div>
+          <div class="sec-title" style="margin:18px 2px 10px"><span class="dot"></span>目标肌群</div>
+          <div class="muscle-wrap">
+            <div style="text-align:center">${C.bodyMap({ data: Object.fromEntries(ex.muscles.map((k, i) => [k, ex.muscles.length - i])), w: 110, h: 172, mode: 'front' })}</div>
+            <div style="text-align:center">${C.bodyMap({ data: Object.fromEntries(ex.muscles.map((k, i) => [k, ex.muscles.length - i])), w: 110, h: 172, mode: 'back' })}</div>
+          </div>
+          <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:7px">
+            ${ex.muscles.map(k => `<span class="tag"><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${D.MUSCLES[k].color};margin-right:5px"></i>${D.MUSCLES[k].name}</span>`).join('')}
+          </div>
+          <div class="sec-title" style="margin:18px 2px 10px"><span class="dot"></span>动作要领</div>
+          <div style="display:flex;flex-direction:column;gap:9px">
+            ${ex.steps.map((s, i) => `<div style="display:flex;gap:10px;font-size:13px;line-height:1.6;color:var(--t2)">
+              <span style="flex:0 0 auto;width:20px;height:20px;border-radius:50%;background:rgba(255,59,48,.16);color:#ff8b82;font-size:11px;font-weight:800;display:grid;place-items:center">${i + 1}</span>
+              <span>${esc(s)}</span></div>`).join('')}
+          </div>
+          ${ex.tips.length ? `
+            <div class="sec-title" style="margin:18px 2px 10px"><span class="dot"></span>教练提示</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              ${ex.tips.map(t => `<div style="display:flex;gap:9px;font-size:12.5px;line-height:1.6;color:var(--t3)">
+                <span style="color:var(--orange)">▸</span><span>${esc(t)}</span></div>`).join('')}
+            </div>` : ''}
+        `;
+      } else if (tab === 'history') {
+        const hist = [];
+        Object.entries(S.state.days).forEach(([dk, dd]) => {
+          (dd.workouts || []).forEach(w => {
+            (w.exercises || []).forEach(e2 => {
+              if (e2.exId === id) hist.push({ dk, sets: e2.sets });
+            });
+          });
+        });
+        hist.sort((a, b) => b.dk.localeCompare(a.dk));
+        body = hist.length ? hist.map(h => `
+          <div class="card" style="margin-bottom:10px;padding:13px 15px">
+            <div style="display:flex;font-size:12.5px;font-weight:800;margin-bottom:8px">
+              <span>${h.dk}</span>
+              <span class="muted" style="margin-left:auto;font-weight:600">${h.sets.filter(s => s.done).length} 组 · ${Math.round(h.sets.reduce((a, s) => a + s.weight * s.reps, 0))} kg</span>
+            </div>
+            ${h.sets.map((s, i) => `<div class="set-line">
+              <span class="idx">${i + 1}</span>
+              <span class="v">${s.weight}<span class="u"> kg</span></span>
+              <span class="v">${s.reps}<span class="u"> 次</span></span>
+              <span class="muted">${S.e1rm(s.weight, s.reps)}<span class="u"> 1RM</span></span>
+              <span></span>
+            </div>`).join('')}
+          </div>`).join('') : `<div class="empty">还没有该动作的历史记录</div>`;
+      } else if (tab === 'progress') {
+        const pts = [];
+        Object.entries(S.state.days).forEach(([dk, dd]) => {
+          (dd.workouts || []).forEach(w => {
+            (w.exercises || []).forEach(e2 => {
+              if (e2.exId === id) {
+                const best = Math.max(...e2.sets.filter(s => s.done).map(s => S.e1rm(s.weight, s.reps)), 0);
+                if (best) pts.push({ k: dk, v: best });
+              }
+            });
+          });
+        });
+        pts.sort((a, b) => a.k.localeCompare(b.k));
+        body = pts.length > 1 ? `
+          <div class="card">
+            <div style="font-size:12px;font-weight:700;color:var(--t3);margin-bottom:10px">估算 1RM 变化</div>
+            ${C.line({ w: 280, h: 110, points: pts.map(p => ({ w: p.v })), minPad: 2 })}
+            <div style="display:flex;justify-content:space-between;margin-top:8px" class="tiny muted">
+              <span>${pts[0].k}</span><span>${pts[pts.length - 1].k}</span>
+            </div>
+          </div>
+          <div class="grid2" style="margin-top:11px">
+            <div class="mini"><div class="h"><span>起始</span></div><div class="big">${pts[0].v}<span>kg</span></div></div>
+            <div class="mini"><div class="h"><span>当前</span></div><div class="big">${pts[pts.length - 1].v}<span>kg</span></div></div>
+          </div>` : `<div class="empty">数据不足，再练几次就能看到进步曲线</div>`;
+      } else {
+        body = `
+          <div class="card" style="margin-bottom:12px">
+            <div class="tiny muted" style="font-weight:700">个人最佳</div>
+            <div style="font-size:34px;font-weight:800;letter-spacing:-1.4px;line-height:1.2">${pr ? pr.e1rm : '--'}<span style="font-size:13px;color:var(--t3)"> kg 估算1RM</span></div>
+            <div class="tiny muted" style="margin-top:5px">${pr ? `${pr.weight}kg × ${pr.reps} · ${pr.date}` : '还没有纪录'}</div>
+          </div>
+          <div class="card">
+            <div style="font-size:12px;font-weight:700;color:var(--t3);margin-bottom:10px">1RM 换算表（Epley）</div>
+            ${[1, 2, 3, 5, 6, 8, 10, 12, 15].map(r => {
+              const base = pr ? pr.e1rm : 0;
+              const w = base ? S.round(base / (1 + r / 30), 1) : 0;
+              return `<div class="set-line" style="grid-template-columns:1fr 1fr 1fr">
+                <span class="muted">${r} RM</span>
+                <span class="v">${w || '--'}<span class="u"> kg</span></span>
+                <span class="muted tiny">${['力量', '力量', '力量', '', '增肌', '增肌', '增肌', '耐力', '耐力'][r - 1] || ''}</span>
+              </div>`;
+            }).join('')}
+          </div>`;
+      }
+
+      return `
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">
+          <span class="tag red">${D.MUSCLES[ex.primary].name}</span>
+          <span class="tag">${esc(ex.equip)}</span>
+        </div>
+        <div class="seg" style="margin-top:12px;margin-bottom:14px">
+          <button class="${tab === 'about' ? 'on' : ''}" data-etab="about">关于</button>
+          <button class="${tab === 'history' ? 'on' : ''}" data-etab="history">历史记录</button>
+          <button class="${tab === 'progress' ? 'on' : ''}" data-etab="progress">进度</button>
+          <button class="${tab === 'record' ? 'on' : ''}" data-etab="record">纪录</button>
+        </div>
+        ${body}
+        <button class="btn" style="margin-top:18px" id="logThis">记录这组训练</button>
+      `;
+    };
+
+    const rerender = () => {
+      U.openSheet(ex.name, build(), { after: rerender });
+    };
+
+    U.openSheet(ex.name, build(), {
+      after: () => {
+        $('#sheetBody').addEventListener('click', e => {
+          const tb = e.target.closest('[data-etab]');
+          if (tb) {
+            tab = tb.dataset.etab;
+            rerender();
+            return;
+          }
+          if (e.target.closest('#logThis')) openQuickLog(ex);
+        });
+      },
+    });
+  }
+
+  /* ---------- 快速记一组 ---------- */
+  function openQuickLog(ex) {
+    const last = (() => {
+      const arr = [];
+      Object.entries(S.state.days).forEach(([dk, dd]) => {
+        (dd.workouts || []).forEach(w => (w.exercises || []).forEach(e2 => {
+          if (e2.exId === ex.id) arr.push({ dk, sets: e2.sets });
+        }));
+      });
+      arr.sort((a, b) => b.dk.localeCompare(a.dk));
+      return arr[0];
+    })();
+    const lastSet = last && last.sets.length ? last.sets[last.sets.length - 1] : { weight: 20, reps: 10 };
+
+    const html = `
+      <div class="tiny muted" style="margin-bottom:12px;font-weight:700">${esc(ex.name)} · ${D.MUSCLES[ex.primary].name}</div>
+      <div class="row-in">
+        <div class="field"><label>重量 (kg)</label>
+          <input class="input" id="qw" type="number" inputmode="decimal" step="0.5" value="${lastSet.weight}" style="text-align:center;font-size:20px;font-weight:800;height:54px" /></div>
+        <div class="field"><label>次数</label>
+          <input class="input" id="qr" type="number" inputmode="numeric" value="${lastSet.reps}" style="text-align:center;font-size:20px;font-weight:800;height:54px" /></div>
+      </div>
+      <div class="card" style="margin-bottom:16px" id="qprev">${qlPrev(lastSet.weight, lastSet.reps)}</div>
+      <button class="btn" id="doQ">保存这组</button>
+    `;
+    U.openSheet('记录一组', html, {
+      after: () => {
+        const w = $('#qw'), r = $('#qr');
+        const upd = () => { $('#qprev').innerHTML = qlPrev(Number(w.value), Number(r.value)); };
+        w.addEventListener('input', upd); r.addEventListener('input', upd);
+        $('#sheetBody').addEventListener('click', e => {
+          if (!e.target.closest('#doQ')) return;
+          const weight = Number(w.value), reps = Number(r.value);
+          if (!weight || !reps) { U.toast('请填写重量与次数'); return; }
+
+          const k = S.todayKey();
+          const d = S.day(k);
+          if (!d.workouts.length) {
+            d.workouts.push({ id: S.uid(), name: '自由训练', ts: Date.now(), dur: 45, exercises: [] });
+          }
+          const w0 = d.workouts[d.workouts.length - 1];
+          let e0 = w0.exercises.find(x => x.exId === ex.id);
+          if (!e0) { e0 = { exId: ex.id, name: ex.name, sets: [] }; w0.exercises.push(e0); }
+          e0.sets.push({ id: S.uid(), weight, reps, done: true });
+
+          // PR
+          const rm = S.e1rm(weight, reps);
+          const old = S.state.prs[ex.id];
+          if (!old || rm > old.e1rm) {
+            S.state.prs[ex.id] = { weight, reps, e1rm: rm, date: k };
+            U.toast(`🎉 新纪录！估算 1RM ${rm} kg`);
+          } else {
+            U.toast(`已记录 ${weight}kg × ${reps}`);
+          }
+          S.bumpStreak(k);
+          S.save();
+          S.checkAchievements();
+          U.closeSheet();
+          render();
+        });
+      },
+    });
+  }
+
+  function qlPrev(w, r) {
+    const rm = S.e1rm(w, r);
+    const vol = Math.round(w * r);
+    return `<div style="display:flex">
+      <div><div class="tiny muted">估算 1RM</div><div style="font-size:20px;font-weight:800">${rm || '--'}<span style="font-size:11px;color:var(--t3)"> kg</span></div></div>
+      <div style="margin-left:auto;text-align:right"><div class="tiny muted">本组容量</div><div style="font-size:20px;font-weight:800">${vol}<span style="font-size:11px;color:var(--t3)"> kg</span></div></div>
+    </div>`;
+  }
+
+  /* ==========================================================
+     训练详情
+     ========================================================== */
+  function openWorkoutDetail(id) {
+    const k = S.todayKey();
+    const d = S.day(k);
+    const w = d.workouts.find(x => x.id === id);
+    if (!w) return;
+
+    const html = `
+      <div style="display:flex;gap:14px;margin-bottom:16px">
+        <div><div class="tiny muted">容量</div><div style="font-size:22px;font-weight:800">${S.workoutVolume(w).toLocaleString()}<span style="font-size:11px;color:var(--t3)"> kg</span></div></div>
+        <div><div class="tiny muted">组数</div><div style="font-size:22px;font-weight:800">${S.workoutSets(w)}</div></div>
+        <div><div class="tiny muted">时长</div><div style="font-size:22px;font-weight:800">${w.dur}<span style="font-size:11px;color:var(--t3)"> 分</span></div></div>
+      </div>
+      ${w.exercises.map(ex => {
+        const meta = D.EXERCISES.find(e => e.id === ex.exId);
+        return `<div class="card" style="margin-bottom:11px;padding:13px 15px">
+          <div style="display:flex;align-items:center;margin-bottom:8px">
+            <div style="font-size:14px;font-weight:800">${esc(ex.name)}</div>
+            <span class="tag" style="margin-left:auto;font-size:10px">${meta ? D.MUSCLES[meta.primary].name : ''}</span>
+          </div>
+          ${ex.sets.map((s, i) => `<div class="set-line">
+            <span class="idx">${i + 1}</span>
+            <span class="v">${s.weight}<span class="u"> kg</span></span>
+            <span class="v">${s.reps}<span class="u"> 次</span></span>
+            <span class="muted">${S.e1rm(s.weight, s.reps)}<span class="u"> 1RM</span></span>
+            <span class="del" data-rmset="${ex.exId}|${s.id}">${ICON.trash}</span>
+          </div>`).join('')}
+        </div>`;
+      }).join('')}
+      <button class="btn ghost" id="addExToW" style="margin-top:6px">添加动作</button>
+      <button class="btn" id="finishW" style="margin-top:10px">完成训练</button>
+    `;
+
+    U.openSheet(w.name, html, {
+      after: () => {
+        $('#sheetBody').addEventListener('click', e => {
+          const rm = e.target.closest('[data-rmset]');
+          if (rm) {
+            const [exId, setId] = rm.dataset.rmset.split('|');
+            const ex = w.exercises.find(x => x.exId === exId);
+            if (ex) ex.sets = ex.sets.filter(s => s.id !== setId);
+            S.save();
+            U.closeSheet();
+            openWorkoutDetail(id);
+            render();
+            return;
+          }
+          if (e.target.closest('#addExToW')) { openPickExercise(w); return; }
+          if (e.target.closest('#finishW')) {
+            U.closeSheet();
+            U.toast('训练完成 💪');
+            S.checkAchievements();
+            render();
+          }
+        });
+      },
+    });
+  }
+
+  /* ==========================================================
+     开始训练：选动作
+     ========================================================== */
+  function openAddWorkout() {
+    const k = S.todayKey();
+    const d = S.day(k);
+    const html = `
+      <div class="field"><label>训练名称</label>
+        <input class="input" id="wname" value="自由训练" /></div>
+      <div class="field"><label>时长（分钟）</label>
+        <input class="input" id="wdur" type="number" inputmode="numeric" value="45" /></div>
+      <div class="tiny muted" style="margin:14px 0 10px;font-weight:700">快速模板</div>
+      <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px">
+        <button class="tag" data-tpl="push">推日 · 胸肩三头</button>
+        <button class="tag" data-tpl="pull">拉日 · 背二头</button>
+        <button class="tag" data-tpl="legs">腿日 · 下肢</button>
+      </div>
+      <button class="btn" id="doWk">创建训练</button>
+      <div class="tiny muted center" style="margin-top:12px">创建后即可逐个动作记录组数</div>
+    `;
+    U.openSheet('开始训练', html, {
+      after: () => {
+        let tpl = null;
+        $('#sheetBody').addEventListener('click', e => {
+          const tp = e.target.closest('[data-tpl]');
+          if (tp) {
+            tpl = tp.dataset.tpl;
+            $$('[data-tpl]').forEach(b => b.classList.toggle('red', b === tp));
+            const names = { push: '推日 · 胸肩三头', pull: '拉日 · 背二头', legs: '腿日 · 下肢' };
+            $('#wname').value = names[tpl];
+            return;
+          }
+          if (!e.target.closest('#doWk')) return;
+          const name = $('#wname').value.trim() || '自由训练';
+          const dur = Number($('#wdur').value) || 45;
+          const preset = {
+            push: ['杠铃平板卧推', '上斜哑铃卧推', '哑铃侧平举', '绳索下压'],
+            pull: ['高位下拉', '杠铃划船', '面拉', '哑铃交替弯举'],
+            legs: ['杠铃深蹲', '罗马尼亚硬拉', '腿举', '站姿提踵'],
+          };
+          const exs = tpl ? preset[tpl].map(n => D.EXERCISES.find(x => x.name === n)).filter(Boolean)
+                          : [];
+          const w = {
+            id: S.uid(), name, ts: Date.now(), dur,
+            exercises: exs.map(ex => ({ exId: ex.id, name: ex.name, sets: [] })),
+          };
+          d.workouts.push(w);
+          S.save();
+          U.closeSheet();
+          U.toast('训练已创建');
+          render();
+          setTimeout(() => openWorkoutDetail(w.id), 220);
+        });
+      },
+    });
+  }
+
+  function openPickExercise(w) {
+    const html = `
+      <div style="display:flex;gap:7px;overflow-x:auto;padding-bottom:10px">
+        ${Object.entries(D.MUSCLES).map(([k, m]) => `<button class="tag" data-mf="${k}" style="white-space:nowrap">${m.name}</button>`).join('')}
+      </div>
+      <div id="exlist" style="max-height:52vh;overflow-y:auto">
+        ${D.EXERCISES.map(ex => `
+          <div class="row" data-pickex="${ex.id}" style="margin-bottom:7px">
+            <div class="mid"><div class="t">${esc(ex.name)}</div>
+              <div class="s">${D.MUSCLES[ex.primary].name} · ${esc(ex.equip)}</div></div>
+            <span style="color:var(--t4)">${ICON.plus}</span>
+          </div>`).join('')}
+      </div>`;
+    U.openSheet('选择动作', html, {
+      after: () => {
+        $('#sheetBody').addEventListener('click', e => {
+          const mf = e.target.closest('[data-mf]');
+          if (mf) {
+            const k = mf.dataset.mf;
+            $('#exlist').innerHTML = D.EXERCISES.filter(x => x.primary === k).map(ex => `
+              <div class="row" data-pickex="${ex.id}" style="margin-bottom:7px">
+                <div class="mid"><div class="t">${esc(ex.name)}</div>
+                  <div class="s">${D.MUSCLES[ex.primary].name} · ${esc(ex.equip)}</div></div>
+                <span style="color:var(--t4)">${ICON.plus}</span>
+              </div>`).join('');
+            return;
+          }
+          const pk = e.target.closest('[data-pickex]');
+          if (pk) {
+            const ex = D.EXERCISES.find(x => x.id === pk.dataset.pickex);
+            if (ex && !w.exercises.find(x => x.exId === ex.id)) {
+              w.exercises.push({ exId: ex.id, name: ex.name, sets: [] });
+              S.save();
+            }
+            U.closeSheet();
+            setTimeout(() => openWorkoutDetail(w.id), 180);
+            render();
+          }
+        });
+      },
+    });
+  }
+
+  /* ==========================================================
+     设置
+     ========================================================== */
+  function openSettings() {
+    const p = S.state.profile;
+    const t = S.calcTargets();
+    const html = `
+      <div class="field"><label>昵称</label><input class="input" id="sName" value="${esc(p.name)}" /></div>
+      <div class="row-in">
+        <div class="field"><label>性别</label>
+          <select class="select" id="sSex">
+            <option value="male" ${p.sex === 'male' ? 'selected' : ''}>男</option>
+            <option value="female" ${p.sex === 'female' ? 'selected' : ''}>女</option>
+          </select></div>
+        <div class="field"><label>年龄</label><input class="input" id="sAge" type="number" value="${p.age}" /></div>
+      </div>
+      <div class="row-in">
+        <div class="field"><label>身高 (cm)</label><input class="input" id="sH" type="number" value="${p.height}" /></div>
+        <div class="field"><label>体重 (kg)</label><input class="input" id="sW" type="number" step="0.1" value="${p.weight}" /></div>
+      </div>
+      <div class="row-in">
+        <div class="field"><label>目标体重 (kg)</label><input class="input" id="sTW" type="number" step="0.1" value="${p.targetWeight}" /></div>
+        <div class="field"><label>目标速率 (kg/周)</label>
+          <select class="select" id="sRate">
+            ${[-0.75, -0.5, -0.25, 0, 0.25, 0.5].map(v => `<option value="${v}" ${p.goalRate == v ? 'selected' : ''}>${v > 0 ? '+' : ''}${v}</option>`).join('')}
+          </select></div>
+      </div>
+      <div class="field"><label>活动水平</label>
+        <select class="select" id="sAct">
+          <option value="1.2" ${p.activity == 1.2 ? 'selected' : ''}>久坐（几乎不运动）</option>
+          <option value="1.375" ${p.activity == 1.375 ? 'selected' : ''}>轻度（每周 1-3 练）</option>
+          <option value="1.55" ${p.activity == 1.55 ? 'selected' : ''}>中度（每周 3-5 练）</option>
+          <option value="1.725" ${p.activity == 1.725 ? 'selected' : ''}>高强度（每周 6-7 练）</option>
+          <option value="1.9" ${p.activity == 1.9 ? 'selected' : ''}>极高（体力劳动）</option>
+        </select></div>
+      <div class="row-in">
+        <div class="field"><label>蛋白 (g/kg)</label><input class="input" id="sP" type="number" step="0.1" value="${p.proteinPerKg}" /></div>
+        <div class="field"><label>脂肪占比</label><input class="input" id="sF" type="number" step="0.05" value="${p.fatPct}" /></div>
+      </div>
+
+      <div class="card" style="margin:16px 0">
+        <div style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;color:var(--t2)">
+          <span>BMR ${t.bmr}</span><span>TDEE ${t.tdee}</span><span style="color:var(--red)">目标 ${t.kcal}</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:11.5px;font-weight:700;color:var(--t3);margin-top:7px">
+          <span>蛋白 ${t.protein}g</span><span>碳水 ${t.carb}g</span><span>脂肪 ${t.fat}g</span>
+        </div>
+      </div>
+
+      <button class="btn" id="doSave">保存设置</button>
+    `;
+    U.openSheet('个人设置', html, {
+      after: () => {
+        $('#sheetBody').addEventListener('click', e => {
+          if (!e.target.closest('#doSave')) return;
+          const g = id => $('#' + id);
+          p.name = g('sName').value.trim() || '训练者';
+          p.sex = g('sSex').value;
+          p.age = Number(g('sAge').value) || 25;
+          p.height = Number(g('sH').value) || 175;
+          p.weight = Number(g('sW').value) || 70;
+          p.targetWeight = Number(g('sTW').value) || 65;
+          p.goalRate = Number(g('sRate').value);
+          p.activity = Number(g('sAct').value);
+          p.proteinPerKg = Number(g('sP').value) || 2;
+          p.fatPct = Number(g('sF').value) || .25;
+          S.save();
+          U.closeSheet();
+          U.toast('设置已保存');
+          render();
+        });
+      },
+    });
+  }
+
+  /* ==========================================================
+     主题市场
+     ========================================================== */
+  function openThemes() {
+    const cur = S.state.profile.theme;
+    const html = `
+      <div class="tiny muted" style="margin-bottom:14px">选择一套配色，立即应用到整个 App。</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px">
+        ${D.THEMES.map(th => `
+          <div data-th="${th.id}" style="cursor:pointer;border-radius:18px;overflow:hidden;
+            border:2px solid ${cur === th.id ? th.accent : 'rgba(255,255,255,.08)'};background:${th.bg}">
+            <div style="height:74px;background:radial-gradient(90% 120% at 50% 110%, ${th.glow}, transparent 70%)"></div>
+            <div style="padding:10px 12px;display:flex;align-items:center;gap:8px">
+              <span style="width:14px;height:14px;border-radius:50%;background:${th.accent};box-shadow:0 0 10px ${th.accent}"></span>
+              <span style="font-size:13px;font-weight:800">${th.name}</span>
+              ${cur === th.id ? `<span style="margin-left:auto;color:${th.accent}">${ICON.check}</span>` : ''}
+            </div>
+          </div>`).join('')}
+      </div>`;
+    U.openSheet('主题市场', html, {
+      after: () => {
+        $('#sheetBody').addEventListener('click', e => {
+          const th = e.target.closest('[data-th]');
+          if (!th) return;
+          S.applyTheme(th.dataset.th);
+          U.closeSheet();
+          U.toast('主题已应用');
+          render();
+        });
+      },
+    });
+  }
+
+  /* ==========================================================
+     成就 / 纪录 / 计划 / 段位 / 动作库
+     ========================================================== */
+  function openAchievements() {
+    const got = S.state.achievements;
+    const html = `
+      <div class="tiny muted" style="margin-bottom:14px">已解锁 ${got.length} / ${D.ACHIEVEMENTS.length}</div>
+      <div style="display:flex;flex-direction:column;gap:9px">
+        ${D.ACHIEVEMENTS.map(a => {
+          const on = got.includes(a.id);
+          return `<div class="row" style="opacity:${on ? 1 : .45}">
+            <div class="ico" style="font-size:20px;background:${on ? 'rgba(255,59,48,.14)' : 'rgba(255,255,255,.05)'}">${a.icon}</div>
+            <div class="mid"><div class="t">${a.name}</div><div class="s">${a.desc}</div></div>
+            ${on ? `<span style="color:var(--red)">${ICON.check}</span>` : `<span class="tiny muted">未解锁</span>`}
+          </div>`;
+        }).join('')}
+      </div>`;
+    U.openSheet('成就', html);
+  }
+
+  function openPRs() {
+    const prs = Object.keys(S.state.prs).map(id => {
+      const ex = D.EXERCISES.find(e => e.id === id);
+      return ex ? { ex, pr: S.state.prs[id] } : null;
+    }).filter(Boolean).sort((a, b) => b.pr.e1rm - a.pr.e1rm);
+    const html = prs.length ? prs.map(({ ex, pr }) => `
+      <div class="row" data-ex="${ex.id}">
+        <div class="mid"><div class="t">${esc(ex.name)}</div>
+          <div class="s">${pr.weight}kg × ${pr.reps} · ${pr.date}</div></div>
+        <div class="r"><div class="n">${pr.e1rm}</div><div class="u">估算1RM</div></div>
+      </div>`).join('') : `<div class="empty">还没有个人纪录，去练一组吧</div>`;
+    U.openSheet('个人纪录', html, {
+      after: () => {
+        $('#sheetBody').addEventListener('click', e => {
+          const ex = e.target.closest('[data-ex]');
+          if (ex) { U.closeSheet(); setTimeout(() => openExercise(ex.dataset.ex), 200); }
+        });
+      },
+    });
+  }
+
+  function openAllExercises() {
+    const html = `
+      <div style="display:flex;gap:7px;overflow-x:auto;padding-bottom:10px">
+        ${Object.entries(D.MUSCLES).map(([k, m]) => `<button class="tag" data-mf="${k}" style="white-space:nowrap">${m.name}</button>`).join('')}
+      </div>
+      <div id="exlist" style="max-height:58vh;overflow-y:auto">
+        ${exRows(D.EXERCISES)}
+      </div>`;
+    U.openSheet('动作库', html, {
+      after: () => {
+        $('#sheetBody').addEventListener('click', e => {
+          const mf = e.target.closest('[data-mf]');
+          if (mf) { $('#exlist').innerHTML = exRows(D.EXERCISES.filter(x => x.primary === mf.dataset.mf)); return; }
+          const ex = e.target.closest('[data-ex2]');
+          if (ex) { U.closeSheet(); setTimeout(() => openExercise(ex.dataset.ex2), 200); }
+        });
+      },
+    });
+  }
+  function exRows(list) {
+    return list.map(ex => `
+      <div class="row" data-ex2="${ex.id}" style="margin-bottom:7px">
+        <div class="mid"><div class="t">${esc(ex.name)}</div>
+          <div class="s">${D.MUSCLES[ex.primary].name} · ${esc(ex.equip)}</div></div>
+        ${ICON.arrow}
+      </div>`).join('');
+  }
+
+  function openPlan() {
+    const t = S.calcTargets();
+    const html = `
+      <div class="card glow" style="margin-bottom:14px">
+        <div style="font-size:15px;font-weight:800;margin-bottom:6px">减脂期 · 标准方案</div>
+        <div class="tiny muted">基于你的 TDEE ${t.tdee} kcal 自动生成</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px">
+          <div><div class="tiny muted">热量</div><div style="font-size:19px;font-weight:800">${t.kcal}</div></div>
+          <div><div class="tiny muted">蛋白</div><div style="font-size:19px;font-weight:800;color:var(--purple)">${t.protein}g</div></div>
+          <div><div class="tiny muted">碳水</div><div style="font-size:19px;font-weight:800;color:var(--green)">${t.carb}g</div></div>
+        </div>
+      </div>
+      <div class="sec-title" style="margin:0 2px 10px"><span class="dot"></span>训练安排</div>
+      ${[
+        ['周一', '推日 · 胸肩三头', '卧推 4×6-8 · 上斜 3×8-10 · 侧平举 3×12-15 · 绳索下压 3×12'],
+        ['周二', '有氧 + 核心', '快走 30 分钟 · 卷腹 3×15 · 平板支撑 3×45s'],
+        ['周三', '拉日 · 背二头', '高位下拉 4×8-10 · 划船 4×8 · 面拉 3×15 · 弯举 3×12'],
+        ['周四', '休息', '散步 6000 步 · 拉伸 10 分钟'],
+        ['周五', '腿日 · 下肢', '深蹲 4×6-8 · RDL 3×8 · 腿举 3×10 · 提踵 4×15'],
+        ['周六', '上肢综合', '肩推 3×8 · 侧平举 3×15 · 引体 3×力竭 · 三头 3×12'],
+        ['周日', '休息', '恢复日，保证 7.5 小时睡眠'],
+      ].map(([d, n, s]) => `
+        <div class="card" style="margin-bottom:9px;padding:13px 15px">
+          <div style="display:flex;align-items:center">
+            <span style="font-size:12px;font-weight:800;color:var(--red);width:34px">${d}</span>
+            <span style="font-size:13.5px;font-weight:800">${n}</span>
+          </div>
+          <div class="tiny muted" style="margin-top:6px;line-height:1.6;padding-left:34px">${s}</div>
+        </div>`).join('')}`;
+    U.openSheet('官方计划', html);
+  }
+
+  function openRank() {
+    const vol = Object.values(S.state.days).reduce((a, dd) =>
+      a + (dd.workouts || []).reduce((b, w) => b + S.workoutVolume(w), 0), 0);
+    const tiers = [
+      [0, '青铜', '刚开始的人'],
+      [5000, '白银', '建立习惯'],
+      [20000, '黄金', '稳定训练'],
+      [50000, '铂金', '进阶力量'],
+      [100000, '钻石', '硬核选手'],
+      [200000, '王者', '天花板'],
+    ];
+    const cur = tiers.filter(t => vol >= t[0]).pop() || tiers[0];
+    const next = tiers.find(t => vol < t[0]);
+    const pct = next ? (vol - cur[0]) / (next[0] - cur[0]) : 1;
+
+    const html = `
+      <div class="card glow" style="text-align:center;margin-bottom:16px">
+        <div style="font-size:44px;line-height:1">🏅</div>
+        <div style="font-size:24px;font-weight:800;margin-top:8px">${cur[1]}</div>
+        <div class="tiny muted" style="margin-top:4px">${cur[2]}</div>
+        <div class="prog" style="margin-top:16px"><i style="width:${Math.min(100, pct * 100)}%"></i></div>
+        <div class="tiny muted" style="margin-top:8px">
+          ${next ? `再练 ${(next[0] - vol).toLocaleString()} kg 容量升到 ${next[1]}` : '已达最高段位'}
+        </div>
+      </div>
+      ${tiers.map(([v, n, d], i) => `
+        <div class="row" style="opacity:${vol >= v ? 1 : .4};margin-bottom:7px">
+          <div class="ico">${['🥉', '🥈', '🥇', '💎', '💠', '👑'][i]}</div>
+          <div class="mid"><div class="t">${n}</div><div class="s">${d}</div></div>
+          <div class="r"><div class="n" style="font-size:12px">${v.toLocaleString()}</div><div class="u">kg</div></div>
+        </div>`).join('')}`;
+    U.openSheet('段位', html);
+  }
+
+  /* ==========================================================
+     导入导出
+     ========================================================== */
+  function doExport() {
+    const txt = S.exportJSON();
+    const blob = new Blob([txt], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `norg-backup-${S.todayKey()}.json`;
+    a.click();
+    U.toast('已导出备份文件');
+  }
+
+  function doImport() {
+    const html = `
+      <div class="tiny muted" style="margin-bottom:12px">粘贴之前导出的 JSON 内容，或选择文件。</div>
+      <textarea class="input" id="impTxt" style="height:160px;padding:12px;resize:none;font-size:12px;font-family:var(--mono)" placeholder='{"profile":{...}}'></textarea>
+      <input type="file" id="impFile" accept=".json" style="margin:12px 0;font-size:12px;color:var(--t3)" />
+      <button class="btn" id="doImp" style="margin-top:10px">导入</button>`;
+    U.openSheet('导入数据', html, {
+      after: () => {
+        const f = $('#impFile');
+        f.addEventListener('change', () => {
+          const file = f.files[0];
+          if (!file) return;
+          const r = new FileReader();
+          r.onload = () => { $('#impTxt').value = r.result; };
+          r.readAsText(file);
+        });
+        $('#sheetBody').addEventListener('click', e => {
+          if (!e.target.closest('#doImp')) return;
+          try {
+            S.importJSON($('#impTxt').value);
+            U.closeSheet();
+            U.toast('导入成功');
+            render();
+          } catch (err) { U.toast('导入失败：' + err.message); }
+        });
+      },
+    });
+  }
+
+  function doReset() {
+    const html = `
+      <div class="tiny muted" style="line-height:1.7;margin-bottom:16px">
+        将清空全部饮食、训练、体重记录并恢复演示数据。此操作不可撤销。
+      </div>
+      <button class="btn" id="doR" style="background:linear-gradient(135deg,#ff5a4e,#8e0f16)">确认清空</button>`;
+    U.openSheet('清空数据', html, {
+      after: () => {
+        $('#sheetBody').addEventListener('click', e => {
+          if (!e.target.closest('#doR')) return;
+          S.reset();
+          U.closeSheet();
+          U.toast('已重置');
+          render();
+        });
+      },
+    });
+  }
+
+  /* ==========================================================
+     启动
+     ========================================================== */
+  function boot() {
+    S.load();
+    S.applyTheme(S.state.profile.theme || 'crimson');
+    S.checkAchievements();
+    bindGlobal();
+    render();
+    // 单文件版不注册 Service Worker（file:// 场景下无意义）
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+
+  global.NorgApp = { render, openAddMeal, openExercise };
+})(window);
+
+</script>
+</body>
+</html>
