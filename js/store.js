@@ -47,7 +47,8 @@
       lastLog: null,
       achievements: [],
       customFoods: [],
-      planWeek: null,  // 当前训练计划（由 planner 生成）
+      planWeek: null,  // 旧字段（兼容）
+      program: null,   // 当前计划 { id, startDate, weekIndex }
     };
   }
 

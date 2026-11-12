@@ -56,6 +56,7 @@
       const sub = VW.planSub;
       if (sub && sub.type === 'session') el.innerHTML = PV.V.planSession(sub.key);
       else if (sub && sub.type === 'meal') el.innerHTML = PV.V.planMeal();
+      else if (sub && sub.type === 'library') el.innerHTML = PV.V.planLibrary();
       else el.innerHTML = PV.V.plan();
     } else {
       el.innerHTML = V[tab] ? V[tab]() : '';
@@ -113,6 +114,32 @@
       if (ps) {
         VW.planSub = { type: 'session', key: ps.dataset.session };
         render();
+        return;
+      }
+
+      // 计划库：选择计划
+      const pp = t.closest('[data-pickprog]');
+      if (pp) {
+        const PV2 = global.NorgPlanViews;
+        PV2.switchProgram(pp.dataset.pickprog);
+        VW.planSub = null;
+        U.toast('已切换计划');
+        render();
+        return;
+      }
+
+      // 计划库：切换周次
+      const wkBtn = t.closest('[data-week]');
+      if (wkBtn) {
+        const st = S.state.program;
+        if (st) {
+          // 按周次反推 startDate
+          const offset = (Number(wkBtn.dataset.week) - 1) * 7;
+          st.startDate = S.dayOffset(S.todayKey(), -offset);
+          st.weekIndex = Number(wkBtn.dataset.week);
+          S.save();
+          render();
+        }
         return;
       }
 
@@ -175,10 +202,11 @@
         // ===== 计划相关 =====
         case 'backPlan': VW.planSub = null; render(); break;
         case 'mealPlan': VW.planSub = { type: 'meal' }; render(); break;
+        case 'openLibrary': VW.planSub = { type: 'library' }; render(); break;
         case 'planSettings': openPlanSettings(); break;
         case 'startFromPlan': {
           const PV = global.NorgPlanViews;
-          const week = PV.getWeek();
+          const week = PV.currentWeek();
           const today = week.sessions.find(s => s.weekday === new Date().getDay());
           if (today) startSessionFromPlan(today);
           else U.toast('今天没有安排训练');
@@ -199,7 +227,7 @@
      ========================================================== */
   function startSessionFromPlanByKey(key) {
     const PV = global.NorgPlanViews;
-    const week = PV.getWeek();
+    const week = PV.currentWeek();
     const s = week.sessions.find(x => x.key === key);
     if (s) startSessionFromPlan(s);
   }
@@ -220,8 +248,11 @@
           exId: e.exId,
           name: e.name,
           sets: [],
-          // 计划的目标值，供记录时预填
-          planned: { weight: e.targetWeight, reps: e.targetReps, sets: e.targetSets },
+          planned: {
+            weight: e.targetWeight,
+            reps: e.targetReps,
+            sets: e.targetSets,
+          },
         })),
       };
       d.workouts.push(w);
@@ -536,30 +567,28 @@
       let body = '';
       if (tab === 'about') {
         body = `
-          <div id="ex3dWrap" style="border-radius:var(--r-l);overflow:hidden;position:relative;
-               background:radial-gradient(75% 75% at 50% 28%, #1e2430 0%, #0a0c10 78%);
+          <div id="ex3dWrap" style="border-radius:20px;overflow:hidden;position:relative;
+               background:radial-gradient(85% 85% at 50% 22%, #f4f4f2 0%, #dcdcd8 70%, #cfcfca 100%);
                aspect-ratio:1.28/1;margin-bottom:8px">
             <div id="ex3d" style="width:100%;height:100%"></div>
             <div id="ex3dFallback" style="position:absolute;inset:0;display:none;place-items:center;
-                 background:linear-gradient(160deg,#f2f2f0,#d4d4d0)">
+                 background:linear-gradient(160deg,#f4f4f2,#dcdcd8)">
               ${C.exerciseArt(ex)}
             </div>
-            <div style="position:absolute;top:10px;right:10px;display:flex;gap:5px;z-index:2">
-              <button class="tag" id="btn3dToggle" style="background:rgba(0,0,0,.55);color:#fff;border:1px solid rgba(255,255,255,.16);font-size:10.5px">暂停</button>
+            <div style="position:absolute;top:10px;right:10px;display:flex;gap:6px;z-index:2">
+              <button class="tag" id="btn3dToggle" style="background:rgba(0,0,0,.42);color:#fff;border:0;font-size:10.5px;backdrop-filter:blur(6px)">暂停</button>
             </div>
             <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
                  display:flex;gap:5px;z-index:2">
-              <button class="tag" data-view="front" style="background:rgba(0,0,0,.55);color:#fff;border:1px solid rgba(255,255,255,.16);font-size:10.5px">正面</button>
-              <button class="tag" data-view="q34" style="background:rgba(0,0,0,.55);color:#fff;border:1px solid rgba(255,255,255,.16);font-size:10.5px">斜侧</button>
-              <button class="tag" data-view="side" style="background:rgba(0,0,0,.55);color:#fff;border:1px solid rgba(255,255,255,.16);font-size:10.5px">侧面</button>
-              <button class="tag" data-view="back" style="background:rgba(0,0,0,.55);color:#fff;border:1px solid rgba(255,255,255,.16);font-size:10.5px">背面</button>
+              <button class="tag" data-view="front" style="background:rgba(0,0,0,.42);color:#fff;border:0;font-size:10px">正面</button>
+              <button class="tag" data-view="q34" style="background:rgba(0,0,0,.42);color:#fff;border:0;font-size:10px">斜侧</button>
+              <button class="tag" data-view="side" style="background:rgba(0,0,0,.42);color:#fff;border:0;font-size:10px">侧面</button>
+              <button class="tag" data-view="back" style="background:rgba(0,0,0,.42);color:#fff;border:0;font-size:10px">背面</button>
             </div>
           </div>
-          <div class="tiny muted" style="margin-bottom:12px;display:flex;align-items:center;gap:6px">
-            <span style="width:5px;height:5px;border-radius:50%;background:var(--red);box-shadow:0 0 6px var(--red)"></span>
-            3D 解剖示范 · 可拖动旋转
-          </div>
+          <div class="tiny muted" style="margin-bottom:12px">官方动作示范</div>
           <div style="font-size:13.5px;line-height:1.75;color:var(--t2)">${esc(ex.desc)}</div>
+
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
             <div class="card" style="padding:12px">
               <div class="tiny muted" style="font-weight:700">主要肌群</div>
@@ -570,9 +599,10 @@
               <div style="font-size:15px;font-weight:800;margin-top:4px">${esc(ex.equip)}</div>
             </div>
           </div>
+
           <div class="sec-title" style="margin:18px 2px 10px"><span class="dot"></span>目标肌群</div>
-          <div id="exMuscle3d" style="border-radius:var(--r-l);overflow:hidden;
-               background:radial-gradient(70% 70% at 50% 25%, #1e2430, #0a0c10 75%);
+          <div id="exMuscle3d" style="border-radius:18px;overflow:hidden;
+               background:linear-gradient(170deg,#161a1c,#0c0e10);
                border:1px solid var(--line);height:300px"></div>
           <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:7px">
             ${ex.muscles.map(k => `<span class="tag"><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${D.MUSCLES[k].color};margin-right:5px"></i>${D.MUSCLES[k].name}</span>`).join('')}
