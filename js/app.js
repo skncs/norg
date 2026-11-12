@@ -15,16 +15,56 @@
   const $ = U.$, $$ = U.$$;
 
   /* ==========================================================
+     3D 视图管理（页面级）
+     ========================================================== */
+  let pageViewer = null;
+  function disposePageViewer() {
+    if (pageViewer) { try { pageViewer.dispose(); } catch (e) {} pageViewer = null; }
+  }
+
+  function initPage3d(tab) {
+    disposePageViewer();
+    if (tab !== 'train') return;
+    const el = document.getElementById('train3d');
+    if (!el) return;
+
+    global.Norg3D.ensureThree().then(() => {
+      if (!document.getElementById('train3d')) return;
+      try {
+        pageViewer = global.Norg3D.createViewer(el, { height: 300, autoRotate: true });
+        pageViewer.setAnim('idle');
+        pageViewer.heatmap(S.muscleVolume(7));
+      } catch (e) {
+        el.innerHTML = `<div style="display:grid;place-items:center;height:100%;color:var(--t4);font-size:12px">3D 加载失败</div>`;
+      }
+    }).catch(() => {
+      el.innerHTML = `<div style="display:grid;place-items:center;height:100%;color:var(--t4);font-size:12px">3D 加载失败</div>`;
+    });
+  }
+
+  /* ==========================================================
      渲染
      ========================================================== */
   function render() {
     const tab = VW.tab;
     const el = $('#view');
-    el.innerHTML = V[tab] ? V[tab]() : '';
+    const PV = global.NorgPlanViews;
+
+    // 计划相关子页
+    if (tab === 'plan') {
+      const sub = VW.planSub;
+      if (sub && sub.type === 'session') el.innerHTML = PV.V.planSession(sub.key);
+      else if (sub && sub.type === 'meal') el.innerHTML = PV.V.planMeal();
+      else el.innerHTML = PV.V.plan();
+    } else {
+      el.innerHTML = V[tab] ? V[tab]() : '';
+    }
+
     el.scrollTop = 0;
     window.scrollTo(0, 0);
     $$('.tab').forEach(b => b.classList.toggle('is-active', b.dataset.tab === tab));
     $('#streakNum').textContent = S.state.streak || 0;
+
     // FAB
     const old = $('#fab');
     if (old) old.remove();
@@ -36,6 +76,9 @@
       f.onclick = () => tab === 'diet' ? openAddMeal() : openAddWorkout();
       document.body.appendChild(f);
     }
+
+    // 训练页的 3D 肌群图
+    setTimeout(() => initPage3d(tab), 30);
   }
 
   /* ==========================================================
@@ -46,6 +89,7 @@
       const b = e.target.closest('.tab');
       if (!b) return;
       VW.tab = b.dataset.tab;
+      VW.planSub = null;
       render();
     });
 
@@ -62,6 +106,18 @@
         render();
         return;
       }
+
+      // 计划：打开某个训练日
+      const ps = t.closest('[data-session]');
+      if (ps) {
+        VW.planSub = { type: 'session', key: ps.dataset.session };
+        render();
+        return;
+      }
+
+      // 计划：动作详情
+      const pex = t.closest('[data-planex]');
+      if (pex) { openExercise(pex.dataset.planex); return; }
 
       // 打开某个动作
       const ex = t.closest('[data-ex]');
@@ -114,6 +170,20 @@
         case 'export': doExport(); break;
         case 'import': doImport(); break;
         case 'reset': doReset(); break;
+
+        // ===== 计划相关 =====
+        case 'backPlan': VW.planSub = null; render(); break;
+        case 'mealPlan': VW.planSub = { type: 'meal' }; render(); break;
+        case 'planSettings': openPlanSettings(); break;
+        case 'startFromPlan': {
+          const PV = global.NorgPlanViews;
+          const week = PV.getWeek();
+          const today = week.sessions.find(s => s.weekday === new Date().getDay());
+          if (today) startSessionFromPlan(today);
+          else U.toast('今天没有安排训练');
+          break;
+        }
+        case 'startSession': startSessionFromPlanByKey(act.dataset.key); break;
       }
     });
 
@@ -121,6 +191,130 @@
     $('#btnStreak').onclick = () => U.toast(`已连续记录 ${S.state.streak} 天`);
     $('#sheetClose').onclick = U.closeSheet;
     $('#sheetMask').onclick = U.closeSheet;
+  }
+
+  /* ==========================================================
+     按计划开始训练
+     ========================================================== */
+  function startSessionFromPlanByKey(key) {
+    const PV = global.NorgPlanViews;
+    const week = PV.getWeek();
+    const s = week.sessions.find(x => x.key === key);
+    if (s) startSessionFromPlan(s);
+  }
+
+  function startSessionFromPlan(session) {
+    const k = S.todayKey();
+    const d = S.day(k);
+
+    // 已存在同名训练就复用，避免重复创建
+    let w = d.workouts.find(x => x.name === session.label);
+    if (!w) {
+      w = {
+        id: S.uid(),
+        name: session.label,
+        ts: Date.now(),
+        dur: Math.round(session.totalSets * 3),
+        exercises: session.exercises.map(e => ({
+          exId: e.exId,
+          name: e.name,
+          sets: [],
+          // 计划的目标值，供记录时预填
+          planned: { weight: e.targetWeight, reps: e.targetReps, sets: e.targetSets },
+        })),
+      };
+      d.workouts.push(w);
+      S.save();
+      U.toast('已按计划创建训练');
+    } else {
+      U.toast('今天的这个训练已存在');
+    }
+
+    VW.tab = 'train';
+    VW.planSub = null;
+    render();
+    setTimeout(() => openWorkoutDetail(w.id), 240);
+  }
+
+  /* ==========================================================
+     计划设置
+     ========================================================== */
+  function openPlanSettings() {
+    const p = S.state.profile;
+    const PV = global.NorgPlanViews;
+    const week = PV.getWeek();
+
+    const html = `
+      <div class="field">
+        <label>每周能练几天</label>
+        <div style="display:flex;gap:7px;flex-wrap:wrap">
+          ${[2, 3, 4, 5].map(n => `<button class="tag ${p.daysPerWeek == n ? 'red' : ''}" data-days="${n}">${n} 天</button>`).join('')}
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:14px">
+        <label>可用器械</label>
+        <div style="display:flex;gap:7px;flex-wrap:wrap">
+          ${[['all', '不限'], ['杠铃', '杠铃'], ['哑铃', '哑铃'], ['器械', '固定器械'], ['绳索', '绳索'], ['自重', '自重']]
+            .map(([v, t]) => `<button class="tag ${p.equipment === v ? 'red' : ''}" data-eq="${v}">${t}</button>`).join('')}
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:14px">
+        <label>训练经验</label>
+        <div style="display:flex;gap:7px;flex-wrap:wrap">
+          ${[['beginner', '新手（<1年）'], ['intermediate', '中阶（1-3年）'], ['advanced', '进阶（3年+）']]
+            .map(([v, t]) => `<button class="tag ${p.level === v ? 'red' : ''}" data-lv="${v}">${t}</button>`).join('')}
+        </div>
+      </div>
+
+      <div class="card" style="margin:16px 0">
+        <div class="tiny muted" style="font-weight:700;margin-bottom:7px">当前方案</div>
+        <div style="font-size:14.5px;font-weight:800">${esc(week.splitName)}</div>
+        <div class="tiny muted" style="margin-top:5px;line-height:1.55">${esc(week.splitDesc)}</div>
+      </div>
+
+      <button class="btn" id="regenPlan">重新生成计划</button>
+      <div class="tiny muted center" style="margin-top:10px;line-height:1.6">
+        重新生成会按新的天数 / 器械 / 经验重新编排动作和目标重量。<br>已记录的训练数据不受影响。
+      </div>
+    `;
+
+    U.openSheet('计划设置', html, {
+      after: () => {
+        let days = p.daysPerWeek, eq = p.equipment, lv = p.level;
+        $('#sheetBody').addEventListener('click', e => {
+          const d1 = e.target.closest('[data-days]');
+          if (d1) {
+            days = Number(d1.dataset.days);
+            $$('[data-days]').forEach(b => b.classList.toggle('red', b.dataset.days == days));
+            return;
+          }
+          const e1 = e.target.closest('[data-eq]');
+          if (e1) {
+            eq = e1.dataset.eq;
+            $$('[data-eq]').forEach(b => b.classList.toggle('red', b.dataset.eq === eq));
+            return;
+          }
+          const l1 = e.target.closest('[data-lv]');
+          if (l1) {
+            lv = l1.dataset.lv;
+            $$('[data-lv]').forEach(b => b.classList.toggle('red', b.dataset.lv === lv));
+            return;
+          }
+          if (e.target.closest('#regenPlan')) {
+            p.daysPerWeek = days;
+            p.equipment = eq;
+            p.level = lv;
+            S.save();
+            PV.regenWeek({ daysPerWeek: days, equipment: eq, level: lv });
+            U.closeSheet();
+            U.toast('计划已重新生成');
+            render();
+          }
+        });
+      },
+    });
   }
 
   /* ==========================================================
@@ -341,8 +535,21 @@
       let body = '';
       if (tab === 'about') {
         body = `
-          <div class="ex-hero" style="margin-bottom:14px">${C.exerciseArt(ex)}</div>
-          <div class="tiny muted" style="margin-bottom:12px">官方动作示范</div>
+          <div id="ex3dWrap" style="border-radius:var(--r-l);overflow:hidden;position:relative;
+               background:linear-gradient(160deg,#f2f2f0,#d4d4d0);aspect-ratio:1.28/1;margin-bottom:6px">
+            <div id="ex3d" style="width:100%;height:100%"></div>
+            <div id="ex3dFallback" style="position:absolute;inset:0;display:none;place-items:center">
+              ${C.exerciseArt(ex)}
+            </div>
+            <div style="position:absolute;top:10px;right:10px;display:flex;gap:6px;z-index:2">
+              <button class="tag" id="btn3dToggle" style="background:rgba(0,0,0,.6);color:#fff;border:0;font-size:10.5px">暂停</button>
+              <button class="tag" id="btn3dView" style="background:rgba(0,0,0,.6);color:#fff;border:0;font-size:10.5px">正面</button>
+            </div>
+          </div>
+          <div class="tiny muted" style="margin-bottom:12px;display:flex;align-items:center;gap:6px">
+            <span style="width:5px;height:5px;border-radius:50%;background:var(--red);box-shadow:0 0 6px var(--red)"></span>
+            3D 动作示范 · 可拖动旋转
+          </div>
           <div style="font-size:13.5px;line-height:1.75;color:var(--t2)">${esc(ex.desc)}</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
             <div class="card" style="padding:12px">
@@ -355,10 +562,8 @@
             </div>
           </div>
           <div class="sec-title" style="margin:18px 2px 10px"><span class="dot"></span>目标肌群</div>
-          <div class="muscle-wrap">
-            <div style="text-align:center">${C.bodyMap({ data: Object.fromEntries(ex.muscles.map((k, i) => [k, ex.muscles.length - i])), w: 110, h: 172, mode: 'front' })}</div>
-            <div style="text-align:center">${C.bodyMap({ data: Object.fromEntries(ex.muscles.map((k, i) => [k, ex.muscles.length - i])), w: 110, h: 172, mode: 'back' })}</div>
-          </div>
+          <div id="exMuscle3d" style="border-radius:var(--r-l);overflow:hidden;background:rgba(255,255,255,.045);
+               border:1px solid var(--line);height:280px"></div>
           <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:7px">
             ${ex.muscles.map(k => `<span class="tag"><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${D.MUSCLES[k].color};margin-right:5px"></i>${D.MUSCLES[k].name}</span>`).join('')}
           </div>
@@ -461,8 +666,60 @@
       `;
     };
 
+    /* 3D 场景实例（切换 tab 时销毁重建，避免泄漏） */
+    let viewer3d = null;
+    let muscleViewer = null;
+
+    const dispose3d = () => {
+      if (viewer3d) { try { viewer3d.dispose(); } catch (e) {} viewer3d = null; }
+      if (muscleViewer) { try { muscleViewer.dispose(); } catch (e) {} muscleViewer = null; }
+    };
+
+    const init3d = () => {
+      if (tab !== 'about') return;
+      const wrap = document.getElementById('ex3d');
+      if (!wrap) return;
+
+      global.Norg3D.ensureThree().then(() => {
+        // 弹层可能在异步期间被关掉
+        if (!document.getElementById('ex3d')) return;
+
+        /* ---- 动作动画视图 ---- */
+        try {
+          viewer3d = global.Norg3D.createViewer(wrap, { height: wrap.clientHeight || 240 });
+          const animKey = global.Norg3D.pickAnim(ex.name);
+          viewer3d.setAnim(animKey);
+          viewer3d.highlight(ex.muscles.slice(0, 2));
+        } catch (e) {
+          const fb = document.getElementById('ex3dFallback');
+          if (fb) fb.style.display = 'grid';
+          console.warn('3D 动作视图初始化失败', e);
+        }
+
+        /* ---- 目标肌群静态视图 ---- */
+        const mw = document.getElementById('exMuscle3d');
+        if (mw) {
+          try {
+            muscleViewer = global.Norg3D.createViewer(mw, { height: 280 });
+            muscleViewer.setAnim('idle');
+            // 主肌群亮，协同肌群稍暗
+            const heat = {};
+            ex.muscles.forEach((k, i) => { heat[k] = ex.muscles.length - i; });
+            muscleViewer.heatmap(heat);
+          } catch (e) {
+            mw.innerHTML = `<div style="display:grid;place-items:center;height:100%;color:var(--t4);font-size:12px">3D 加载失败</div>`;
+          }
+        }
+      }).catch(() => {
+        const fb = document.getElementById('ex3dFallback');
+        if (fb) fb.style.display = 'grid';
+      });
+    };
+
     const rerender = () => {
+      dispose3d();
       U.openSheet(ex.name, build(), { after: rerender });
+      setTimeout(init3d, 60);
     };
 
     U.openSheet(ex.name, build(), {
@@ -474,9 +731,26 @@
             rerender();
             return;
           }
+          // 3D 控制
+          if (e.target.closest('#btn3dToggle')) {
+            const btn = e.target.closest('#btn3dToggle');
+            const paused = btn.dataset.paused === '1';
+            if (viewer3d) viewer3d.setPlaying(paused);
+            btn.dataset.paused = paused ? '0' : '1';
+            btn.textContent = paused ? '暂停' : '播放';
+            return;
+          }
+          if (e.target.closest('#btn3dView')) {
+            const btn = e.target.closest('#btn3dView');
+            if (viewer3d) { viewer3d.resetView(); }
+            btn.textContent = btn.textContent === '正面' ? '复位' : '正面';
+            return;
+          }
           if (e.target.closest('#logThis')) openQuickLog(ex);
         });
+        setTimeout(init3d, 80);
       },
+      onClose: dispose3d,
     });
   }
 

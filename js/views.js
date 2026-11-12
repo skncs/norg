@@ -14,6 +14,7 @@
   let mode = 'diet';        // 今日页模式：diet / train
   let viewDate = null;      // 浏览的日期（null = 今天）
   let curTab = 'today';
+  let planSub = null;       // 计划页子视图：null / {type:'session',key} / {type:'meal'}
 
   const V = {};
 
@@ -443,13 +444,9 @@
     </div>
 
     <div class="sec-title"><span class="dot"></span>肌群分布<span class="more">近 7 天</span></div>
-    <div class="card">
-      <div class="muscle-wrap">
-        <div style="text-align:center">${C.bodyMap({ data: musc, w: 118, h: 184, mode: 'front' })}
-          <div class="tiny muted" style="margin-top:4px">正面</div></div>
-        <div style="text-align:center">${C.bodyMap({ data: musc, w: 118, h: 184, mode: 'back' })}
-          <div class="tiny muted" style="margin-top:4px">背面</div></div>
-      </div>
+    <div class="card" style="padding:12px">
+      <div id="train3d" style="height:300px;border-radius:18px;overflow:hidden;background:radial-gradient(80% 80% at 50% 20%, rgba(255,59,48,.08), transparent 70%)"></div>
+      <div class="tiny muted center" style="margin-top:8px">3D 肌群热力图 · 越红练得越多 · 可拖动旋转</div>
       <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:7px 14px">
         ${Object.entries(D.MUSCLES).filter(([mk]) => musc[mk]).sort((a, b) => musc[b[0]] - musc[a[0]]).slice(0, 8).map(([mk, m]) => `
           <div style="display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700">
@@ -609,6 +606,8 @@
     set mode(v) { mode = v; },
     get viewDate() { return viewDate; },
     set viewDate(v) { viewDate = v; },
+    get planSub() { return planSub; },
+    set planSub(v) { planSub = v; },
     V, weekKcal, weekLabels, macroBar,
   };
 })(window);

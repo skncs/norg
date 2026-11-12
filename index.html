@@ -9,13 +9,13 @@
 <meta name="apple-mobile-web-app-title" content="Norg" />
 <title>Norg · 健身与饮食记录</title>
 <link rel="manifest" href="manifest.webmanifest" />
-<link rel="stylesheet" href="css/app.css" />
+<link rel="stylesheet" href="css/app.css?v=11" />
 </head>
 <body>
 
 <div id="app">
 
-  <!-- ========== 顶栏 ========== -->
+  <!-- 顶栏 -->
   <header class="topbar" id="topbar">
     <div class="brand">
       <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
@@ -39,10 +39,10 @@
     </div>
   </header>
 
-  <!-- ========== 主视图 ========== -->
+  <!-- 主视图 -->
   <main id="view" class="view"></main>
 
-  <!-- ========== 底部导航 ========== -->
+  <!-- 底部导航 -->
   <nav class="tabbar" id="tabbar">
     <button class="tab is-active" data-tab="today">
       <svg viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 011 1v13a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1zm0 5h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="8" cy="14.5" r="1.6" fill="currentColor"/></svg>
@@ -51,6 +51,10 @@
     <button class="tab" data-tab="diet">
       <svg viewBox="0 0 24 24"><path d="M6 3v7a3 3 0 006 0V3M9 3v18M17 3c-1.5 2-2 4-2 6 0 2 1 3 2 3v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
       <span>饮食</span>
+    </button>
+    <button class="tab" data-tab="plan">
+      <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>计划</span>
     </button>
     <button class="tab" data-tab="train">
       <svg viewBox="0 0 24 24"><path d="M3 9v6M21 9v6M6.5 6.5v11M17.5 6.5v11M6.5 12h11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -64,7 +68,7 @@
 
 </div>
 
-<!-- ========== 底部弹层 ========== -->
+<!-- 底部弹层 -->
 <div class="sheet-mask" id="sheetMask" hidden></div>
 <div class="sheet" id="sheet" hidden>
   <div class="sheet-grip"></div>
@@ -79,11 +83,14 @@
 
 <div class="toast" id="toast" hidden></div>
 
-<script src="js/data.js"></script>
-<script src="js/store.js"></script>
-<script src="js/charts.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/views.js"></script>
-<script src="js/app.js"></script>
+<script src="js/data.js?v=11"></script>
+<script src="js/store.js?v=11"></script>
+<script src="js/planner.js?v=11"></script>
+<script src="js/charts.js?v=11"></script>
+<script src="js/body3d.js?v=11"></script>
+<script src="js/ui.js?v=11"></script>
+<script src="js/views.js?v=11"></script>
+<script src="js/views-plan.js?v=11"></script>
+<script src="js/app.js?v=11"></script>
 </body>
 </html>

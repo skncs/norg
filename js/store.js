@@ -37,6 +37,9 @@
         fatPct: 0.25,
         theme: 'crimson',
         unit: 'kg',
+        daysPerWeek: 3,       // 每周能练几天
+        equipment: 'all',     // all / 杠铃 / 哑铃 / 器械 / 自重 / 绳索
+        level: 'intermediate',// beginner / intermediate / advanced
       },
       days: {},        // { '2026-11-12': { meals:[], workouts:[], weight:null, water:0, sleep:null, steps:0 } }
       prs: {},         // { exerciseId: { weight, reps, e1rm, date } }
@@ -44,6 +47,7 @@
       lastLog: null,
       achievements: [],
       customFoods: [],
+      planWeek: null,  // 当前训练计划（由 planner 生成）
     };
   }
 
