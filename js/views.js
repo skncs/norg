@@ -445,7 +445,8 @@
 
     <div class="sec-title"><span class="dot"></span>肌群分布<span class="more">近 7 天</span></div>
     <div class="card" style="padding:12px">
-      <div id="train3d" style="height:300px;border-radius:18px;overflow:hidden;background:radial-gradient(80% 80% at 50% 20%, rgba(255,59,48,.08), transparent 70%)"></div>
+      <div id="train3d" style="height:340px;border-radius:18px;overflow:hidden;
+           background:radial-gradient(70% 70% at 50% 25%, #1e2430, #0a0c10 75%)"></div>
       <div class="tiny muted center" style="margin-top:8px">3D 肌群热力图 · 越红练得越多 · 可拖动旋转</div>
       <div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:7px 14px">
         ${Object.entries(D.MUSCLES).filter(([mk]) => musc[mk]).sort((a, b) => musc[b[0]] - musc[a[0]]).slice(0, 8).map(([mk, m]) => `

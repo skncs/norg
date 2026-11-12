@@ -31,8 +31,9 @@
     global.Norg3D.ensureThree().then(() => {
       if (!document.getElementById('train3d')) return;
       try {
-        pageViewer = global.Norg3D.createViewer(el, { height: 300, autoRotate: true });
+        pageViewer = global.Norg3D.createViewer(el, { height: 340, autoRotate: true });
         pageViewer.setAnim('idle');
+        pageViewer.setView('front');
         pageViewer.heatmap(S.muscleVolume(7));
       } catch (e) {
         el.innerHTML = `<div style="display:grid;place-items:center;height:100%;color:var(--t4);font-size:12px">3D 加载失败</div>`;
@@ -536,19 +537,27 @@
       if (tab === 'about') {
         body = `
           <div id="ex3dWrap" style="border-radius:var(--r-l);overflow:hidden;position:relative;
-               background:linear-gradient(160deg,#f2f2f0,#d4d4d0);aspect-ratio:1.28/1;margin-bottom:6px">
+               background:radial-gradient(75% 75% at 50% 28%, #1e2430 0%, #0a0c10 78%);
+               aspect-ratio:1.28/1;margin-bottom:8px">
             <div id="ex3d" style="width:100%;height:100%"></div>
-            <div id="ex3dFallback" style="position:absolute;inset:0;display:none;place-items:center">
+            <div id="ex3dFallback" style="position:absolute;inset:0;display:none;place-items:center;
+                 background:linear-gradient(160deg,#f2f2f0,#d4d4d0)">
               ${C.exerciseArt(ex)}
             </div>
-            <div style="position:absolute;top:10px;right:10px;display:flex;gap:6px;z-index:2">
-              <button class="tag" id="btn3dToggle" style="background:rgba(0,0,0,.6);color:#fff;border:0;font-size:10.5px">暂停</button>
-              <button class="tag" id="btn3dView" style="background:rgba(0,0,0,.6);color:#fff;border:0;font-size:10.5px">正面</button>
+            <div style="position:absolute;top:10px;right:10px;display:flex;gap:5px;z-index:2">
+              <button class="tag" id="btn3dToggle" style="background:rgba(0,0,0,.55);color:#fff;border:1px solid rgba(255,255,255,.16);font-size:10.5px">暂停</button>
+            </div>
+            <div style="position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
+                 display:flex;gap:5px;z-index:2">
+              <button class="tag" data-view="front" style="background:rgba(0,0,0,.55);color:#fff;border:1px solid rgba(255,255,255,.16);font-size:10.5px">正面</button>
+              <button class="tag" data-view="q34" style="background:rgba(0,0,0,.55);color:#fff;border:1px solid rgba(255,255,255,.16);font-size:10.5px">斜侧</button>
+              <button class="tag" data-view="side" style="background:rgba(0,0,0,.55);color:#fff;border:1px solid rgba(255,255,255,.16);font-size:10.5px">侧面</button>
+              <button class="tag" data-view="back" style="background:rgba(0,0,0,.55);color:#fff;border:1px solid rgba(255,255,255,.16);font-size:10.5px">背面</button>
             </div>
           </div>
           <div class="tiny muted" style="margin-bottom:12px;display:flex;align-items:center;gap:6px">
             <span style="width:5px;height:5px;border-radius:50%;background:var(--red);box-shadow:0 0 6px var(--red)"></span>
-            3D 动作示范 · 可拖动旋转
+            3D 解剖示范 · 可拖动旋转
           </div>
           <div style="font-size:13.5px;line-height:1.75;color:var(--t2)">${esc(ex.desc)}</div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
@@ -562,8 +571,9 @@
             </div>
           </div>
           <div class="sec-title" style="margin:18px 2px 10px"><span class="dot"></span>目标肌群</div>
-          <div id="exMuscle3d" style="border-radius:var(--r-l);overflow:hidden;background:rgba(255,255,255,.045);
-               border:1px solid var(--line);height:280px"></div>
+          <div id="exMuscle3d" style="border-radius:var(--r-l);overflow:hidden;
+               background:radial-gradient(70% 70% at 50% 25%, #1e2430, #0a0c10 75%);
+               border:1px solid var(--line);height:300px"></div>
           <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:7px">
             ${ex.muscles.map(k => `<span class="tag"><i style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${D.MUSCLES[k].color};margin-right:5px"></i>${D.MUSCLES[k].name}</span>`).join('')}
           </div>
@@ -689,6 +699,7 @@
           viewer3d = global.Norg3D.createViewer(wrap, { height: wrap.clientHeight || 240 });
           const animKey = global.Norg3D.pickAnim(ex.name);
           viewer3d.setAnim(animKey);
+          // 主肌群亮（红心蓝边）
           viewer3d.highlight(ex.muscles.slice(0, 2));
         } catch (e) {
           const fb = document.getElementById('ex3dFallback');
@@ -700,8 +711,9 @@
         const mw = document.getElementById('exMuscle3d');
         if (mw) {
           try {
-            muscleViewer = global.Norg3D.createViewer(mw, { height: 280 });
+            muscleViewer = global.Norg3D.createViewer(mw, { height: 300, autoRotate: true });
             muscleViewer.setAnim('idle');
+            muscleViewer.setView('front');
             // 主肌群亮，协同肌群稍暗
             const heat = {};
             ex.muscles.forEach((k, i) => { heat[k] = ex.muscles.length - i; });
@@ -740,10 +752,12 @@
             btn.textContent = paused ? '暂停' : '播放';
             return;
           }
-          if (e.target.closest('#btn3dView')) {
-            const btn = e.target.closest('#btn3dView');
-            if (viewer3d) { viewer3d.resetView(); }
-            btn.textContent = btn.textContent === '正面' ? '复位' : '正面';
+          const vb = e.target.closest('[data-view]');
+          if (vb) {
+            if (viewer3d) viewer3d.setView(vb.dataset.view);
+            $$('[data-view]').forEach(b => {
+              b.style.background = b === vb ? 'rgba(255,59,48,.85)' : 'rgba(0,0,0,.55)';
+            });
             return;
           }
           if (e.target.closest('#logThis')) openQuickLog(ex);
